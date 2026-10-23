@@ -1,0 +1,13 @@
+window_sizes 1440 603 287 1147 430 120
+cleanlooks_style
+diagrams
+  active  classdiagram_ref 128133 // EJ1
+    1147 430 100 A4 0 0
+end
+show_stereotypes
+selected 
+  package_ref 129 // A7.EJ1
+open
+  classview_ref 128133 // EJ1
+end
+end
