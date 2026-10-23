@@ -1,0 +1,29 @@
+class CocheDTO
+!!!130051.java!!!	CocheDTO(in matricula : String, in kmsActuales : double, in esta_en : int, in categoria : String)
+		super();
+		this.matricula = matricula;
+		this.kmsActuales = kmsActuales;
+		this.esta_en=esta_en;
+		this.categoria=categoria;
+!!!130179.java!!!	CocheDTO(inout c : Coche)
+		super();
+		this.matricula=c.getMatricula();
+		this.kmsActuales=c.getKmsActuales();
+		this.esta_en=c.getEsta_en().getIdSucursal();
+		this.categoria=c.getTiene().getNombre();
+!!!130307.java!!!	getMatricula() : String
+		return matricula;
+!!!130435.java!!!	setMatricula(in matricula : String) : void
+		this.matricula = matricula;
+!!!130563.java!!!	getKmsActuales() : double
+		return kmsActuales;
+!!!130691.java!!!	setKmsActuales(in kmsActuales : double) : void
+		this.kmsActuales = kmsActuales;
+!!!130819.java!!!	getEsta_en() : int
+		return esta_en;
+!!!130947.java!!!	setEsta_en(in esta_en : int) : void
+		this.esta_en = esta_en;
+!!!131075.java!!!	getCategoria() : String
+		return categoria;
+!!!131203.java!!!	setCategoria(in categoria : String) : void
+		this.categoria = categoria;

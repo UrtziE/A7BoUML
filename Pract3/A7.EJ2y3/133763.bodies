@@ -1,0 +1,25 @@
+class ControladorPrincipal
+!!!172931.java!!!	listarSucursales(inout event : ActionEvent) : void
+		 initCasoDeUso(LISTAR_SUCURSALES,ControladorListarSucursales.class).show();
+!!!173059.java!!!	listarCochesSucursal(inout event : ActionEvent) : void
+	 //TODO implementar el manejador del C.U. Listar reservas de una sucursal
+		 initCasoDeUso(LISTAR_VEHICULO_SUCURSAL,ControladorListarCochesSucursales.class).show();
+!!!173187.java!!!	listarCategorias(inout event : ActionEvent) : void
+		 initCasoDeUso(LISTAR_CATEGORIAS,ControladorListarCategorias.class).show();
+!!!173315.java!!!	crearCliente(inout event : ActionEvent) : void
+		 initCasoDeUso(CREAR_CLIENTE, ControladorCrearCliente.class).show();
+!!!173443.java!!!	crearReserva(inout event : ActionEvent) : void
+	 // TODO implementar el manejador del C.U. Crear Reserva
+		 initCasoDeUso(CREAR_RESERVA,ControladorCrearReserva.class).show();
+!!!173571.java!!!	listarReservasSucursal(inout event : ActionEvent) : void
+	 //TODO implementar el manejador del C.U. Listar reservas de una sucursal
+		 initCasoDeUso(LISTAR_RESERVAS_SUCURSAL,ControladorListarReservasSucursales.class).show();
+!!!173699.java!!!	entregarVehiculoReserva(inout event : ActionEvent) : void
+	 //TODO implementar el manejador del C.U. Listar reservas de una sucursal
+		 initCasoDeUso(ENTREGAR_VEHICULO_RESERVA,ControladorEntregarVehiculoReserva.class).show();
+!!!173827.java!!!	salir(inout event : ActionEvent) : void
+	 Platform.exit();
+!!!173955.java!!!	setPrimaryStage(inout primaryStage : Stage) : void
+	 this.primaryStage = primaryStage;
+!!!174083.java!!!	initCasoDeUso(in urlVista : String, inout controlClass : Class<T>) : T
+		 return ControladorCasoDeUso.initCasoDeUso(urlVista, controlClass,	primaryStage, ControladorPrincipal.this);

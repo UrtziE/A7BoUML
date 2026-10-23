@@ -1,0 +1,57 @@
+class Categoria
+!!!143619.java!!!	Categoria(inout cat : CategoriaDTO)
+		
+		this.nombre = cat.getNombre();
+		this.precioModIlimitada = cat.getPrecioModIlimitada();
+		this.precioModKms = cat.getPrecioModKms();
+		this.precioKmModKms = cat.getPrecioKMModKms();
+		this.precioSeguroTRiesgo = cat.getPrecioSeguroTRiesgo();
+		this.precioSeguroTerceros = cat.getPrecioSeguroTerceros();
+		this.superior =null;		
+!!!143747.java!!!	addCoche(inout c : Coche) : void
+		coleccionCoches.put(c.getMatricula(), c);
+!!!143875.java!!!	removeCoche(in matricula : String) : Coche
+		return coleccionCoches.remove(matricula);	
+!!!144003.java!!!	getCoche(in matricula : String) : Coche
+		return coleccionCoches.get(matricula);
+!!!144131.java!!!	getNombre() : String
+		return nombre;
+!!!144259.java!!!	setNombre(in nombre : String) : void
+		this.nombre = nombre;
+!!!144387.java!!!	getPrecioModIlimitada() : double
+		return precioModIlimitada;
+!!!144515.java!!!	setPrecioModIlimitada(in precioModIlimitada : double) : void
+		this.precioModIlimitada = precioModIlimitada;
+!!!144643.java!!!	getPrecioModKms() : double
+		return precioModKms;
+!!!144771.java!!!	setPrecioModKms(in precioModKms : double) : void
+		this.precioModKms = precioModKms;
+!!!144899.java!!!	getPrecioKmModKms() : double
+		return precioKmModKms;
+!!!145027.java!!!	setPrecioKmModKms(in precioKmModKms : double) : void
+		this.precioKmModKms = precioKmModKms;
+!!!145155.java!!!	getPrecioSeguroTRiesgo() : double
+		return precioSeguroTRiesgo;
+!!!145283.java!!!	setPrecioSeguroTRiesgo(in precioSeguroTRiesgo : double) : void
+		this.precioSeguroTRiesgo = precioSeguroTRiesgo;
+!!!145411.java!!!	getPrecioSeguroTerceros() : double
+		return precioSeguroTerceros;
+!!!145539.java!!!	setPrecioSeguroTerceros(in precioSeguroTerceros : double) : void
+		this.precioSeguroTerceros = precioSeguroTerceros;
+!!!145667.java!!!	getSuperior() : Categoria
+		return superior;
+!!!145795.java!!!	setSuperior(inout catSuperior : Categoria) : void
+		this.superior = catSuperior;
+!!!145923.java!!!	toString() : String
+		String aux = "";
+		
+		if (superior != null) aux =  superior.getNombre();
+		else aux = "no tiene";
+		
+		return "Categoria [nombre=" + nombre + ", precioModIlimitada="
+				+ precioModIlimitada + ", precioModKms=" + precioModKms
+				+ ", precioKmModKms=" + precioKmModKms
+				+ ", \nprecioSeguroTRiesgo=" + precioSeguroTRiesgo
+				+ ", precioSeguroTerceros=" + precioSeguroTerceros
+				+ ", categoria superior=" + aux + ", coleccionCoches="
+				+ coleccionCoches + "]";

@@ -1,0 +1,3562 @@
+format 224
+"logica" // src::logica
+  revision 1
+  modified_by 3 "urtzi"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  java_dir "/home/urtzi/eclipse-workspace/AlquilerDeVehiculosA7/src/logica/"
+  java_package "logica"
+  classview 128131 "logica"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    class 128131 "Categoria"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 132995 "nombre"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "CP"
+      end
+
+      attribute 133123 "precioModIlimitada"
+	private explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 133251 "precioModKms"
+	private explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 133379 "precioKmModKms"
+	private explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 133507 "precioSeguroTRiesgo"
+	private explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 133635 "precioSeguroTerceros"
+	private explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 130179 // superior (<unidirectional association>)
+	relation 130179 --->
+	  a role_name "superior" private
+	    comment " +superior"
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 130179 // superior (<unidirectional association>)
+	  b parent class_ref 128131 // Categoria
+      end
+
+      classrelation 130307 // coleccionCoches (<unidirectional association>)
+	relation 130307 --->
+	  stereotype "Hashtable"
+	  a role_name "coleccionCoches" init_value " new Hashtable<String,Coche>()" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<String,${type}> ${name}${value};
+"
+	    classrelation_ref 130307 // coleccionCoches (<unidirectional association>)
+	  b parent class_ref 128515 // Coche
+      end
+
+      operation 143619 "Categoria"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "cat" type class_ref 128003 // CategoriaDTO
+	nexceptions 1
+	  exception class_ref 129667 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 143747 "addCoche"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "c" type class_ref 128515 // Coche
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 143875 "removeCoche"
+	public return_type class_ref 128515 // Coche
+	nparams 1
+	  param in name "matricula" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 144003 "getCoche"
+	public return_type class_ref 128515 // Coche
+	nparams 1
+	  param in name "matricula" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 144131 "getNombre"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 144259 "setNombre"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "nombre" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 144387 "getPrecioModIlimitada"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 144515 "setPrecioModIlimitada"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "precioModIlimitada" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 144643 "getPrecioModKms"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 144771 "setPrecioModKms"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "precioModKms" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 144899 "getPrecioKmModKms"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 145027 "setPrecioKmModKms"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "precioKmModKms" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 145155 "getPrecioSeguroTRiesgo"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 145283 "setPrecioSeguroTRiesgo"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "precioSeguroTRiesgo" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 145411 "getPrecioSeguroTerceros"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 145539 "setPrecioSeguroTerceros"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "precioSeguroTerceros" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 145667 "getSuperior"
+	public return_type class_ref 128131 // Categoria
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 145795 "setSuperior"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "catSuperior" type class_ref 128131 // Categoria
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 145923 "toString"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+    end
+
+    class 128515 "Coche"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 135171 "matricula"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "CP"
+      end
+
+      attribute 135299 "kmsActuales"
+	private explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 130435 // tiene (<unidirectional association>)
+	relation 130435 --->
+	  a role_name "tiene" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 130435 // tiene (<unidirectional association>)
+	  b parent class_ref 128131 // Categoria
+      end
+
+      classrelation 130563 // esta_en (<unidirectional association>)
+	relation 130563 --->
+	  a role_name "esta_en" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 130563 // esta_en (<unidirectional association>)
+	  b parent class_ref 130819 // Sucursal
+      end
+
+      operation 149251 "Coche"
+	public explicit_return_type ""
+	nparams 3
+	  param in name "matricula" explicit_type "String"
+	  param in name "kmsActuales" explicit_type "int"
+	  param inout name "tiene" type class_ref 128131 // Categoria
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 149379 "Coche"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "coche" type class_ref 128387 // CocheDTO
+	nexceptions 1
+	  exception class_ref 129667 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 149507 "getMatricula"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 149635 "setMatricula"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "matricula" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 149763 "getKmsActuales"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 149891 "setKmsActuales"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "kmsActuales" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 150019 "getTiene"
+	public return_type class_ref 128131 // Categoria
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 150147 "setTiene"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "tiene" type class_ref 128131 // Categoria
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 150275 "getEsta_en"
+	public return_type class_ref 130819 // Sucursal
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 150403 "setEsta_en"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "esta_en" type class_ref 130819 // Sucursal
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 150531 "toString"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+    end
+
+    class 130435 "Empleado"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 136451 "DNI"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "CP"
+      end
+
+      attribute 136579 "nombre"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 131075 // trabaja (<unidirectional association>)
+	relation 131075 --->
+	  a role_name "trabaja" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 131075 // trabaja (<unidirectional association>)
+	  b parent class_ref 130819 // Sucursal
+      end
+
+      attribute 136707 "administrador"
+	private explicit_type "boolean"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 153731 "Empleado"
+	public explicit_return_type ""
+	nparams 4
+	  param in name "dNI" explicit_type "String"
+	  param in name "nombre" explicit_type "String"
+	  param inout name "administrador" explicit_type "boolean"
+	  param inout name "trabaja" type class_ref 130819 // Sucursal
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 153859 "Empleado"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "e" type class_ref 130179 // EmpleadoDTO
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 153987 "getDNI"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 154115 "setDNI"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "dNI" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 154243 "getNombre"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 154371 "setNombre"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "nombre" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 154499 "getAdministrador"
+	public explicit_return_type "boolean"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 154627 "setAdministrador"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "administrador" explicit_type "boolean"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 130563 "Entrega"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 136835 "id"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 136963 "fecha"
+	private explicit_type "LocalDateTime"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 137091 "tipoSeguro"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 137219 "kms"
+	private explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 137347 "combustible"
+	private explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 131203 // tiene_asociado (<unidirectional association>)
+	relation 131203 --->
+	  a role_name "tiene_asociado" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 131203 // tiene_asociado (<unidirectional association>)
+	  b parent class_ref 128515 // Coche
+      end
+
+      classrelation 131331 // asociado_a_devolucion (<unidirectional association>)
+	relation 131331 --->
+	  a role_name "asociado_a_devolucion" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 131331 // asociado_a_devolucion (<unidirectional association>)
+	  b parent class_ref 131715 // Devolucion
+      end
+
+      classrelation 131459 // asociado_a_reserva (<unidirectional association>)
+	relation 131459 --->
+	  a role_name "asociado_a_reserva" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 131459 // asociado_a_reserva (<unidirectional association>)
+	  b parent class_ref 130691 // Reserva
+      end
+
+      classrelation 131587 // es_realizada_por (<unidirectional association>)
+	relation 131587 --->
+	  a role_name "es_realizada_por" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 131587 // es_realizada_por (<unidirectional association>)
+	  b parent class_ref 130435 // Empleado
+      end
+
+      classrelation 131715 // coleccionDanyos (<unidirectional association>)
+	relation 131715 --->
+	  stereotype "Hashtable"
+	  a role_name "coleccionDanyos" init_value " new Hashtable<String,Danyo>()" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<String,${type}> ${name}${value};
+"
+	    classrelation_ref 131715 // coleccionDanyos (<unidirectional association>)
+	  b parent class_ref 131459 // Danyo
+      end
+
+      operation 154755 "Entrega"
+	public explicit_return_type ""
+	nparams 8
+	  param in name "id" explicit_type "int"
+	  param inout name "fecha" explicit_type "LocalDateTime"
+	  param in name "tipoSeguro" explicit_type "String"
+	  param in name "kms" explicit_type "double"
+	  param in name "combustible" explicit_type "double"
+	  param inout name "tiene_asociado" type class_ref 128515 // Coche
+	  param inout name "asociado_a_reserva" type class_ref 130691 // Reserva
+	  param inout name "es_realizada_por" type class_ref 130435 // Empleado
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}, ${t4} ${p4}, ${t5} ${p5}, ${t6} ${p6}, ${t7} ${p7}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 154883 "Entrega"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "e" type class_ref 129923 // EntregaDTO
+	nexceptions 1
+	  exception class_ref 129667 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 155011 "addDanyo"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "c" type class_ref 131459 // Danyo
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 155139 "removeDanyo"
+	public return_type class_ref 131459 // Danyo
+	nparams 1
+	  param in name "idDanyo" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 155267 "getDanyo"
+	public return_type class_ref 131459 // Danyo
+	nparams 1
+	  param in name "idDanyo" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 155395 "getId"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 155523 "setId"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "id" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 155651 "getFecha"
+	public explicit_return_type "LocalDateTime"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 155779 "setFecha"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "fecha" explicit_type "LocalDateTime"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 155907 "getTipoSeguro"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 156035 "setTipoSeguro"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "tipoSeguro" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 156163 "getKms"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 156291 "setKms"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "kms" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 156419 "getCombustible"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 156547 "setCombustible"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "combustible" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 156675 "getTiene_asociado"
+	public return_type class_ref 128515 // Coche
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 156803 "setTiene_asociado"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "tiene_asociado" type class_ref 128515 // Coche
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 156931 "getAsociado_a_devolucion"
+	public return_type class_ref 131715 // Devolucion
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 157059 "setAsociado_a_devolucion"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "asociado_a_devolucion" type class_ref 131715 // Devolucion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 157187 "getAsociado_a_reserva"
+	public return_type class_ref 130691 // Reserva
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 157315 "setAsociado_a_reserva"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "asociado_a_reserva" type class_ref 130691 // Reserva
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 157443 "getEs_realizada_por"
+	public return_type class_ref 130435 // Empleado
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 157571 "setEs_realizada_por"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "es_realizada_por" type class_ref 130435 // Empleado
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 157699 "getColeccionDanyos"
+	public return_type class_ref 131459 // Danyo
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Hashtable<String, ${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 157827 "setColeccionDanyos"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "coleccionDanyos" explicit_type "Hashtable<String, Danyo>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 130691 "Reserva"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 137475 "idReserva"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 137603 "fechaRecogida"
+	private explicit_type "LocalDateTime"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 137731 "fechaDevolucion"
+	private explicit_type "LocalDateTime"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 131843 // realizada_por (<unidirectional association>)
+	relation 131843 --->
+	  a role_name "realizada_por" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 131843 // realizada_por (<unidirectional association>)
+	  b parent class_ref 131331 // Cliente
+      end
+
+      classrelation 131971 // tiene_asociada (<unidirectional association>)
+	relation 131971 --->
+	  a role_name "tiene_asociada" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 131971 // tiene_asociada (<unidirectional association>)
+	  b parent class_ref 128131 // Categoria
+      end
+
+      classrelation 132099 // lugar_recogida (<unidirectional association>)
+	relation 132099 --->
+	  a role_name "lugar_recogida" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 132099 // lugar_recogida (<unidirectional association>)
+	  b parent class_ref 130819 // Sucursal
+      end
+
+      classrelation 132227 // lugar_devolucion (<unidirectional association>)
+	relation 132227 --->
+	  a role_name "lugar_devolucion" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 132227 // lugar_devolucion (<unidirectional association>)
+	  b parent class_ref 130819 // Sucursal
+      end
+
+      classrelation 132355 // asociado_a (<unidirectional association>)
+	relation 132355 --->
+	  a role_name "asociado_a" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 132355 // asociado_a (<unidirectional association>)
+	  b parent class_ref 130563 // Entrega
+      end
+
+      attribute 137859 "modalidadAlquiler"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 157955 "Reserva"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 158083 "Reserva"
+	public explicit_return_type ""
+	nparams 8
+	  param in name "idReserva" explicit_type "int"
+	  param inout name "fechaRecogida" explicit_type "LocalDateTime"
+	  param inout name "fechaDevolucion" explicit_type "LocalDateTime"
+	  param inout name "realizada_por" type class_ref 131331 // Cliente
+	  param inout name "tiene_asociada" type class_ref 128131 // Categoria
+	  param inout name "lugar_recogida" type class_ref 130819 // Sucursal
+	  param inout name "lugar_devolucion" type class_ref 130819 // Sucursal
+	  param in name "modalidadAlquiler" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}, ${t4} ${p4}, ${t5} ${p5}, ${t6} ${p6}, ${t7} ${p7}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 158211 "Reserva"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "res" type class_ref 129795 // ReservaDTO
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 158339 "getIdReserva"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 158467 "setIdReserva"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "idReserva" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 158595 "getFechaRecogida"
+	public explicit_return_type "LocalDateTime"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 158723 "setFechaRecogida"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "fechaRecogida" explicit_type "LocalDateTime"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 158851 "getFechaDevolucion"
+	public explicit_return_type "LocalDateTime"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 158979 "setFechaDevolucion"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "fechaDevolucion" explicit_type "LocalDateTime"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 159107 "getModalidadAlquiler"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 159235 "setModalidadAlquiler"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "modalidadAlquiler" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 159363 "getRealizada_por"
+	public return_type class_ref 131331 // Cliente
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 159491 "setRealizada_por"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "realizada_por" type class_ref 131331 // Cliente
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 159619 "getTiene_asociada"
+	public return_type class_ref 128131 // Categoria
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 159747 "setTiene_asociada"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "tiene_asociada" type class_ref 128131 // Categoria
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 159875 "getLugar_recogida"
+	public return_type class_ref 130819 // Sucursal
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 160003 "setLugar_recogida"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "lugar_recogida" type class_ref 130819 // Sucursal
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 160131 "getLugar_devolucion"
+	public return_type class_ref 130819 // Sucursal
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 160259 "setLugar_devolucion"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "lugar_devolucion" type class_ref 130819 // Sucursal
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 160387 "getAsociado_a"
+	public return_type class_ref 130563 // Entrega
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 160515 "setAsociado_a"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "asociado_a" type class_ref 130563 // Entrega
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 160643 "toString"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+    end
+
+    class 130819 "Sucursal"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 137987 "idSucursal"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "CP"
+      end
+
+      attribute 138115 "direccion"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 132483 // lugar_devolucion (<unidirectional association>)
+	relation 132483 --->
+	  stereotype "Hashtable"
+	  a role_name "lugar_devolucion" init_value " new Hashtable<Integer,Reserva>()" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<Integer,${type}> ${name}${value};
+"
+	    classrelation_ref 132483 // lugar_devolucion (<unidirectional association>)
+	  b parent class_ref 130691 // Reserva
+      end
+
+      classrelation 132611 // lugar_recogida (<unidirectional association>)
+	relation 132611 --->
+	  stereotype "Hashtable"
+	  a role_name "lugar_recogida" init_value " new Hashtable<Integer,Reserva>()" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<Integer,${type}> ${name}${value};
+"
+	    classrelation_ref 132611 // lugar_recogida (<unidirectional association>)
+	  b parent class_ref 130691 // Reserva
+      end
+
+      classrelation 132739 // esta_en (<unidirectional association>)
+	relation 132739 --->
+	  stereotype "Hashtable"
+	  a role_name "esta_en" init_value " new Hashtable<String,Coche>()" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<String,${type}> ${name}${value};
+"
+	    classrelation_ref 132739 // esta_en (<unidirectional association>)
+	  b parent class_ref 128515 // Coche
+      end
+
+      classrelation 132867 // coleccionEmpleados (<unidirectional association>)
+	relation 132867 --->
+	  stereotype "Hashtable"
+	  a role_name "coleccionEmpleados" init_value " new Hashtable<String,Empleado>()" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<String,${type}> ${name}${value};
+"
+	    classrelation_ref 132867 // coleccionEmpleados (<unidirectional association>)
+	  b parent class_ref 130435 // Empleado
+      end
+
+      operation 160771 "toString"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+
+      operation 160899 "addReservaDevolucion"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "r" type class_ref 130691 // Reserva
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 161027 "Sucursal"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "suc" type class_ref 130051 // SucursalDTO
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 161155 "removeReservaDevolucion"
+	public return_type class_ref 130691 // Reserva
+	nparams 1
+	  param in name "idReserva" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 161283 "getReservaDevolucion"
+	public return_type class_ref 130691 // Reserva
+	nparams 1
+	  param in name "idReserva" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 161411 "addReservaRecogida"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "r" type class_ref 130691 // Reserva
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 161539 "removeReservaRecogida"
+	public return_type class_ref 130691 // Reserva
+	nparams 1
+	  param in name "idReserva" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 161667 "getReservaRecogida"
+	public return_type class_ref 130691 // Reserva
+	nparams 1
+	  param in name "idReserva" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 161795 "addCoche"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "c" type class_ref 128515 // Coche
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 161923 "removeCoche"
+	public return_type class_ref 128515 // Coche
+	nparams 1
+	  param in name "matricula" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 162051 "getCoche"
+	public return_type class_ref 128515 // Coche
+	nparams 1
+	  param in name "matricula" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 162179 "addEmpleado"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "e" type class_ref 130435 // Empleado
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 162307 "removeEmpleado"
+	public return_type class_ref 130435 // Empleado
+	nparams 1
+	  param in name "DNI" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 162435 "getEmpleado"
+	public return_type class_ref 130435 // Empleado
+	nparams 1
+	  param in name "DNI" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 162563 "getIdSucursal"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 162691 "setIdSucursal"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "i" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 162819 "getDireccion"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 162947 "setDireccion"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "direccion" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 163075 "getReservas"
+	public return_type class_ref 130691 // Reserva
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}Collection<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 131203 "AlquilerVehiculos"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 129283 // coleccionClientes (<unidirectional association>)
+	relation 129283 --->
+	  stereotype "Hashtable"
+	  a role_name "coleccionClientes" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<String, ${type}> ${name}${value};
+"
+	    classrelation_ref 129283 // coleccionClientes (<unidirectional association>)
+	  b parent class_ref 131331 // Cliente
+      end
+
+      classrelation 129411 // coleccionReservas (<unidirectional association>)
+	relation 129411 --->
+	  stereotype "Hashtable"
+	  a role_name "coleccionReservas" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<Integer, ${type}> ${name}${value};
+"
+	    classrelation_ref 129411 // coleccionReservas (<unidirectional association>)
+	  b parent class_ref 130691 // Reserva
+      end
+
+      classrelation 129539 // coleccionCategorias (<unidirectional association>)
+	relation 129539 --->
+	  stereotype "Hashtable"
+	  a role_name "coleccionCategorias" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<String, ${type}> ${name}${value};
+"
+	    classrelation_ref 129539 // coleccionCategorias (<unidirectional association>)
+	  b parent class_ref 128131 // Categoria
+      end
+
+      classrelation 129667 // coleccionSucursales (<unidirectional association>)
+	relation 129667 --->
+	  stereotype "Hashtable"
+	  a role_name "coleccionSucursales" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<Integer, ${type}> ${name}${value};
+"
+	    classrelation_ref 129667 // coleccionSucursales (<unidirectional association>)
+	  b parent class_ref 130819 // Sucursal
+      end
+
+      classrelation 129795 // coleccionEntregas (<unidirectional association>)
+	relation 129795 --->
+	  stereotype "Hashtable"
+	  a role_name "coleccionEntregas" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<Integer, ${type}> ${name}${value};
+"
+	    classrelation_ref 129795 // coleccionEntregas (<unidirectional association>)
+	  b parent class_ref 130563 // Entrega
+      end
+
+      classrelation 129923 // dal (<unidirectional association>)
+	relation 129923 --->
+	  a role_name "dal" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 129923 // dal (<unidirectional association>)
+	  b parent class_ref 128643 // DAL
+      end
+
+      classrelation 130051 // alquiler (<unidirectional association>)
+	relation 130051 --->
+	  a role_name "alquiler" class_relation private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 130051 // alquiler (<unidirectional association>)
+	  b parent class_ref 131203 // AlquilerVehiculos
+      end
+
+      operation 140035 "AlquilerVehiculos"
+	private explicit_return_type ""
+	nparams 0
+	nexceptions 1
+	  exception class_ref 129667 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 140163 "getSingleton"
+	class_operation public return_type class_ref 131203 // AlquilerVehiculos
+	nparams 0
+	nexceptions 1
+	  exception class_ref 129667 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 140291 "listarReservasSucursal"
+	public return_type class_ref 130691 // Reserva
+	nparams 1
+	  param in name "id" explicit_type "int"
+	nexceptions 1
+	  exception class_ref 129667 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 140419 "listarCategorias"
+	public return_type class_ref 128131 // Categoria
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 140547 "listarVehiculosSucursal"
+	public return_type class_ref 128515 // Coche
+	nparams 1
+	  param in name "sucursal" explicit_type "int"
+	nexceptions 1
+	  exception class_ref 129667 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 140675 "listarVehiculosCategoriaSucursal"
+	public return_type class_ref 128515 // Coche
+	nparams 2
+	  param in name "categoria" explicit_type "String"
+	  param in name "sucursal" explicit_type "int"
+	nexceptions 1
+	  exception class_ref 129667 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 140803 "listarSucursales"
+	public return_type class_ref 130819 // Sucursal
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 140931 "cargaSistema"
+	public explicit_return_type "void"
+	nparams 0
+	nexceptions 1
+	  exception class_ref 129667 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 141059 "cargarSucursales"
+	private explicit_return_type "void"
+	nparams 0
+	nexceptions 1
+	  exception class_ref 129667 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 141187 "cargaCategorias"
+	private explicit_return_type "void"
+	nparams 0
+	nexceptions 1
+	  exception class_ref 129667 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 141315 "crearReserva"
+	public return_type class_ref 130691 // Reserva
+	nparams 7
+	  param inout name "fechaRec" explicit_type "LocalDateTime"
+	  param inout name "fechaDev" explicit_type "LocalDateTime"
+	  param in name "mod" explicit_type "String"
+	  param inout name "cliente" type class_ref 131331 // Cliente
+	  param inout name "cat" type class_ref 128131 // Categoria
+	  param inout name "recogida" type class_ref 130819 // Sucursal
+	  param inout name "devolucion" type class_ref 130819 // Sucursal
+	nexceptions 1
+	  exception class_ref 129667 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}, ${t4} ${p4}, ${t5} ${p5}, ${t6} ${p6}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 141443 "crearCliente"
+	public return_type class_ref 131331 // Cliente
+	nparams 11
+	  param in name "DNI" explicit_type "String"
+	  param in name "nombreyApellidos" explicit_type "String"
+	  param in name "direccion" explicit_type "String"
+	  param in name "poblacion" explicit_type "String"
+	  param in name "codPostal" explicit_type "String"
+	  param inout name "fechaCarnetConducir" explicit_type "LocalDateTime"
+	  param in name "digitosTC" explicit_type "String"
+	  param in name "mesTC" explicit_type "int"
+	  param in name "anyoTC" explicit_type "int"
+	  param in name "cvcTC" explicit_type "int"
+	  param in name "tipoTC" explicit_type "String"
+	nexceptions 1
+	  exception class_ref 129667 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}, ${t4} ${p4}, ${t5} ${p5}, ${t6} ${p6}, ${t7} ${p7}, ${t8} ${p8}, ${t9} ${p9}, ${t10} ${p10}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 141571 "crearEntrega"
+	public explicit_return_type "void"
+	nparams 7
+	  param in name "id" explicit_type "int"
+	  param inout name "fecha" explicit_type "LocalDateTime"
+	  param in name "tipoSeguro" explicit_type "String"
+	  param in name "kms" explicit_type "double"
+	  param in name "combustible" explicit_type "double"
+	  param in name "tiene_asociado" explicit_type "String"
+	  param in name "es_realizada_por" explicit_type "String"
+	nexceptions 1
+	  exception class_ref 129667 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}, ${t4} ${p4}, ${t5} ${p5}, ${t6} ${p6}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 141699 "addEntrega"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "e" type class_ref 130563 // Entrega
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 141827 "addCliente"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "c" type class_ref 131331 // Cliente
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 141955 "removeCliente"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "dni" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 142083 "getCliente"
+	public return_type class_ref 131331 // Cliente
+	nparams 1
+	  param in name "dni" explicit_type "String"
+	nexceptions 1
+	  exception class_ref 129667 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 142211 "getEntrega"
+	public return_type class_ref 130563 // Entrega
+	nparams 1
+	  param in name "id" explicit_type "int"
+	nexceptions 1
+	  exception class_ref 129667 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 142339 "getEmpleado"
+	public return_type class_ref 130435 // Empleado
+	nparams 1
+	  param in name "dni" explicit_type "String"
+	nexceptions 1
+	  exception class_ref 129667 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 142467 "addReserva"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "r" type class_ref 130691 // Reserva
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 142595 "removeReserva"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "idReserva" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 142723 "getReserva"
+	public return_type class_ref 130691 // Reserva
+	nparams 1
+	  param in name "idReserva" explicit_type "int"
+	nexceptions 1
+	  exception class_ref 129667 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 142851 "addCategoria"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "c" type class_ref 128131 // Categoria
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 142979 "removeCategoria"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "nombre" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 143107 "getCategoria"
+	public return_type class_ref 128131 // Categoria
+	nparams 1
+	  param in name "nombre" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 143235 "addSucursal"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "s" type class_ref 130819 // Sucursal
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 143363 "removeSucursal"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "idSucursal" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 143491 "getSucursal"
+	public return_type class_ref 130819 // Sucursal
+	nparams 1
+	  param in name "idSucursal" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 131331 "Cliente"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 133763 "DNI"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment " CP"
+      end
+
+      attribute 133891 "nombreyApellidos"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 134019 "direccion"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 134147 "poblacion"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 134275 "codPostal"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 134403 "fechaCarnetConducir"
+	private explicit_type "LocalDateTime"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 134531 "digitosTC"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 134659 "mesTC"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 134787 "anyoTC"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 134915 "cvcTC"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 135043 "tipoTC"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 146051 "Cliente"
+	public explicit_return_type ""
+	nparams 11
+	  param in name "dNI" explicit_type "String"
+	  param in name "nombreyApellidos" explicit_type "String"
+	  param in name "direccion" explicit_type "String"
+	  param in name "poblacion" explicit_type "String"
+	  param in name "codPostal" explicit_type "String"
+	  param inout name "fechaCarnetConducir" explicit_type "LocalDateTime"
+	  param in name "digitosTC" explicit_type "String"
+	  param in name "mesTC" explicit_type "int"
+	  param in name "anyoTC" explicit_type "int"
+	  param in name "cvcTC" explicit_type "int"
+	  param in name "tipoTC" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}, ${t4} ${p4}, ${t5} ${p5}, ${t6} ${p6}, ${t7} ${p7}, ${t8} ${p8}, ${t9} ${p9}, ${t10} ${p10}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 146179 "Cliente"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "c" type class_ref 128259 // ClienteDTO
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 146307 "getDNI"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 146435 "setDNI"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "dNI" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 146563 "getNombreyApellidos"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 146691 "setNombreyApellidos"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "nombreyApellidos" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 146819 "getDireccion"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 146947 "setDireccion"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "direccion" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 147075 "getPoblacion"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 147203 "setPoblacion"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "poblacion" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 147331 "getCodPostal"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 147459 "setCodPostal"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "codPostal" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 147587 "getFechaCarnetConducir"
+	public explicit_return_type "LocalDateTime"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 147715 "setFechaCarnetConducir"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "fechaCarnetConducir" explicit_type "LocalDateTime"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 147843 "getDigitosTC"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 147971 "setDigitosTC"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "digitosTC" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 148099 "getMesTC"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 148227 "setMesTC"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "mesTC" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 148355 "getAnyoTC"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 148483 "setAnyoTC"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "anyoTC" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 148611 "getCvcTC"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 148739 "setCvcTC"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "cvcTC" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 148867 "getTipoTC"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 148995 "setTipoTC"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "tipoTC" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 149123 "toString"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+    end
+
+    class 131459 "Danyo"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 135427 "idDanyo"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "CP"
+      end
+
+      attribute 135555 "zona"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 135683 "descripcion"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 150659 "getIdDanyo"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 150787 "setIdDanyo"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "idDanyo" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 150915 "getZona"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 151043 "setZona"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "zona" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 151171 "getDescripcion"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 151299 "setDescripcion"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "descripcion" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 131587 "DAOPersistenceTester"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 151427 "main"
+	class_operation public explicit_return_type "void"
+	nparams 1
+	  param inout name "args" explicit_type "String"
+	multiplicity "[]"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 131715 "Devolucion"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 135811 "fecha"
+	private explicit_type "LocalDateTime"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 135939 "totalACobrar"
+	private explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 136067 "cobrado"
+	private explicit_type "boolean"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 136195 "kms"
+	private explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 136323 "combustible"
+	private explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 130691 // asociado_a (<unidirectional association>)
+	relation 130691 --->
+	  a role_name "asociado_a" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 130691 // asociado_a (<unidirectional association>)
+	  b parent class_ref 130563 // Entrega
+      end
+
+      classrelation 130819 // realizada_por (<unidirectional association>)
+	relation 130819 --->
+	  a role_name "realizada_por" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 130819 // realizada_por (<unidirectional association>)
+	  b parent class_ref 130435 // Empleado
+      end
+
+      classrelation 130947 // coleccionDanyos (<unidirectional association>)
+	relation 130947 --->
+	  stereotype "Hashtable"
+	  a role_name "coleccionDanyos" init_value " new Hashtable<String,Danyo>()" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<String,${type}> ${name}${value};
+"
+	    classrelation_ref 130947 // coleccionDanyos (<unidirectional association>)
+	  b parent class_ref 131459 // Danyo
+      end
+
+      operation 151555 "getRealizada_por"
+	public return_type class_ref 130435 // Empleado
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 151683 "setRealizada_por"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "realizada_por" type class_ref 130435 // Empleado
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 151811 "addDanyo"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "c" type class_ref 131459 // Danyo
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 151939 "removeDanyo"
+	public return_type class_ref 131459 // Danyo
+	nparams 1
+	  param in name "idDanyo" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 152067 "getDanyo"
+	public return_type class_ref 131459 // Danyo
+	nparams 1
+	  param in name "idDanyo" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 152195 "getFecha"
+	public explicit_return_type "LocalDateTime"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 152323 "setFecha"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "fecha" explicit_type "LocalDateTime"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 152451 "getTotalACobrar"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 152579 "setTotalACobrar"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "totalACobrar" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 152707 "isCobrado"
+	public explicit_return_type "boolean"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 152835 "setCobrado"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "cobrado" explicit_type "boolean"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 152963 "getKms"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 153091 "setKms"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "kms" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 153219 "getCombustible"
+	public explicit_return_type "double"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 153347 "setCombustible"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "combustible" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 153475 "getAsociado_a"
+	public return_type class_ref 130563 // Entrega
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 153603 "setAsociado_a"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "asociado_a" type class_ref 130563 // Entrega
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 131843 "TestCapaLogica"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 163203 "main"
+	class_operation public explicit_return_type "void"
+	nparams 1
+	  param inout name "args" explicit_type "String"
+	multiplicity "[]"
+	nexceptions 1
+	  exception class_ref 129667 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+  end
+
+  deploymentview 128259 "logica"
+    //deployment diagram settings
+    deploymentdiagramsettings
+     end
+    artifact 129283 "AlquilerVehiculos"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.List;
+import comunicacion.CategoriaDTO;
+import comunicacion.ClienteDTO;
+import comunicacion.CocheDTO;
+import comunicacion.DAL;
+import comunicacion.EmpleadoDTO;
+import comunicacion.EntregaDTO;
+import comunicacion.ReservaDTO;
+import comunicacion.SucursalDTO;
+import excepciones.DAOExcepcion;
+${definition}"
+      associated_elems
+	class_ref 131203 // AlquilerVehiculos
+      end
+    end
+
+    artifact 129411 "Categoria"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Hashtable;
+import comunicacion.CategoriaDTO;
+import excepciones.DAOExcepcion;
+${definition}"
+      associated_elems
+	class_ref 128131 // Categoria
+      end
+    end
+
+    artifact 129539 "Cliente"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.time.LocalDateTime;
+import comunicacion.ClienteDTO;
+${definition}"
+      associated_elems
+	class_ref 131331 // Cliente
+      end
+    end
+
+    artifact 129667 "Coche"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import comunicacion.CocheDTO;
+import excepciones.DAOExcepcion;
+${definition}"
+      associated_elems
+	class_ref 128515 // Coche
+      end
+    end
+
+    artifact 129795 "Danyo"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_elems
+	class_ref 131459 // Danyo
+      end
+    end
+
+    artifact 129923 "DAOPersistenceTester"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.Collection;
+import excepciones.DAOExcepcion;
+${definition}"
+      associated_elems
+	class_ref 131587 // DAOPersistenceTester
+      end
+    end
+
+    artifact 130051 "Devolucion"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.time.LocalDateTime;
+import java.util.Hashtable;
+${definition}"
+      associated_elems
+	class_ref 131715 // Devolucion
+      end
+    end
+
+    artifact 130179 "Empleado"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import comunicacion.EmpleadoDTO;
+${definition}"
+      associated_elems
+	class_ref 130435 // Empleado
+      end
+    end
+
+    artifact 130307 "Entrega"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.time.LocalDateTime;
+import java.util.Hashtable;
+import comunicacion.DAL;
+import comunicacion.EntregaDTO;
+import excepciones.DAOExcepcion;
+${definition}"
+      associated_elems
+	class_ref 130563 // Entrega
+      end
+    end
+
+    artifact 130435 "Reserva"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.time.LocalDateTime;
+import comunicacion.ReservaDTO;
+import excepciones.DAOExcepcion;
+${definition}"
+      associated_elems
+	class_ref 130691 // Reserva
+      end
+    end
+
+    artifact 130563 "Sucursal"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Hashtable;
+import java.util.List;
+import java.util.Set;
+import comunicacion.SucursalDTO;
+${definition}"
+      associated_elems
+	class_ref 130819 // Sucursal
+      end
+    end
+
+    artifact 130691 "TestCapaLogica"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collection;
+import excepciones.DAOExcepcion;
+${definition}"
+      associated_elems
+	class_ref 131843 // TestCapaLogica
+      end
+    end
+  end
+end
