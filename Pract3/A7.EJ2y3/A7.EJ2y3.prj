@@ -1,7 +1,12 @@
 format 224
 "A7.EJ2y3"
+<<<<<<< Updated upstream
   revision 1
   modified_by 5 "jcarlar"
+=======
+  revision 3
+  modified_by 3 "urtzi"
+>>>>>>> Stashed changes
 
 
   
@@ -96,8 +101,8 @@ format 224
     activitydiagramsettings
      end
     classdiagram 128389 "EJ:2.2.1"
-      classdiagramsettings member_max_width 0 end
-      size A4
+      classdiagramsettings hide_operations yes member_max_width 0 end
+      size D
     end
 
     sequencediagram 128517 "EJ:2.2.2"
