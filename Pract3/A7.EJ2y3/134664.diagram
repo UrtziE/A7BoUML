@@ -1,0 +1,202 @@
+format 224
+
+classcanvas 310536 class_ref 128131 // Categoria
+  classdiagramsettings member_max_width 0 end
+  xyz 729.0 222.5 3005
+end
+classcanvas 310664 class_ref 130691 // Reserva
+  classdiagramsettings member_max_width 0 end
+  xyz 210.0 744.5 2000
+end
+classcanvas 310792 class_ref 128515 // Coche
+  classdiagramsettings member_max_width 0 end
+  xyz 1385.0 772.5 2000
+end
+classcanvas 310920 class_ref 130819 // Sucursal
+  classdiagramsettings member_max_width 0 end
+  xyz 843.5 772.5 3005
+end
+classcanvas 311048 class_ref 130435 // Empleado
+  classdiagramsettings member_max_width 0 end
+  xyz 1078.0 1016.5 2000
+end
+classcanvas 311176 class_ref 130563 // Entrega
+  classdiagramsettings member_max_width 0 end
+  xyz 840.0 1308.5 2000
+end
+classcanvas 311304 class_ref 131331 // Cliente
+  classdiagramsettings member_max_width 0 end
+  xyz 142.5 1324.0 2016
+end
+classcanvas 311432 class_ref 131203 // AlquilerVehiculos
+  classdiagramsettings member_max_width 0 end
+  xyz 594.5 1927.0 2010
+end
+classcanvas 311560 class_ref 128643 // DAL
+  classdiagramsettings member_max_width 0 end
+  xyz 670.0 2107.0 3005
+end
+note 311688 "Trabajador de una sucursal y quien hace la entrega del vehículo. Tiene DNI, nombre y si es administrador."
+  xyzwh 1252.0 1016.5 2000 300 174
+note 311816 "Representa la reserva de un vehículo que hace un cliente, con fecha de recogida, devolución y modalidad del alquiler. Se relaciona con cliente, categoría, sucursales de recogida y devolución y la entrega si existe."
+  xyzwh 90.0 400.5 2000 300 314
+note 311944 "Categoría del vehículo con sus precios por modalidad y tipo de seguro. Puede tener una categoría superior, que se usa cuando no hay coches disponibles de la categoría reservada."
+  xyzwh 1011.0 179.5 2000 300 258
+note 312072 "Representa la entrega del vehículo con la fecha, tipo de seguro, kilómetros y combustible. Relaciona la reserva, el coche entregado y el empleado que la realiza."
+  xyzwh 990.0 1506.5 2000 300 258
+note 312200 "Oficina de la empresa, identificada por su id y dirección. En ella hay coches y empleados, y es el lugar de recogida y devolución de las reservas."
+  xyzwh 483.5 512.5 2000 300 230
+note 312328 "Fachada de la lógica (Singleton). Guarda en memoria los clientes, reservas, categorías... y se comunica con la persistencia mediante el DAL."
+  xyzwh 264.5 1927.0 2000 300 230
+note 312456 "Vehículo de la empresa, identificado con matrícula y kilómetros actuales. Pertenece a una categoría y está en una sucursal."
+  xyzwh 1300.0 470.5 2000 300 202
+note 312584 "Cliente que hace las reservas. Se guardan sus datos personales, la fecha del carné y los datos de su tarjeta."
+  xyzwh 100.0 1706.0 2000 300 174
+relationcanvas 312712 relation_ref 132483 // <unidirectional association>
+  from ref 310920 z 2001 stereotype "<<Hashtable>>" xyz 649.4 788.0 3000 to ref 310664
+  role_a_pos 440.0 788.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 312840 relation_ref 132611 // <unidirectional association>
+  from ref 310920 z 2001 stereotype "<<Hashtable>>" xyz 649.4 824.0 3000 to ref 310664
+  role_a_pos 440.0 824.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 312968 relation_ref 132739 // <unidirectional association>
+  from ref 310920 z 2001 stereotype "<<Hashtable>>" xyz 1159.3 788.0 3000 to ref 310792
+  role_a_pos 1251.0 824.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 313096 relation_ref 132867 // <unidirectional association>
+  from ref 310920 z 2001 stereotype "<<Hashtable>>" xyz 1020.1 902.5 3000 to ref 311048
+  role_a_pos 1071.2 955.7 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 313224 relation_ref 129667 // <unidirectional association>
+  from ref 311432 z 2001 stereotype "<<Hashtable>>" xyz 622.5 1418.2 3000 to ref 310920
+  role_a_pos 646.6 874.9 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 313352 relation_ref 132099 // <unidirectional association>
+  from ref 310664 z 2001 to ref 310920
+  role_a_pos 813.5 824.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 313480 relation_ref 132227 // <unidirectional association>
+  from ref 310664 z 2001 to ref 310920
+  role_a_pos 813.5 824.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 313608 relation_ref 130563 // <unidirectional association>
+  from ref 310792 z 2001 to ref 310920
+  role_a_pos 1006.5 788.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 313736 relation_ref 131075 // <unidirectional association>
+  from ref 311048 z 2001 to ref 310920
+  role_a_pos 983.4 864.3 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 313864 relation_ref 130179 // <unidirectional association>
+  from ref 310536 z 2001 to point 806.7 162.5
+  line 313992 z 2001 to point 873.3 162.5
+  line 314120 z 2001 to ref 310536
+  role_a_pos 883.3 142.5 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 314248 relation_ref 130307 // <unidirectional association>
+  from ref 310536 z 2001 stereotype "<<Hashtable>>" xyz 982.9 546.2 3000 to ref 310792
+  role_a_pos 1369.7 715.4 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 314376 relation_ref 129539 // <unidirectional association>
+  from ref 311432 z 2001 stereotype "<<Hashtable>>" xyz 769.9 1224.7 3000 to ref 310536
+  role_a_pos 837.3 445.4 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 314504 relation_ref 131971 // <unidirectional association>
+  from ref 310664 z 2001 to ref 310536
+  role_a_pos 521.4 425.6 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 314632 relation_ref 130435 // <unidirectional association>
+  from ref 310792 z 2001 to ref 310536
+  role_a_pos 1045.0 490.6 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 314760 relation_ref 131203 // <unidirectional association>
+  from ref 311176 z 2001 to ref 310792
+  role_a_pos 1387.4 900.5 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 314888 relation_ref 131587 // <unidirectional association>
+  from ref 311176 z 2001 to ref 311048
+  role_a_pos 873.8 1143.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 315016 relation_ref 132355 // <unidirectional association>
+  from ref 310664 z 2001 to ref 311176
+  role_a_pos 681.2 1282.2 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 315144 relation_ref 131459 // <unidirectional association>
+  from ref 311176 z 2001 to ref 310664
+  role_a_pos 416.9 891.3 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 315272 relation_ref 129411 // <unidirectional association>
+  from ref 311432 z 2001 stereotype "<<Hashtable>>" xyz 537.5 1466.8 3000 to ref 310664
+  role_a_pos 350.1 937.2 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 315400 relation_ref 129795 // <unidirectional association>
+  from ref 311432 z 2001 stereotype "<<Hashtable>>" xyz 789.6 1699.0 3000 to ref 311176
+  role_a_pos 639.1 1533.1 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 315528 relation_ref 130051 // <unidirectional association>
+  from ref 311432 z 2001 to point 855.5 1907.0
+  line 315656 z 2001 to point 855.5 1993.0
+  line 315784 z 2001 to ref 311432
+  role_a_pos 863.5 1942.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 315912 relation_ref 128899 // <unidirectional association>
+  from ref 311560 z 2001 to point 780.0 2087.0
+  line 316040 z 2001 to point 780.0 2173.0
+  line 316168 z 2001 to ref 311560
+  role_a_pos 788.0 2122.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 316296 relation_ref 129923 // <unidirectional association>
+  from ref 311432 z 2001 to ref 311560
+  role_a_pos 710.0 2035.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 316424 relation_ref 129283 // <unidirectional association>
+  from ref 311432 z 2001 stereotype "<<Hashtable>>" xyz 543.2 1751.2 3000 to ref 311304
+  role_a_pos 395.8 1603.8 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 316552 relation_ref 131843 // <unidirectional association>
+  from ref 310664 z 2001 to ref 311304
+  role_a_pos 275.9 1252.1 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 316680 -_-_
+  from ref 311048 z 2001 to ref 311688
+line 316808 -_-_
+  from ref 310664 z 2001 to ref 311816
+line 316936 -_-_
+  from ref 310536 z 2001 to ref 311944
+line 317064 -_-_
+  from ref 311176 z 2001 to ref 312072
+line 317192 -_-_
+  from ref 310920 z 2001 to ref 312200
+line 317320 -_-_
+  from ref 311432 z 2001 to ref 312328
+line 317448 -_-_
+  from ref 310792 z 2001 to ref 312456
+line 317576 -_-_
+  from ref 311304 z 2001 to ref 312584
+end

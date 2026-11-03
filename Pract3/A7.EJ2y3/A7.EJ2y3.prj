@@ -1,6 +1,6 @@
 format 224
 "A7.EJ2y3"
-  revision 5
+  revision 8
   modified_by 8 "Zhijian Wu Wang"
 
 
@@ -99,12 +99,32 @@ format 224
      end
     classdiagram 128389 "EJ2.2.1"
       classdiagramsettings hide_operations yes member_max_width 0 end
-      size D
+      size A0
     end
 
     sequencediagram 128517 "EJ2.2.2"
       sequencediagramsettings end
       overlapping_bars size A4
+    end
+
+    classdiagram 134536 "EJ2.2.1a"
+      classdiagramsettings hide_operations yes member_max_width 0 end
+      size A2
+    end
+
+    classdiagram 134664 "EJ2.2.1b"
+      classdiagramsettings hide_operations yes member_max_width 0 end
+      size A2
+    end
+
+    classdiagram 134792 "EJ2.2.1c"
+      classdiagramsettings hide_operations yes member_max_width 0 end
+      size A2
+    end
+
+    classdiagram 141320 "EJ2.2.1d"
+      classdiagramsettings hide_operations yes member_max_width 0 end
+      size A2
     end
   end
 
