@@ -1,18 +1,6 @@
-window_sizes 1137 672 371 760 611 0
+window_sizes 1137 672 284 847 515 104
 cleanlooks_style
-diagrams
-  active  classdiagram_ref 128389 // EJ:2.2.1
-    662 747 50 D 240 0
-end
 show_stereotypes
-selected class_ref 131331 // Cliente
-open
-  classview_ref 128003 // comunicacion
-  classview_ref 128131 // logica
-  classview_ref 128259 // persistencia
-  classview_ref 128387 // excepciones
-  deploymentview_ref 128131 // excepciones
-  classview_ref 128643 // presentacion
-  classview_ref 128389 // EJ2.2
-end
+selected 
+package_ref 129 // A7.EJ2y3
 end

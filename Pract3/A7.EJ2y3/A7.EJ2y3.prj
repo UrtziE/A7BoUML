@@ -1,12 +1,7 @@
 format 224
 "A7.EJ2y3"
-<<<<<<< Updated upstream
-  revision 1
-  modified_by 5 "jcarlar"
-=======
-  revision 3
+  revision 4
   modified_by 3 "urtzi"
->>>>>>> Stashed changes
 
 
   
@@ -49,6 +44,8 @@ format 224
 
   mark_for_import
   
+  package_ref 128131 // src
+
   classview 128133 "EJ2.1"
     
     classdiagramsettings member_max_width 0 end
@@ -121,4 +118,6 @@ format 224
       size A4
     end
   end
+
+  package_ref 128771 // unknown
 end
