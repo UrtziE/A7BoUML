@@ -1,7 +1,7 @@
 format 224
 "A7.EJ2y3"
-  revision 4
-  modified_by 3 "urtzi"
+  revision 5
+  modified_by 8 "Zhijian Wu Wang"
 
 
   
@@ -66,12 +66,12 @@ format 224
     
     activitydiagramsettings
      end
-    classdiagram 128133 "EJ:2.1.1"
+    classdiagram 128133 "EJ2.1.1"
       classdiagramsettings member_max_width 0 end
       size A4
     end
 
-    sequencediagram 128261 "EJ:2.1.2"
+    sequencediagram 128261 "EJ2.1.2"
       sequencediagramsettings end
       overlapping_bars size A4
     end
@@ -97,12 +97,12 @@ format 224
     
     activitydiagramsettings
      end
-    classdiagram 128389 "EJ:2.2.1"
+    classdiagram 128389 "EJ2.2.1"
       classdiagramsettings hide_operations yes member_max_width 0 end
       size D
     end
 
-    sequencediagram 128517 "EJ:2.2.2"
+    sequencediagram 128517 "EJ2.2.2"
       sequencediagramsettings end
       overlapping_bars size A4
     end

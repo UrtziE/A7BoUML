@@ -2,103 +2,153 @@ format 224
 
 classcanvas 128003 class_ref 129795 // ReservaDTO
   classdiagramsettings member_max_width 0 end
-  xyz 1431.93 40.5 2000
+  xyz 1600.0 1380.0 2000
+end
+classcanvas 128008 class_ref 133507 // ControladorCasoDeUso
+  classdiagramsettings member_max_width 0 end
+  xyz 574.5 165.0 2006
 end
 classcanvas 128131 class_ref 128387 // CocheDTO
   classdiagramsettings member_max_width 0 end
-  xyz 247.5 1740.5 2000
+  xyz 1600.0 2000.0 2000
 end
 classcanvas 128259 class_ref 130179 // EmpleadoDTO
   classdiagramsettings member_max_width 0 end
-  xyz 426.5 1740.5 2000
+  xyz 1890.0 1700.0 2000
 end
 classcanvas 128387 class_ref 129923 // EntregaDTO
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 1740.5 2000
+  xyz 1600.0 1700.0 2000
+end
+classcanvas 128392 class_ref 133763 // ControladorPrincipal
+  classdiagramsettings member_max_width 0 end
+  xyz 36.5 66.0 3005
 end
 classcanvas 128515 class_ref 129667 // DAOExcepcion
   classdiagramsettings member_max_width 0 end
-  xyz 643.5 1740.5 2000
+  xyz 1890.0 1880.0 2000
 end
 classcanvas 128643 class_ref 132355 // CocheDAOImp
   classdiagramsettings member_max_width 0 end
-  xyz 210.821 1335.86 2000
+  xyz 375.5 2029.0 2000
 end
 classcanvas 128771 class_ref 132611 // EmpleadoDAOImp
   classdiagramsettings member_max_width 0 end
-  xyz 39.3214 1252.29 2000
+  xyz 54.5 2029.0 2000
+end
+classcanvas 128776 class_ref 130819 // Sucursal
+  classdiagramsettings member_max_width 0 end
+  xyz 1103.5 852.5 3005
 end
 classcanvas 128899 class_ref 132995 // ReservaDAOImp
   classdiagramsettings member_max_width 0 end
-  xyz 457.75 1371.21 2000
+  xyz 661.5 2029.0 2000
 end
 classcanvas 129027 class_ref 129411 // ICocheDAO
   classdiagramsettings member_max_width 0 end
-  xyz 223.214 1223.39 2006
+  xyz 375.0 1856.0 2006
 end
 classcanvas 129283 class_ref 129539 // IEmpleadoDAO
   classdiagramsettings member_max_width 0 end
-  xyz 53.3214 1154.29 2006
+  xyz 54.5 1856.0 2006
 end
 classcanvas 129667 class_ref 129155 // IReservaDAO
   classdiagramsettings member_max_width 0 end
-  xyz 629.25 1361.61 2006
+  xyz 665.0 1856.0 2006
 end
 classcanvas 129923 class_ref 132739 // EntregaDAOImp
   classdiagramsettings member_max_width 0 end
-  xyz 354.893 1454.79 2000
+  xyz 963.0 2029.0 2000
 end
 classcanvas 130051 class_ref 129283 // IEntregaDAO
   classdiagramsettings member_max_width 0 end
-  xyz 368.893 1271.61 2006
+  xyz 965.0 1856.0 2006
+end
+classcanvas 130056 class_ref 128131 // Categoria
+  classdiagramsettings member_max_width 0 end
+  xyz 989.0 512.5 3005
 end
 classcanvas 130307 class_ref 134147 // ControladorEntregarVehiculoReserva
   classdiagramsettings member_max_width 0 end
-  xyz 988.25 619.571 2000
+  xyz 883.5 38.0 2000
 end
 classcanvas 130435 class_ref 128515 // Coche
   classdiagramsettings member_max_width 0 end
-  xyz 1175.46 380.5 2000
+  xyz 1835.0 852.5 2000
 end
 classcanvas 131075 class_ref 130435 // Empleado
   classdiagramsettings member_max_width 0 end
-  xyz 1169.46 40.6429 2000
+  xyz 1258.0 976.5 2000
+end
+classcanvas 131080 class_ref 132099 // ConnectionManager
+  classdiagramsettings member_max_width 0 end
+  xyz 638.5 2170.5 3023
 end
 classcanvas 131203 class_ref 130563 // Entrega
   classdiagramsettings member_max_width 0 end
-  xyz 1178.07 188 2000
+  xyz 1040.0 1188.5 2000
 end
 classcanvas 131587 class_ref 130691 // Reserva
   classdiagramsettings member_max_width 0 end
-  xyz 1046.18 1198.04 2000
+  xyz 390.0 824.5 2000
 end
 classcanvas 135171 class_ref 131203 // AlquilerVehiculos
   classdiagramsettings member_max_width 0 end
-  xyz 866.786 1239.43 2010
+  xyz 654.5 1577.0 2010
 end
 classcanvas 136195 class_ref 128643 // DAL
   classdiagramsettings member_max_width 0 end
-  xyz 660.857 1239.43 3005
+  xyz 730.0 1697.0 3005
 end
 classcanvas 137347 class_ref 128259 // ClienteDTO
   classdiagramsettings member_max_width 0 end
-  xyz 1672.93 40.5 2000
+  xyz 1890.0 1380.0 2000
 end
 classcanvas 137475 class_ref 128899 // IClienteDAO
   classdiagramsettings member_max_width 0 end
-  xyz 632.25 1141.43 3011
+  xyz 1270.0 1856.0 3011
 end
 classcanvas 137731 class_ref 132227 // ClienteDAOImp
   classdiagramsettings member_max_width 0 end
-  xyz 770.929 1149.43 3017
+  xyz 1270.0 2029.0 3017
 end
 classcanvas 137987 class_ref 131331 // Cliente
   classdiagramsettings member_max_width 0 end
-  xyz 859.393 1367.75 2016
+  xyz 192.5 1174.0 2016
+end
+relationcanvas 128136 relation_ref 135555 // <generalisation>
+  from ref 130307 z 2007 to ref 128008
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128648 relation_ref 135043 // <unidirectional association>
+  from ref 128008 z 3006 to ref 128392
+  role_a_pos 413.5 204.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128904 relation_ref 132483 // <unidirectional association>
+  from ref 128776 z 3006 stereotype "<<Hashtable>>" xyz 873.4 870.0 3006 to ref 131587
+  role_a_pos 620.0 870.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129032 relation_ref 132611 // <unidirectional association>
+  from ref 128776 z 3006 stereotype "<<Hashtable>>" xyz 873.4 904.0 3006 to ref 131587
+  role_a_pos 620.0 904.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129155 relation_ref 133507 // <realization>
   from ref 128643 z 2007 to ref 129027
   no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129160 relation_ref 132739 // <unidirectional association>
+  from ref 128776 z 3006 stereotype "<<Hashtable>>" xyz 1504.8 870.0 3006 to ref 130435
+  role_a_pos 1711.5 870.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129288 relation_ref 132867 // <unidirectional association>
+  from ref 128776 z 3006 stereotype "<<Hashtable>>" xyz 1245.2 931.9 3006 to ref 131075
+  role_a_pos 1038.2 967.6 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129411 relation_ref 133763 // <realization>
@@ -106,9 +156,34 @@ relationcanvas 129411 relation_ref 133763 // <realization>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
+relationcanvas 129416 relation_ref 129667 // <unidirectional association>
+  from ref 135171 z 3006 stereotype "<<Hashtable>>" xyz 788.5 1263.7 3006 to ref 128776
+  role_a_pos 881.9 1024.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129544 relation_ref 132099 // <unidirectional association>
+  from ref 131587 z 3006 to ref 128776
+  role_a_pos 1073.5 904.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129672 relation_ref 132227 // <unidirectional association>
+  from ref 131587 z 3006 to ref 128776
+  role_a_pos 1073.5 904.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
 relationcanvas 129795 relation_ref 134275 // <realization>
   from ref 128899 z 2007 to ref 129667
   no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129800 relation_ref 130563 // <unidirectional association>
+  from ref 130435 z 3006 to ref 128776
+  role_a_pos 1266.5 870.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129928 relation_ref 131075 // <unidirectional association>
+  from ref 131075 z 3006 to ref 128776
+  role_a_pos 1247.2 967.6 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130179 relation_ref 134019 // <realization>
@@ -116,208 +191,190 @@ relationcanvas 130179 relation_ref 134019 // <realization>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
+relationcanvas 130184 relation_ref 130179 // <unidirectional association>
+  from ref 130056 z 3006 to point 1066.7 452.5
+  line 130312 z 3006 to point 1133.3 452.5
+  line 130440 z 3006 to ref 130056
+  role_a_pos 1143.3 432.5 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
 relationcanvas 130563 relation_ref 136707 // <unidirectional association>
-  decenter_begin 864
-  decenter_end 616
-  from ref 130307 z 2001 stereotype "<<TableView>>" xyz 1184.5 539.5 3000 to ref 130435
-  role_a_pos 1245 474 3000 no_role_b
+  from ref 130307 z 2001 stereotype "<<TableView>>" xyz 1547.4 552.7 3000 to ref 130435
+  role_a_pos 1825.6 796.2 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130568 relation_ref 130307 // <unidirectional association>
+  from ref 130056 z 3006 stereotype "<<Hashtable>>" xyz 1501.8 727.1 3006 to ref 130435
+  role_a_pos 1629.7 834.0 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130691 relation_ref 136835 // <unidirectional association>
-  geometry VHV unfixed
-  decenter_begin 662
-  decenter_end 90
-  from ref 130307 z 2001 stereotype "<<TableColumn>>" xyz 1116 563.5 3000 to point 1175 503
-  line 133763 z 2001 to point 1181 503
-  line 133891 z 2001 to ref 130435
-  role_a_pos 1193 474 3000 no_role_b
+  from ref 130307 z 2001 stereotype "<<TableColumn>>" xyz 1547.4 586.7 3000 to ref 130435
+  role_a_pos 1679.6 796.2 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130696 relation_ref 129539 // <unidirectional association>
+  from ref 135171 z 3006 stereotype "<<Hashtable>>" xyz 754.1 1164.7 3006 to ref 130056
+  role_a_pos 1059.6 735.3 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130819 relation_ref 136963 // <unidirectional association>
-  geometry VHV unfixed
-  decenter_begin 763
-  decenter_end 353
-  from ref 130307 z 2001 to point 1204 541
-  line 134659 z 2001 to point 1207 541
-  line 134787 z 2001 stereotype "<<TableColumn>>" xyz 1147 503 3000 to ref 130435
-  role_a_pos 1219 474 3000 no_role_b
+  from ref 130307 z 2001 stereotype "<<TableColumn>>" xyz 1369.9 552.7 3000 to ref 130435
+  role_a_pos 1729.5 760.7 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130824 relation_ref 131971 // <unidirectional association>
+  from ref 131587 z 3006 to ref 130056
+  role_a_pos 795.5 656.6 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130947 relation_ref 137091 // <unidirectional association>
-  decenter_begin 965
-  decenter_end 909
-  from ref 130307 z 2001 stereotype "<<TableColumn>>" xyz 1202 541 3000 to ref 130435
-  role_a_pos 1274 474 3000 no_role_b
+  from ref 130307 z 2001 stereotype "<<TableColumn>>" xyz 1369.9 586.7 3000 to ref 130435
+  role_a_pos 1724.7 707.9 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130952 relation_ref 130435 // <unidirectional association>
+  from ref 130435 z 3006 to ref 130056
+  role_a_pos 1258.8 642.1 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131208 relation_ref 133379 // <unidirectional association>
+  from ref 137731 z 3024 to ref 131080
+  role_a_pos 930.0 2144.7 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131331 relation_ref 131203 // <unidirectional association>
   from ref 131203 z 2001 to ref 130435
-  role_a_pos 1234 351 3000 no_role_b
+  role_a_pos 1641.9 918.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131336 relation_ref 133635 // <unidirectional association>
+  from ref 128643 z 3024 to ref 131080
+  role_a_pos 647.8 2120.8 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131459 relation_ref 131587 // <unidirectional association>
   from ref 131203 z 2001 to ref 131075
-  role_a_pos 1234 158 3000 no_role_b
+  role_a_pos 1251.5 1136.4 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131464 relation_ref 134403 // <unidirectional association>
+  from ref 128899 z 3024 to ref 131080
+  role_a_pos 770.0 2100.5 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131592 relation_ref 134147 // <unidirectional association>
+  from ref 129923 z 3024 to ref 131080
+  role_a_pos 913.2 2108.8 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131715 relation_ref 132355 // <unidirectional association>
-  decenter_begin 290
-  decenter_end 748
-  from ref 131587 z 2001 to point 1351 1236
-  line 133379 z 2001 to point 1351 304
-  line 139267 z 2001 to ref 131203
-  role_a_pos 1284 275 3000 no_role_b
+  from ref 131587 z 2001 to ref 131203
+  role_a_pos 890.9 1226.3 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131720 relation_ref 133891 // <unidirectional association>
+  from ref 128771 z 3024 to ref 131080
+  role_a_pos 474.5 2144.7 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131843 relation_ref 131459 // <unidirectional association>
-  decenter_begin 935
-  decenter_end 68
-  from ref 131203 z 2001 to point 1313 333
-  line 132995 z 2001 to point 1313 1207
-  line 140675 z 2001 to ref 131587
-  role_a_pos 1194 1178 3000 no_role_b
+  from ref 131203 z 2001 to ref 131587
+  role_a_pos 614.1 946.1 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131971 relation_ref 135683 // <unidirectional association>
-  geometry VHV unfixed
-  decenter_begin 627
-  decenter_end 575
-  from ref 130307 z 2001 stereotype "<<TableView>>" xyz 1115.5 966 3000 to point 1165 1043
-  line 139011 z 2001 to point 1123 1043
-  line 139139 z 2001 to ref 131587
-  role_a_pos 1135 1169 3000 no_role_b
+  from ref 130307 z 2001 stereotype "<<TableView>>" xyz 782.2 540.1 3000 to ref 131587
+  role_a_pos 583.4 764.6 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 132099 relation_ref 135811 // <unidirectional association>
-  geometry VHV unfixed
-  decenter_begin 728
-  decenter_end 697
-  from ref 130307 z 2001 to point 1194 1081
-  line 134019 z 2001 to point 1140 1081
-  line 139395 z 2001 stereotype "<<TableColumn>>" xyz 1080 1140 3000 to ref 131587
-  role_a_pos 1152 1169 3000 no_role_b
+  from ref 130307 z 2001 stereotype "<<TableColumn>>" xyz 782.2 574.1 3000 to ref 131587
+  role_a_pos 583.4 798.6 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 132227 relation_ref 135939 // <unidirectional association>
-  geometry VHV unfixed
-  decenter_begin 965
-  decenter_end 935
-  from ref 130307 z 2001 stereotype "<<TableColumn>>" xyz 1202 1024 3000 to point 1262 1159
-  line 140163 z 2001 to point 1173 1159
-  line 140291 z 2001 to ref 131587
-  role_a_pos 1185 1169 3000 no_role_b
+  from ref 130307 z 2001 stereotype "<<TableColumn>>" xyz 604.7 540.1 3000 to ref 131587
+  role_a_pos 531.9 764.6 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 132355 relation_ref 136067 // <unidirectional association>
-  geometry VHV unfixed
-  decenter_begin 324
-  decenter_end 187
-  from ref 130307 z 2001 stereotype "<<TableColumn>>" xyz 1018 911 3000 to point 1078 927
-  line 133635 z 2001 to point 1069 927
-  line 138371 z 2001 to ref 131587
-  role_a_pos 1081 1169 3000 no_role_b
+  from ref 130307 z 2001 stereotype "<<TableColumn>>" xyz 604.7 574.1 3000 to ref 131587
+  role_a_pos 550.7 730.8 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 132483 relation_ref 136195 // <unidirectional association>
-  decenter_begin 226
-  decenter_end 64
-  from ref 130307 z 2001 stereotype "<<TableColumn>>" xyz 990 1039 3000 to ref 131587
-  role_a_pos 1064 1169 3000 no_role_b
+  from ref 130307 z 2001 stereotype "<<TableColumn>>" xyz 823.1 493.9 3000 to ref 131587
+  role_a_pos 657.1 681.3 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 132611 relation_ref 136323 // <unidirectional association>
-  geometry VHV unfixed
-  decenter_begin 829
-  decenter_end 834
-  from ref 130307 z 2001 stereotype "<<TableColumn>>" xyz 1162.5 1004 3000 to point 1223 1120
-  line 139907 z 2001 to point 1159 1120
-  line 140035 z 2001 to ref 131587
-  role_a_pos 1171 1169 3000 no_role_b
+  from ref 130307 z 2001 stereotype "<<TableColumn>>" xyz 645.6 493.9 3000 to ref 131587
+  role_a_pos 657.1 715.3 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 132739 relation_ref 136451 // <unidirectional association>
-  geometry VHV unfixed
-  decenter_begin 425
-  decenter_end 323
-  from ref 130307 z 2001 stereotype "<<TableColumn>>" xyz 1046 930 3000 to point 1107 966
-  line 133507 z 2001 to point 1088 966
-  line 138499 z 2001 to ref 131587
-  role_a_pos 1100 1169 3000 no_role_b
+  from ref 130307 z 2001 stereotype "<<TableColumn>>" xyz 741.2 620.4 3000 to ref 131587
+  role_a_pos 542.6 681.3 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 132867 relation_ref 136579 // <unidirectional association>
-  geometry VHV unfixed
-  decenter_begin 526
-  decenter_end 438
-  from ref 130307 z 2001 to point 1136 1004
-  line 138627 z 2001 to point 1104 1004
-  line 138755 z 2001 stereotype "<<TableColumn>>" xyz 1043.5 1101 3000 to ref 131587
-  role_a_pos 1116 1169 3000 no_role_b
+  from ref 130307 z 2001 stereotype "<<TableColumn>>" xyz 563.7 620.4 3000 to ref 131587
+  role_a_pos 583.4 798.6 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 135299 relation_ref 129411 // <unidirectional association>
-  from ref 135171 z 2011 stereotype "<<Hashtable>>" xyz 969.5 1258 2011 to ref 131587
-  role_a_pos 910 1233 3000 no_role_b
+  from ref 135171 z 2011 stereotype "<<Hashtable>>" xyz 652.5 1310.3 2011 to ref 131587
+  role_a_pos 535.1 982.6 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 135427 relation_ref 129795 // <unidirectional association>
-  geometry VH unfixed
-  from ref 135171 z 2011 stereotype "<<Hashtable>>" xyz 884.5 751 2011 to point 934 263
-  line 138883 z 2011 to ref 131203
-  role_a_pos 1042 237 3000 no_role_b
+  from ref 135171 z 2011 stereotype "<<Hashtable>>" xyz 909.4 1438.8 2011 to ref 131203
+  role_a_pos 822.4 1333.9 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 135555 relation_ref 130051 // <unidirectional association>
-  from ref 135171 z 2011 to point 807.786 1238.43
-  line 135683 z 2011 to point 807.786 1298.43
+  from ref 135171 z 2011 to point 915.5 1557.0
+  line 135683 z 2011 to point 915.5 1643.0
   line 135811 z 2011 to ref 135171
-  role_a_pos 803.786 1250.43 3000 no_role_b
+  role_a_pos 923.5 1608.0 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 136323 relation_ref 128387 // <unidirectional association>
   from ref 136195 z 3006 to ref 129667
-  role_a_pos 691 1332 3000 no_role_b
+  role_a_pos 770.0 1786.0 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 136451 relation_ref 128515 // <unidirectional association>
-  decenter_begin 200
-  decenter_end 163
   from ref 136195 z 3006 to ref 130051
-  role_a_pos 482 1251 3000 no_role_b
+  role_a_pos 962.4 1805.4 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 136579 relation_ref 128643 // <unidirectional association>
-  decenter_begin 577
-  decenter_end 163
-  from ref 136195 z 3006 to point 513 1265
-  line 140419 z 3006 to point 513 1233
-  line 140547 z 3006 to ref 129027
-  role_a_pos 323 1204 3000 no_role_b
+  from ref 136195 z 3006 to ref 129027
+  role_a_pos 577.6 1805.4 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 136707 relation_ref 128771 // <unidirectional association>
-  decenter_begin 200
-  from ref 136195 z 3006 to point 593 1245
-  line 139651 z 3006 to point 593 1184
-  line 139779 z 3006 to ref 129283
-  role_a_pos 181 1156 3000 no_role_b
+  from ref 136195 z 3006 to ref 129283
+  role_a_pos 272.3 1820.9 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 136835 relation_ref 128899 // <unidirectional association>
-  from ref 136195 z 3006 to point 601.857 1238.43
-  line 136963 z 3006 to point 601.857 1298.43
+  from ref 136195 z 3006 to point 840.0 1677.0
+  line 136963 z 3006 to point 840.0 1763.0
   line 137091 z 3006 to ref 136195
-  role_a_pos 628.857 1237.43 3000 no_role_b
+  role_a_pos 848.0 1728.0 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 137219 relation_ref 129923 // <unidirectional association>
   from ref 135171 z 3006 to ref 136195
-  role_a_pos 714 1233 3000 no_role_b
+  role_a_pos 770.0 1630.0 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 137603 relation_ref 128131 // <unidirectional association>
   from ref 136195 z 3012 to ref 137475
-  role_a_pos 691 1211 3000 no_role_b
+  role_a_pos 1200.2 1825.5 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 137859 relation_ref 133251 // <realization>
@@ -326,15 +383,13 @@ relationcanvas 137859 relation_ref 133251 // <realization>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 138115 relation_ref 129283 // <unidirectional association>
-  from ref 135171 z 2017 stereotype "<<Hashtable>>" xyz 882 1321 2017 to ref 137987
-  role_a_pos 946 1338 3000 no_role_b
+  from ref 135171 z 2017 stereotype "<<Hashtable>>" xyz 588.1 1471.1 2017 to ref 137987
+  role_a_pos 452.6 1397.5 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 138243 relation_ref 131843 // <unidirectional association>
-  geometry VH unfixed
-  from ref 131587 z 2017 to point 1113 1511
-  line 139523 z 2017 to ref 137987
-  role_a_pos 1027 1485 3000 no_role_b
+  from ref 131587 z 2017 to ref 137987
+  role_a_pos 395.3 1106.9 3000 no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 end
