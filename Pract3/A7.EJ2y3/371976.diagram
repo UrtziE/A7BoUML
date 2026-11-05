@@ -1,0 +1,71 @@
+format 224
+
+classinstance 436232 class_ref 131203 // AlquilerVehiculos
+  name "alq"   xyz 112 4 2000 life_line_z 2000
+classinstance 436360 class_ref 128643 // DAL
+  name "dal"   xyz 468 4 2000 life_line_z 2000
+classinstance 436488 class_ref 131331 // Cliente
+  name ""   xyz 682 334 2000 life_line_z 2000
+note 438536 "Continuación de AlquilerVehiculos.listarReservasSucursal / Reserva.Reserva. Si el cliente ya está en memoria se devuelve directamente. Si no, se crea uno para guardarlo con addCliente y otro igual que es el que se devuelve."
+  xyzwh 20 600 2000 760 150
+fragment 437512 "opt"
+  xyzwh 185 294 1990 608 226
+end
+fragment 436872 "opt"
+  xyzwh 185 128 1990 608 410
+end
+textcanvas 437000 "[el cliente no está en coleccionClientes]"
+  xyzwh 273 132 2020 467 26
+textcanvas 437640 "[cliDTO != null]"
+  xyzwh 273 298 2020 192 26
+continuation 437384 "continúa en DAL.getCliente"
+  xyzwh 499 218 2025 316 30
+durationcanvas 436616 classinstance_ref 436232 // alq:AlquilerVehiculos
+  xyzwh 230 96 2010 11 458
+  overlappingdurationcanvas 438024
+    xyzwh 236 430 2011 11 34
+  end
+end
+durationcanvas 437128 classinstance_ref 436360 // dal:DAL
+  xyzwh 509 184 2010 11 104
+end
+durationcanvas 437768 classinstance_ref 436488 // :Cliente
+  xyzwh 728 368 2010 11 34
+end
+durationcanvas 438280 classinstance_ref 436488 // :Cliente
+  xyzwh 728 480 2010 11 32
+end
+lostfoundmsgsupport 438664 xyz 10 91 2015
+msg 436744 found_synchronous
+  from lostfoundmsgsupport_ref 438664
+  to durationcanvas_ref 436616
+  yz 96 2030 msg operation_ref 142083 // "getCliente"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "dni"
+  label_xy 24 72
+msg 437256 synchronous
+  from durationcanvas_ref 436616
+  to durationcanvas_ref 437128
+  yz 184 2030 msg operation_ref 132867 // "getCliente"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "dni"
+  label_xy 249 160
+msg 437896 synchronous
+  from durationcanvas_ref 436616
+  to durationcanvas_ref 437768
+  yz 350 2030 explicitmsg "new Cliente(cliDTO)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 249 326
+reflexivemsg 438152 synchronous
+  to durationcanvas_ref 438024
+  yz 430 2030 msg operation_ref 141827 // "addCliente"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "cliente"
+  label_xy 257 406
+msg 438408 synchronous
+  from durationcanvas_ref 436616
+  to durationcanvas_ref 438280
+  yz 480 2030 explicitmsg "<<create>> new Cliente(cliDTO)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 249 456
+end

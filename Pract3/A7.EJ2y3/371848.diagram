@@ -1,0 +1,210 @@
+format 224
+
+classinstance 429576 class_ref 131203 // AlquilerVehiculos
+  name "alq"   xyz 234 4 2000 life_line_z 2000
+classinstance 429704 class_ref 128643 // DAL
+  name "dal"   xyz 744 4 2000 life_line_z 2000
+classinstance 429832 class_ref 129795 // ReservaDTO
+  name "auxDTO"   xyz 1006 4 2000 life_line_z 2000
+classinstance 429960 class_ref 130691 // Reserva
+  name "aux"   xyz 1238 288 2000 life_line_z 2000
+note 435976 "Continuación de ControladorEntregarVehiculoReserva.popularTablaReservas. Cada reserva se añade a la lista devuelta y a coleccionReservas (Hashtable)."
+  xyzwh 20 1544 2000 760 124
+fragment 435208 "opt"
+  xyzwh 306 1320 1990 1059 96
+end
+fragment 430728 "loop"
+  xyzwh 306 248 1990 1059 1234
+end
+textcanvas 430856 "[i < resDTO.size()]"
+  xyzwh 394 252 2020 225 26
+textcanvas 435336 "[entrega != null]"
+  xyzwh 394 1324 2020 203 26
+continuation 430600 "continúa en DAL.getReservasSucursal"
+  xyzwh 774 172 2025 415 30
+continuation 431240 "continúa en Reserva.Reserva"
+  xyzwh 1290 358 2025 327 30
+continuation 431880 "continúa en AlquilerVehiculos.getCliente"
+  xyzwh 341 540 2025 470 30
+continuation 435080 "continúa en AlquilerVehiculos.getEntrega"
+  xyzwh 341 1244 2025 470 30
+durationcanvas 430088 classinstance_ref 429576 // alq:AlquilerVehiculos
+  xyzwh 351 96 2010 11 1402
+  overlappingdurationcanvas 431624
+    xyzwh 357 504 2011 11 106
+  end
+  overlappingdurationcanvas 432520
+    xyzwh 357 734 2011 11 34
+  end
+  overlappingdurationcanvas 433288
+    xyzwh 357 892 2011 11 34
+  end
+  overlappingdurationcanvas 434056
+    xyzwh 357 1050 2011 11 34
+  end
+  overlappingdurationcanvas 434824
+    xyzwh 357 1208 2011 11 106
+  end
+end
+durationcanvas 430344 classinstance_ref 429704 // dal:DAL
+  xyzwh 784 138 2010 11 104
+end
+durationcanvas 431368 classinstance_ref 429832 // auxDTO:ReservaDTO
+  xyzwh 1102 444 2010 11 32
+end
+durationcanvas 432264 classinstance_ref 429832 // auxDTO:ReservaDTO
+  xyzwh 1102 674 2010 11 32
+end
+durationcanvas 433032 classinstance_ref 429832 // auxDTO:ReservaDTO
+  xyzwh 1102 832 2010 11 32
+end
+durationcanvas 433800 classinstance_ref 429832 // auxDTO:ReservaDTO
+  xyzwh 1102 990 2010 11 32
+end
+durationcanvas 434568 classinstance_ref 429832 // auxDTO:ReservaDTO
+  xyzwh 1102 1148 2010 11 32
+end
+durationcanvas 430984 classinstance_ref 429960 // aux:Reserva
+  xyzwh 1300 322 2010 11 106
+end
+durationcanvas 432008 classinstance_ref 429960 // aux:Reserva
+  xyzwh 1300 626 2010 11 32
+end
+durationcanvas 432776 classinstance_ref 429960 // aux:Reserva
+  xyzwh 1300 784 2010 11 32
+end
+durationcanvas 433544 classinstance_ref 429960 // aux:Reserva
+  xyzwh 1300 942 2010 11 32
+end
+durationcanvas 434312 classinstance_ref 429960 // aux:Reserva
+  xyzwh 1300 1100 2010 11 32
+end
+durationcanvas 435464 classinstance_ref 429960 // aux:Reserva
+  xyzwh 1300 1376 2010 11 32
+end
+durationcanvas 435720 classinstance_ref 429960 // aux:Reserva
+  xyzwh 1300 1442 2010 11 32
+end
+lostfoundmsgsupport 436104 xyz 10 91 2015
+msg 430216 found_synchronous
+  from lostfoundmsgsupport_ref 436104
+  to durationcanvas_ref 430088
+  yz 96 2030 msg operation_ref 140291 // "listarReservasSucursal"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "id"
+  label_xy 24 72
+msg 430472 synchronous
+  from durationcanvas_ref 430088
+  to durationcanvas_ref 430344
+  yz 138 2030 msg operation_ref 132099 // "getReservasSucursal"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "id"
+  label_xy 370 114
+msg 431112 synchronous
+  from durationcanvas_ref 430088
+  to durationcanvas_ref 430984
+  yz 304 2030 explicitmsg "new Reserva(auxDTO)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 370 280
+msg 431496 synchronous
+  from durationcanvas_ref 430088
+  to durationcanvas_ref 431368
+  yz 444 2030 msg operation_ref 137731 // "getDniCliente"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 370 420
+reflexivemsg 431752 synchronous
+  to durationcanvas_ref 431624
+  yz 504 2030 msg operation_ref 142083 // "getCliente"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "dni"
+  label_xy 378 480
+msg 432136 synchronous
+  from durationcanvas_ref 430088
+  to durationcanvas_ref 432008
+  yz 626 2030 msg operation_ref 159491 // "setRealizada_por"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "cliente"
+  label_xy 370 602
+msg 432392 synchronous
+  from durationcanvas_ref 430088
+  to durationcanvas_ref 432264
+  yz 674 2030 msg operation_ref 138499 // "getIdSucursalDevolucion"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 370 650
+reflexivemsg 432648 synchronous
+  to durationcanvas_ref 432520
+  yz 734 2030 msg operation_ref 143491 // "getSucursal"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "idSucursalDevolucion"
+  label_xy 378 710
+msg 432904 synchronous
+  from durationcanvas_ref 430088
+  to durationcanvas_ref 432776
+  yz 784 2030 msg operation_ref 160259 // "setLugar_devolucion"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "sucursal"
+  label_xy 370 760
+msg 433160 synchronous
+  from durationcanvas_ref 430088
+  to durationcanvas_ref 433032
+  yz 832 2030 msg operation_ref 138243 // "getIdSucursalRecogida"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 370 808
+reflexivemsg 433416 synchronous
+  to durationcanvas_ref 433288
+  yz 892 2030 msg operation_ref 143491 // "getSucursal"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "idSucursalRecogida"
+  label_xy 378 868
+msg 433672 synchronous
+  from durationcanvas_ref 430088
+  to durationcanvas_ref 433544
+  yz 942 2030 msg operation_ref 160003 // "setLugar_recogida"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "sucursal"
+  label_xy 370 918
+msg 433928 synchronous
+  from durationcanvas_ref 430088
+  to durationcanvas_ref 433800
+  yz 990 2030 msg operation_ref 137987 // "getNombreCategoria"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 370 966
+reflexivemsg 434184 synchronous
+  to durationcanvas_ref 434056
+  yz 1050 2030 msg operation_ref 143107 // "getCategoria"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "nombreCategoria"
+  label_xy 378 1026
+msg 434440 synchronous
+  from durationcanvas_ref 430088
+  to durationcanvas_ref 434312
+  yz 1100 2030 msg operation_ref 159747 // "setTiene_asociada"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "categoria"
+  label_xy 370 1076
+msg 434696 synchronous
+  from durationcanvas_ref 430088
+  to durationcanvas_ref 434568
+  yz 1148 2030 msg operation_ref 136707 // "getId"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 370 1124
+reflexivemsg 434952 synchronous
+  to durationcanvas_ref 434824
+  yz 1208 2030 msg operation_ref 142211 // "getEntrega"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "id"
+  label_xy 378 1184
+msg 435592 synchronous
+  from durationcanvas_ref 430088
+  to durationcanvas_ref 435464
+  yz 1376 2030 msg operation_ref 160515 // "setAsociado_a"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "entrega"
+  label_xy 370 1352
+msg 435848 synchronous
+  from durationcanvas_ref 430088
+  to durationcanvas_ref 435720
+  yz 1442 2030 msg operation_ref 158339 // "getIdReserva"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 370 1418
+end

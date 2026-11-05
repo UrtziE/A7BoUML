@@ -1,0 +1,82 @@
+format 224
+
+classinstance 438792 class_ref 131203 // AlquilerVehiculos
+  name "alq"   xyz 102 4 2000 life_line_z 2000
+classinstance 438920 class_ref 128643 // DAL
+  name "dal"   xyz 458 4 2000 life_line_z 2000
+classinstance 439048 class_ref 130563 // Entrega
+  name ""   xyz 671 334 2000 life_line_z 2000
+fragment 439432 "opt"
+  xyzwh 174 128 1990 608 530
+end
+textcanvas 439560 "[la entrega no está en coleccionEntregas]"
+  xyzwh 262 132 2020 467 26
+continuation 439944 "continúa en DAL.getEntrega"
+  xyzwh 488 218 2025 326 54
+fragment 440072 "opt"
+  xyzwh 174 294 1990 608 346
+end
+textcanvas 440200 "[entDTO != null]"
+  xyzwh 262 298 2020 192 26
+continuation 440584 "continúa en Entrega.Entrega"
+  xyzwh 707 404 2025 331 54
+note 441480 "Continuación de AlquilerVehiculos.listarReservasSucursal. Igual que getCliente se crea una Entrega para guardar la y otra que se devuelve."
+  xyzwh 20 720 2000 760 124
+durationcanvas 439176 classinstance_ref 438792 // alq:AlquilerVehiculos
+  xyzwh 202 96 2010 11 578
+  overlappingdurationcanvas 440712
+    xyzwh 208 502 2011 11 82
+  end
+end
+durationcanvas 439688 classinstance_ref 438920 // dal:DAL
+  xyzwh 496 184 2010 11 104
+end
+durationcanvas 440328 classinstance_ref 439048 // :Entrega
+  xyzwh 713 368 2010 11 106
+end
+durationcanvas 440968 classinstance_ref 439048 // :Entrega
+  xyzwh 713 546 2010 11 32
+end
+durationcanvas 441224 classinstance_ref 439048 // :Entrega
+  xyzwh 713 600 2010 11 32
+end
+lostfoundmsgsupport 441608 xyz 10 91 2015
+msg 439304 found_synchronous
+  from lostfoundmsgsupport_ref 441608
+  to durationcanvas_ref 439176
+  yz 96 2030 msg operation_ref 142211 // "getEntrega(in id : int) : Entrega"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "id"
+  label_xy 24 72
+msg 439816 synchronous
+  from durationcanvas_ref 439176
+  to durationcanvas_ref 439688
+  yz 184 2030 msg operation_ref 133123 // "getEntrega(in id : int) : EntregaDTO"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "id"
+  label_xy 238 160
+msg 440456 synchronous
+  from durationcanvas_ref 439176
+  to durationcanvas_ref 440328
+  yz 350 2030 explicitmsg "new Entrega(entDTO)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 238 326
+reflexivemsg 440840 synchronous
+  to durationcanvas_ref 440712
+  yz 502 2030 msg operation_ref 141699 // "addEntrega(inout e : Entrega) : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "entrega"
+  label_xy 246 478
+msg 441096 synchronous
+  from durationcanvas_ref 440712
+  to durationcanvas_ref 440968
+  yz 546 2030 msg operation_ref 155395 // "getId() : int"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 238 522
+msg 441352 synchronous
+  from durationcanvas_ref 439176
+  to durationcanvas_ref 441224
+  yz 600 2030 explicitmsg "<<create>> new Entrega(entDTO)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 238 576
+end

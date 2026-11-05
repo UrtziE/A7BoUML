@@ -1,0 +1,92 @@
+format 224
+
+classinstance 481672 class_ref 128643 // DAL
+  name "dal"   xyz 200 4 2000 life_line_z 2000
+classinstance 481800 class_ref 132611 // EmpleadoDAOImp
+  name "empDAO"   xyz 372 4 2000 life_line_z 2000
+classinstance 481928 class_ref 132099 // ConnectionManager
+  name "connManager"   xyz 896 4 2000 life_line_z 2000
+classinstance 482056 class_ref 130179 // EmpleadoDTO
+  name ""   xyz 1260 354 2000 life_line_z 2000
+classinstance 482184 class_ref 129667 // DAOExcepcion
+  name ""   xyz 1436 486 2000 life_line_z 2000
+fragment 483592 "opt"
+  xyzwh 445 314 1990 948 116
+end
+textcanvas 483720 "[rs.next()]"
+  xyzwh 533 318 2020 137 26
+fragment 484104 "break"
+  xyzwh 445 446 1990 1129 116
+end
+textcanvas 484232 "[SQLException]"
+  xyzwh 533 450 2020 170 26
+note 484616 "Continuación de AlquilerVehiculos.getEmpleado / Entrega.Entrega. La DAOExcepcion se propaga hasta la capa que llamó."
+  xyzwh 20 630 2000 760 110
+durationcanvas 482312 classinstance_ref 481672 // dal:DAL
+  xyzwh 238 96 2010 11 488
+end
+durationcanvas 482568 classinstance_ref 481800 // empDAO:EmpleadoDAOImp
+  xyzwh 508 138 2010 11 440
+end
+durationcanvas 482824 classinstance_ref 481928 // connManager:ConnectionManager
+  xyzwh 1062 180 2010 11 32
+end
+durationcanvas 483080 classinstance_ref 481928 // connManager:ConnectionManager
+  xyzwh 1062 228 2010 11 32
+end
+durationcanvas 483336 classinstance_ref 481928 // connManager:ConnectionManager
+  xyzwh 1062 276 2010 11 32
+end
+durationcanvas 483848 classinstance_ref 482056 // :EmpleadoDTO
+  xyzwh 1333 388 2010 11 34
+end
+durationcanvas 484360 classinstance_ref 482184 // :DAOExcepcion
+  xyzwh 1510 520 2010 11 34
+end
+lostfoundmsgsupport 484744 xyz 10 91 2015
+msg 482440 found_synchronous
+  from lostfoundmsgsupport_ref 484744
+  to durationcanvas_ref 482312
+  yz 96 2030 msg operation_ref 132995 // "getEmpleado(in dni : String) : EmpleadoDTO"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "dni"
+  label_xy 24 72
+msg 482696 synchronous
+  from durationcanvas_ref 482312
+  to durationcanvas_ref 482568
+  yz 138 2030 msg operation_ref 166531 // "buscarEmpleado(in dni : String) : EmpleadoDTO"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "dni"
+  label_xy 260 114
+msg 482952 synchronous
+  from durationcanvas_ref 482568
+  to durationcanvas_ref 482824
+  yz 180 2030 msg operation_ref 165635 // "connect() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 509 156
+msg 483208 synchronous
+  from durationcanvas_ref 482568
+  to durationcanvas_ref 483080
+  yz 228 2030 msg operation_ref 166019 // "queryDB(in sql : String) : ResultSet"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "'select * from EMPLEADO where DNI= ...'"
+  label_xy 509 204
+msg 483464 synchronous
+  from durationcanvas_ref 482568
+  to durationcanvas_ref 483336
+  yz 276 2030 msg operation_ref 165763 // "close() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 509 252
+msg 483976 synchronous
+  from durationcanvas_ref 482568
+  to durationcanvas_ref 483848
+  yz 370 2030 explicitmsg "new EmpleadoDTO(...)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 509 346
+msg 484488 synchronous
+  from durationcanvas_ref 482568
+  to durationcanvas_ref 484360
+  yz 502 2030 explicitmsg "new DAOExcepcion(e)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 509 478
+end

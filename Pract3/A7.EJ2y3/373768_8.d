@@ -1,0 +1,92 @@
+format 224
+
+classinstance 484872 class_ref 128643 // DAL
+  name "dal"   xyz 234 4 2000 life_line_z 2000
+classinstance 485000 class_ref 132355 // CocheDAOImp
+  name "cocDAO"   xyz 455 4 2000 life_line_z 2000
+classinstance 485128 class_ref 132099 // ConnectionManager
+  name "connManager"   xyz 996 4 2000 life_line_z 2000
+classinstance 485256 class_ref 128387 // CocheDTO
+  name ""   xyz 1358 354 2000 life_line_z 2000
+classinstance 485384 class_ref 129667 // DAOExcepcion
+  name ""   xyz 1502 486 2000 life_line_z 2000
+fragment 486792 "opt"
+  xyzwh 511 314 1990 964 116
+end
+textcanvas 486920 "[rs.next()]"
+  xyzwh 599 318 2020 137 26
+fragment 487304 "break"
+  xyzwh 511 446 1990 1129 116
+end
+textcanvas 487432 "[SQLException]"
+  xyzwh 599 450 2020 170 26
+note 487816 "Continuación de AlquilerVehiculos.crearEntrega / Entrega.Entrega. La DAOExcepcion se propaga hasta la capa que llamó."
+  xyzwh 20 630 2000 760 110
+durationcanvas 485512 classinstance_ref 484872 // dal:DAL
+  xyzwh 272 96 2010 11 488
+end
+durationcanvas 485768 classinstance_ref 485000 // cocDAO:CocheDAOImp
+  xyzwh 568 138 2010 11 440
+end
+durationcanvas 486024 classinstance_ref 485128 // connManager:ConnectionManager
+  xyzwh 1162 180 2010 11 32
+end
+durationcanvas 486280 classinstance_ref 485128 // connManager:ConnectionManager
+  xyzwh 1162 228 2010 11 32
+end
+durationcanvas 486536 classinstance_ref 485128 // connManager:ConnectionManager
+  xyzwh 1162 276 2010 11 32
+end
+durationcanvas 487048 classinstance_ref 485256 // :CocheDTO
+  xyzwh 1413 388 2010 11 34
+end
+durationcanvas 487560 classinstance_ref 485384 // :DAOExcepcion
+  xyzwh 1576 520 2010 11 34
+end
+lostfoundmsgsupport 487944 xyz 10 91 2015
+msg 485640 found_synchronous
+  from lostfoundmsgsupport_ref 487944
+  to durationcanvas_ref 485512
+  yz 96 2030 msg operation_ref 132739 // "getCoche(in matricula : String) : CocheDTO"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "matricula"
+  label_xy 24 72
+msg 485896 synchronous
+  from durationcanvas_ref 485512
+  to durationcanvas_ref 485768
+  yz 138 2030 msg operation_ref 165379 // "buscarCoche(in matricula : String) : CocheDTO"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "matricula"
+  label_xy 293 114
+msg 486152 synchronous
+  from durationcanvas_ref 485768
+  to durationcanvas_ref 486024
+  yz 180 2030 msg operation_ref 165635 // "connect() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 575 156
+msg 486408 synchronous
+  from durationcanvas_ref 485768
+  to durationcanvas_ref 486280
+  yz 228 2030 msg operation_ref 166019 // "queryDB(in sql : String) : ResultSet"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "'select * from COCHE where MATRICULA= ...'"
+  label_xy 575 204
+msg 486664 synchronous
+  from durationcanvas_ref 485768
+  to durationcanvas_ref 486536
+  yz 276 2030 msg operation_ref 165763 // "close() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 575 252
+msg 487176 synchronous
+  from durationcanvas_ref 485768
+  to durationcanvas_ref 487048
+  yz 370 2030 explicitmsg "new CocheDTO(...)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 575 346
+msg 487688 synchronous
+  from durationcanvas_ref 485768
+  to durationcanvas_ref 487560
+  yz 502 2030 explicitmsg "new DAOExcepcion(e)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 575 478
+end

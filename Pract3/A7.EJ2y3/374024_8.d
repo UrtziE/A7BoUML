@@ -1,0 +1,86 @@
+format 224
+
+classinstance 491272 class_ref 128643 // DAL
+  name "dal"   xyz 354 4 2000 life_line_z 2000
+classinstance 491400 class_ref 132355 // CocheDAOImp
+  name "cocDAO"   xyz 697 4 2000 life_line_z 2000
+classinstance 491528 class_ref 132099 // ConnectionManager
+  name "connManager"   xyz 1402 4 2000 life_line_z 2000
+classinstance 491656 class_ref 129667 // DAOExcepcion
+  name ""   xyz 1766 402 2000 life_line_z 2000
+fragment 493320 "break"
+  xyzwh 753 362 1990 1151 116
+end
+textcanvas 493448 "[SQLException]"
+  xyzwh 841 366 2020 170 26
+note 493832 "Continuación de AlquilerVehiculos.crearEntrega. La DAOExcepcion se propaga hasta la capa que llamó."
+  xyzwh 20 546 2000 760 110
+durationcanvas 491784 classinstance_ref 491272 // dal:DAL
+  xyzwh 392 96 2010 11 404
+end
+durationcanvas 492040 classinstance_ref 491400 // cocDAO:CocheDAOImp
+  xyzwh 810 138 2010 11 356
+end
+durationcanvas 492296 classinstance_ref 491528 // connManager:ConnectionManager
+  xyzwh 1568 180 2010 11 32
+end
+durationcanvas 492552 classinstance_ref 491528 // connManager:ConnectionManager
+  xyzwh 1568 228 2010 11 32
+end
+durationcanvas 492808 classinstance_ref 491528 // connManager:ConnectionManager
+  xyzwh 1568 276 2010 11 32
+end
+durationcanvas 493064 classinstance_ref 491528 // connManager:ConnectionManager
+  xyzwh 1568 324 2010 11 32
+end
+durationcanvas 493576 classinstance_ref 491656 // :DAOExcepcion
+  xyzwh 1840 436 2010 11 34
+end
+lostfoundmsgsupport 493960 xyz 10 91 2015
+msg 491912 found_synchronous
+  from lostfoundmsgsupport_ref 493960
+  to durationcanvas_ref 491784
+  yz 96 2030 msg operation_ref 133251 // "modificarCoche(in matricula : String, in kms : double) : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "matricula, kms"
+  label_xy 24 72
+msg 492168 synchronous
+  from durationcanvas_ref 491784
+  to durationcanvas_ref 492040
+  yz 138 2030 msg operation_ref 165251 // "modificarVehiculo(in matricula : String, in kms : double) : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "matricula, kms"
+  label_xy 414 114
+msg 492424 synchronous
+  from durationcanvas_ref 492040
+  to durationcanvas_ref 492296
+  yz 180 2030 msg operation_ref 165635 // "connect() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 817 156
+msg 492680 synchronous
+  from durationcanvas_ref 492040
+  to durationcanvas_ref 492552
+  yz 228 2030 msg operation_ref 166019 // "queryDB(in sql : String) : ResultSet"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "'UPDATE COCHE SET SUCURSAL = NULL WHERE MATRICULA= ...'"
+  label_xy 817 204
+msg 492936 synchronous
+  from durationcanvas_ref 492040
+  to durationcanvas_ref 492808
+  yz 276 2030 msg operation_ref 166019 // "queryDB(in sql : String) : ResultSet"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "'UPDATE COCHE SET KMSACTUALES = ... WHERE MATRICULA= ...'"
+  label_xy 817 252
+msg 493192 synchronous
+  from durationcanvas_ref 492040
+  to durationcanvas_ref 493064
+  yz 324 2030 msg operation_ref 165763 // "close() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 817 300
+msg 493704 synchronous
+  from durationcanvas_ref 492040
+  to durationcanvas_ref 493576
+  yz 418 2030 explicitmsg "new DAOExcepcion(e)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 817 394
+end
