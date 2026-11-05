@@ -6,143 +6,143 @@ classinstance 457736 class_ref 129795 // ReservaDTO
   name "res"   xyz 576 4 2000 life_line_z 2000
 classinstance 457864 class_ref 131203 // AlquilerVehiculos
   name "alq"   xyz 774 4 2000 life_line_z 2000
-note 461960 "Continuación de AlquilerVehiculos.listarReservasSucursal / AlquilerVehiculos.getReserva / Entrega.Entrega. Los campos simples (id, fechas, modalidad) se copian del DTO con sus getters; solo se dibujan las llamadas que van a otras clases."
-  xyzwh 20 948 2000 760 150
+continuation 459016 "continúa en AlquilerVehiculos.getCliente"
+  xyzwh 882 268 2025 470 54
 fragment 461448 "break"
   xyzwh 295 776 1990 359 110
 end
 textcanvas 461576 "[DAOExcepcion]"
   xyzwh 383 780 2020 170 26
-continuation 459016 "continúa en AlquilerVehiculos.getCliente"
-  xyzwh 882 268 2025 470 30
+note 461960 "Continuación de AlquilerVehiculos.listarReservasSucursal / AlquilerVehiculos.getReserva / Entrega.Entrega. Los campos simples: id, fechas, modalidad se copian del DTO"
+  xyzwh 20 948 2000 760 150
 durationcanvas 457992 classinstance_ref 457608 // :Reserva
-  xyzwh 340 96 2010 11 806
+  xyzwh 337 96 2010 11 806
   overlappingdurationcanvas 461704
-    xyzwh 346 844 2011 11 34
+    xyzwh 343 844 2011 11 34
   end
+end
+durationcanvas 458248 classinstance_ref 457864 // alq:AlquilerVehiculos
+  xyzwh 874 138 2010 11 32
 end
 durationcanvas 458504 classinstance_ref 457736 // res:ReservaDTO
   xyzwh 655 186 2010 11 32
 end
+durationcanvas 458760 classinstance_ref 457864 // alq:AlquilerVehiculos
+  xyzwh 874 234 2010 11 104
+end
+durationcanvas 459144 classinstance_ref 457864 // alq:AlquilerVehiculos
+  xyzwh 874 354 2010 11 32
+end
 durationcanvas 459400 classinstance_ref 457736 // res:ReservaDTO
   xyzwh 655 402 2010 11 32
+end
+durationcanvas 459656 classinstance_ref 457864 // alq:AlquilerVehiculos
+  xyzwh 874 450 2010 11 32
+end
+durationcanvas 459912 classinstance_ref 457864 // alq:AlquilerVehiculos
+  xyzwh 874 498 2010 11 32
 end
 durationcanvas 460168 classinstance_ref 457736 // res:ReservaDTO
   xyzwh 655 546 2010 11 32
 end
+durationcanvas 460424 classinstance_ref 457864 // alq:AlquilerVehiculos
+  xyzwh 874 594 2010 11 32
+end
+durationcanvas 460680 classinstance_ref 457864 // alq:AlquilerVehiculos
+  xyzwh 874 642 2010 11 32
+end
 durationcanvas 460936 classinstance_ref 457736 // res:ReservaDTO
   xyzwh 655 690 2010 11 32
 end
-durationcanvas 458248 classinstance_ref 457864 // alq:AlquilerVehiculos
-  xyzwh 892 138 2010 11 32
-end
-durationcanvas 458760 classinstance_ref 457864 // alq:AlquilerVehiculos
-  xyzwh 892 234 2010 11 104
-end
-durationcanvas 459144 classinstance_ref 457864 // alq:AlquilerVehiculos
-  xyzwh 892 354 2010 11 32
-end
-durationcanvas 459656 classinstance_ref 457864 // alq:AlquilerVehiculos
-  xyzwh 892 450 2010 11 32
-end
-durationcanvas 459912 classinstance_ref 457864 // alq:AlquilerVehiculos
-  xyzwh 892 498 2010 11 32
-end
-durationcanvas 460424 classinstance_ref 457864 // alq:AlquilerVehiculos
-  xyzwh 892 594 2010 11 32
-end
-durationcanvas 460680 classinstance_ref 457864 // alq:AlquilerVehiculos
-  xyzwh 892 642 2010 11 32
-end
 durationcanvas 461192 classinstance_ref 457864 // alq:AlquilerVehiculos
-  xyzwh 892 738 2010 11 32
+  xyzwh 874 738 2010 11 32
 end
 lostfoundmsgsupport 462088 xyz 10 91 2015
 msg 458120 found_synchronous
   from lostfoundmsgsupport_ref 462088
   to durationcanvas_ref 457992
   yz 96 2030 explicitmsg "Reserva(res : ReservaDTO)"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 24 72
 msg 458376 synchronous
   from durationcanvas_ref 457992
   to durationcanvas_ref 458248
-  yz 138 2030 msg operation_ref 140163 // "getSingleton"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 138 2030 msg operation_ref 140163 // "getSingleton() : AlquilerVehiculos"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 359 114
 msg 458632 synchronous
   from durationcanvas_ref 457992
   to durationcanvas_ref 458504
-  yz 186 2030 msg operation_ref 137731 // "getDniCliente"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 186 2030 msg operation_ref 137731 // "getDniCliente() : String"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 359 162
 msg 458888 synchronous
   from durationcanvas_ref 457992
   to durationcanvas_ref 458760
-  yz 234 2030 msg operation_ref 142083 // "getCliente"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 234 2030 msg operation_ref 142083 // "getCliente(in dni : String) : Cliente"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   args "dni"
   label_xy 359 210
 msg 459272 synchronous
   from durationcanvas_ref 457992
   to durationcanvas_ref 459144
-  yz 354 2030 msg operation_ref 140163 // "getSingleton"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 354 2030 msg operation_ref 140163 // "getSingleton() : AlquilerVehiculos"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 359 330
 msg 459528 synchronous
   from durationcanvas_ref 457992
   to durationcanvas_ref 459400
-  yz 402 2030 msg operation_ref 137987 // "getNombreCategoria"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 402 2030 msg operation_ref 137987 // "getNombreCategoria() : String"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 359 378
 msg 459784 synchronous
   from durationcanvas_ref 457992
   to durationcanvas_ref 459656
-  yz 450 2030 msg operation_ref 143107 // "getCategoria"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 450 2030 msg operation_ref 143107 // "getCategoria(in nombre : String) : Categoria"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   args "nombreCategoria"
   label_xy 359 426
 msg 460040 synchronous
   from durationcanvas_ref 457992
   to durationcanvas_ref 459912
-  yz 498 2030 msg operation_ref 140163 // "getSingleton"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 498 2030 msg operation_ref 140163 // "getSingleton() : AlquilerVehiculos"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 359 474
 msg 460296 synchronous
   from durationcanvas_ref 457992
   to durationcanvas_ref 460168
-  yz 546 2030 msg operation_ref 138243 // "getIdSucursalRecogida"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 546 2030 msg operation_ref 138243 // "getIdSucursalRecogida() : int"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 359 522
 msg 460552 synchronous
   from durationcanvas_ref 457992
   to durationcanvas_ref 460424
-  yz 594 2030 msg operation_ref 143491 // "getSucursal"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 594 2030 msg operation_ref 143491 // "getSucursal(in idSucursal : int) : Sucursal"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   args "idSucursalRecogida"
   label_xy 359 570
 msg 460808 synchronous
   from durationcanvas_ref 457992
   to durationcanvas_ref 460680
-  yz 642 2030 msg operation_ref 140163 // "getSingleton"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 642 2030 msg operation_ref 140163 // "getSingleton() : AlquilerVehiculos"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 359 618
 msg 461064 synchronous
   from durationcanvas_ref 457992
   to durationcanvas_ref 460936
-  yz 690 2030 msg operation_ref 138499 // "getIdSucursalDevolucion"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 690 2030 msg operation_ref 138499 // "getIdSucursalDevolucion() : int"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 359 666
 msg 461320 synchronous
   from durationcanvas_ref 457992
   to durationcanvas_ref 461192
-  yz 738 2030 msg operation_ref 143491 // "getSucursal"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 738 2030 msg operation_ref 143491 // "getSucursal(in idSucursal : int) : Sucursal"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   args "idSucursalDevolucion"
   label_xy 359 714
 reflexivemsg 461832 synchronous
   to durationcanvas_ref 461704
   yz 844 2030 explicitmsg "e.printStackTrace()"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 367 820
 end

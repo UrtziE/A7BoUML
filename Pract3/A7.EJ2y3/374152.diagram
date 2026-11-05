@@ -10,48 +10,48 @@ classinstance 494472 class_ref 129923 // EntregaDTO
   name "e"   xyz 1204 4 2000 life_line_z 2000
 classinstance 494600 class_ref 129667 // DAOExcepcion
   name ""   xyz 1380 690 2000 life_line_z 2000
-note 498312 "Continuación de AlquilerVehiculos.crearEntrega. Los getters del DTO se usan para montar la sentencia INSERT. La DAOExcepcion se propaga hasta la capa que llamó."
-  xyzwh 20 834 2000 760 124
 fragment 497800 "break"
   xyzwh 456 650 1990 1063 116
 end
 textcanvas 497928 "[SQLException]"
   xyzwh 544 654 2020 170 26
+note 498312 "Continuación de AlquilerVehiculos.crearEntrega. Los getters del DTO se usan para hacer el insert y la DAOExcepcion se propaga hasta la capa que llamó."
+  xyzwh 20 834 2000 760 124
 durationcanvas 494728 classinstance_ref 494088 // dal:DAL
-  xyzwh 296 96 2010 11 692
+  xyzwh 294 96 2010 11 692
 end
 durationcanvas 494984 classinstance_ref 494216 // entDAO:EntregaDAOImp
-  xyzwh 501 138 2010 11 644
+  xyzwh 509 138 2010 11 644
 end
 durationcanvas 495240 classinstance_ref 494344 // connManager:ConnectionManager
-  xyzwh 1003 180 2010 11 32
-end
-durationcanvas 497288 classinstance_ref 494344 // connManager:ConnectionManager
-  xyzwh 1003 564 2010 11 32
-end
-durationcanvas 497544 classinstance_ref 494344 // connManager:ConnectionManager
-  xyzwh 1003 612 2010 11 32
+  xyzwh 1008 180 2010 11 32
 end
 durationcanvas 495496 classinstance_ref 494472 // e:EntregaDTO
-  xyzwh 1272 228 2010 11 32
+  xyzwh 1273 228 2010 11 32
 end
 durationcanvas 495752 classinstance_ref 494472 // e:EntregaDTO
-  xyzwh 1272 276 2010 11 32
+  xyzwh 1273 276 2010 11 32
 end
 durationcanvas 496008 classinstance_ref 494472 // e:EntregaDTO
-  xyzwh 1272 324 2010 11 32
+  xyzwh 1273 324 2010 11 32
 end
 durationcanvas 496264 classinstance_ref 494472 // e:EntregaDTO
-  xyzwh 1272 372 2010 11 32
+  xyzwh 1273 372 2010 11 32
 end
 durationcanvas 496520 classinstance_ref 494472 // e:EntregaDTO
-  xyzwh 1272 420 2010 11 32
+  xyzwh 1273 420 2010 11 32
 end
 durationcanvas 496776 classinstance_ref 494472 // e:EntregaDTO
-  xyzwh 1272 468 2010 11 32
+  xyzwh 1273 468 2010 11 32
 end
 durationcanvas 497032 classinstance_ref 494472 // e:EntregaDTO
-  xyzwh 1272 516 2010 11 32
+  xyzwh 1273 516 2010 11 32
+end
+durationcanvas 497288 classinstance_ref 494344 // connManager:ConnectionManager
+  xyzwh 1008 564 2010 11 32
+end
+durationcanvas 497544 classinstance_ref 494344 // connManager:ConnectionManager
+  xyzwh 1008 612 2010 11 32
 end
 durationcanvas 498056 classinstance_ref 494600 // :DAOExcepcion
   xyzwh 1454 724 2010 11 34
@@ -60,82 +60,82 @@ lostfoundmsgsupport 498440 xyz 10 91 2015
 msg 494856 found_synchronous
   from lostfoundmsgsupport_ref 498440
   to durationcanvas_ref 494728
-  yz 96 2030 msg operation_ref 131843 // "crearEntrega"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 96 2030 msg operation_ref 131843 // "crearEntrega(inout entrega : EntregaDTO) : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   args "entrega"
   label_xy 24 72
 msg 495112 synchronous
   from durationcanvas_ref 494728
   to durationcanvas_ref 494984
-  yz 138 2030 msg operation_ref 167171 // "crearEntrega"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 138 2030 msg operation_ref 167171 // "crearEntrega(inout e : EntregaDTO) : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   args "e"
   label_xy 315 114
 msg 495368 synchronous
   from durationcanvas_ref 494984
   to durationcanvas_ref 495240
-  yz 180 2030 msg operation_ref 165635 // "connect"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 180 2030 msg operation_ref 165635 // "connect() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 520 156
 msg 495624 synchronous
   from durationcanvas_ref 494984
   to durationcanvas_ref 495496
-  yz 228 2030 msg operation_ref 134915 // "getFecha"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 228 2030 msg operation_ref 134915 // "getFecha() : LocalDateTime"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 520 204
 msg 495880 synchronous
   from durationcanvas_ref 494984
   to durationcanvas_ref 495752
-  yz 276 2030 msg operation_ref 134659 // "getId"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 276 2030 msg operation_ref 134659 // "getId() : int"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 520 252
 msg 496136 synchronous
   from durationcanvas_ref 494984
   to durationcanvas_ref 496008
-  yz 324 2030 msg operation_ref 135171 // "getTipoSeguro"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 324 2030 msg operation_ref 135171 // "getTipoSeguro() : String"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 520 300
 msg 496392 synchronous
   from durationcanvas_ref 494984
   to durationcanvas_ref 496264
-  yz 372 2030 msg operation_ref 135427 // "getKms"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 372 2030 msg operation_ref 135427 // "getKms() : double"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 520 348
 msg 496648 synchronous
   from durationcanvas_ref 494984
   to durationcanvas_ref 496520
-  yz 420 2030 msg operation_ref 135683 // "getCombustible"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 420 2030 msg operation_ref 135683 // "getCombustible() : double"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 520 396
 msg 496904 synchronous
   from durationcanvas_ref 494984
   to durationcanvas_ref 496776
-  yz 468 2030 msg operation_ref 135939 // "getTiene_asociado"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 468 2030 msg operation_ref 135939 // "getTiene_asociado() : String"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 520 444
 msg 497160 synchronous
   from durationcanvas_ref 494984
   to durationcanvas_ref 497032
-  yz 516 2030 msg operation_ref 136195 // "getEs_realizada_por"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 516 2030 msg operation_ref 136195 // "getEs_realizada_por() : String"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 520 492
 msg 497416 synchronous
   from durationcanvas_ref 494984
   to durationcanvas_ref 497288
-  yz 564 2030 msg operation_ref 166019 // "queryDB"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 564 2030 msg operation_ref 166019 // "queryDB(in sql : String) : ResultSet"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   args "'insert into Entrega values(...)'"
   label_xy 520 540
 msg 497672 synchronous
   from durationcanvas_ref 494984
   to durationcanvas_ref 497544
-  yz 612 2030 msg operation_ref 165763 // "close"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  yz 612 2030 msg operation_ref 165763 // "close() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 520 588
 msg 498184 synchronous
   from durationcanvas_ref 494984
   to durationcanvas_ref 498056
   yz 706 2030 explicitmsg "new DAOExcepcion(e)"
-  show_full_operations_definition default drawing_language default show_context_mode default
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
   label_xy 520 682
 end
