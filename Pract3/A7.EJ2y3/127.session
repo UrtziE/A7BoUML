@@ -1,0 +1,43 @@
+window_sizes 1920 991 341 1573 801 128
+
+diagrams
+  classdiagram_ref 128389 // EJ2.2.1
+    1258 640 50 A0 0 0
+  active  classdiagram_ref 128133 // EJ2.1.1
+    1573 801 69 A4 0 0
+  sequencediagram_ref 128261 // EJ2.1.2
+    134 122 100 A4 0 0
+  sequencediagram_ref 128517 // EJ2.2.2
+    134 122 100 A0 1362 0
+  classdiagram_ref 134536 // EJ2.2.1a
+    134 122 100 A2 0 0
+  classdiagram_ref 134664 // EJ2.2.1b
+    134 122 100 A2 1594 0
+  classdiagram_ref 134792 // EJ2.2.1c
+    134 122 100 A2 0 0
+  classdiagram_ref 141320 // EJ2.2.1d
+    134 122 100 A2 0 0
+end
+show_stereotypes
+marked
+  class_ref 133891 // ControladorCrearCliente
+  class_ref 133507 // ControladorCasoDeUso
+  class_ref 133763 // ControladorPrincipal
+  class_ref 131331 // Cliente
+  class_ref 131203 // AlquilerVehiculos
+  class_ref 132227 // ClienteDAOImp
+  class_ref 132099 // ConnectionManager
+  class_ref 128899 // IClienteDAO
+  class_ref 129667 // DAOExcepcion
+  class_ref 128643 // DAL
+  class_ref 128259 // ClienteDTO
+end
+selected classdiagram_ref 128133 // EJ2.1.1
+open
+  
+  package_ref 128131 // src
+  classview_ref 128133 // EJ2.1
+  sequencediagram_ref 372744 // Reserva.Reserva
+  classview_ref 128515 // unknown
+end
+end

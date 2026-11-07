@@ -19,39 +19,39 @@ note 413192 "Parte inicial del diagrama EJ2.2.2. Empieza en el manejador del bot
 note 413320 "Después, los eventos de la ventana: al cambiar la sucursal seleccionada se ejecuta popularTablaReservas, al seleccionar una reserva listarCoches y al pulsar Aceptar el método aceptar, que crea la entrega. Cada uno continúa en su propio diagrama."
   xyzwh 18.1 1091.7 2000 760 176
 durationcanvas 410120 classinstance_ref 409736 // :ControladorPrincipal
-  xyzwh 360 96.4 2010 11 426
+  xyzwh 360 96 2010 11 426
   overlappingdurationcanvas 410376
-    xyzwh 366 150.4 2011 11 318
+    xyzwh 366 150 2011 11 318
   end
 end
 durationcanvas 410632 classinstance_ref 409864 // :ControladorCasoDeUso
-  xyzwh 1344 192.8 2010 11 268
+  xyzwh 1344 192 2010 11 268
 end
 durationcanvas 410888 classinstance_ref 409992 // ctrl:ControladorEntregarVehiculoReserva
-  xyzwh 1987 235.8 2010 11 52
+  xyzwh 1987 235 2010 11 52
 end
 durationcanvas 411144 classinstance_ref 409992 // ctrl:ControladorEntregarVehiculoReserva
-  xyzwh 1987 303.2 2010 11 104
+  xyzwh 1987 303 2010 11 104
 end
 durationcanvas 411528 classinstance_ref 409992 // ctrl:ControladorEntregarVehiculoReserva
-  xyzwh 1987 423.4 2010 11 32
+  xyzwh 1987 423 2010 11 32
 end
 durationcanvas 411784 classinstance_ref 409992 // ctrl:ControladorEntregarVehiculoReserva
-  xyzwh 1987 483.4 2010 11 32
+  xyzwh 1987 483 2010 11 32
 end
 durationcanvas 412040 classinstance_ref 409992 // ctrl:ControladorEntregarVehiculoReserva
-  xyzwh 1987 537.4 2010 11 104
+  xyzwh 1987 537 2010 11 104
 end
 durationcanvas 412424 classinstance_ref 409992 // ctrl:ControladorEntregarVehiculoReserva
-  xyzwh 1987 657.4 2010 11 104
+  xyzwh 1987 657 2010 11 104
 end
 durationcanvas 412808 classinstance_ref 409992 // ctrl:ControladorEntregarVehiculoReserva
-  xyzwh 1987 777.4 2010 11 104
+  xyzwh 1987 777 2010 11 104
 end
-lostfoundmsgsupport 413448 xyz 10.2 98.6 2015
-lostfoundmsgsupport 413576 xyz 1662.8 540.2 2015
-lostfoundmsgsupport 413704 xyz 1750.2 660.2 2015
-lostfoundmsgsupport 413832 xyz 1892.8 780.2 2015
+lostfoundmsgsupport 413448 xyz 10 98 2015
+lostfoundmsgsupport 413576 xyz 1662 540 2015
+lostfoundmsgsupport 413704 xyz 1750 660 2015
+lostfoundmsgsupport 413832 xyz 1892 780 2015
 msg 410248 found_synchronous
   from lostfoundmsgsupport_ref 413448
   to durationcanvas_ref 410120
