@@ -1,0 +1,121 @@
+format 224
+
+classinstance 409736 class_ref 133763 // ControladorPrincipal
+  name ""   xyz 278 5.3 2000 life_line_z 2000
+classinstance 409864 class_ref 133507 // ControladorCasoDeUso
+  name ""   xyz 1250.7 5.3 2000 life_line_z 2000
+classinstance 409992 class_ref 134147 // ControladorEntregarVehiculoReserva
+  name "ctrl"   xyz 1830.1 221.1 2000 life_line_z 2000
+continuation 411400 "continúa en ControladorEntregarVehiculoReserva.initialize"
+  xyzwh 2036.2 338.2 2025 657 54
+continuation 412296 "continúa en ControladorEntregarVehiculoReserva.popularTablaReservas"
+  xyzwh 2036.7 572.4 2025 767 54
+continuation 412680 "continúa en ControladorEntregarVehiculoReserva.listarCoches"
+  xyzwh 2036.5 692.4 2025 679 54
+continuation 413064 "continúa en ControladorEntregarVehiculoReserva.aceptar"
+  xyzwh 2036.1 812.4 2025 624 54
+note 413192 "Parte inicial del diagrama EJ2.2.2. Empieza en el manejador del botón 'Entregar vehículo reservado' del menú principal (ControladorPrincipal.entregarVehiculoReserva), que abre la ventana del caso de uso."
+  xyzwh 19.7 927.6 2000 760 150
+note 413320 "Después, los eventos de la ventana: al cambiar la sucursal seleccionada se ejecuta popularTablaReservas, al seleccionar una reserva listarCoches y al pulsar Aceptar el método aceptar, que crea la entrega. Cada uno continúa en su propio diagrama."
+  xyzwh 18.1 1091.7 2000 760 176
+durationcanvas 410120 classinstance_ref 409736 // :ControladorPrincipal
+  xyzwh 360 96.4 2010 11 426
+  overlappingdurationcanvas 410376
+    xyzwh 366 150.4 2011 11 318
+  end
+end
+durationcanvas 410632 classinstance_ref 409864 // :ControladorCasoDeUso
+  xyzwh 1344 192.8 2010 11 268
+end
+durationcanvas 410888 classinstance_ref 409992 // ctrl:ControladorEntregarVehiculoReserva
+  xyzwh 1987 235.8 2010 11 52
+end
+durationcanvas 411144 classinstance_ref 409992 // ctrl:ControladorEntregarVehiculoReserva
+  xyzwh 1987 303.2 2010 11 104
+end
+durationcanvas 411528 classinstance_ref 409992 // ctrl:ControladorEntregarVehiculoReserva
+  xyzwh 1987 423.4 2010 11 32
+end
+durationcanvas 411784 classinstance_ref 409992 // ctrl:ControladorEntregarVehiculoReserva
+  xyzwh 1987 483.4 2010 11 32
+end
+durationcanvas 412040 classinstance_ref 409992 // ctrl:ControladorEntregarVehiculoReserva
+  xyzwh 1987 537.4 2010 11 104
+end
+durationcanvas 412424 classinstance_ref 409992 // ctrl:ControladorEntregarVehiculoReserva
+  xyzwh 1987 657.4 2010 11 104
+end
+durationcanvas 412808 classinstance_ref 409992 // ctrl:ControladorEntregarVehiculoReserva
+  xyzwh 1987 777.4 2010 11 104
+end
+lostfoundmsgsupport 413448 xyz 10.2 98.6 2015
+lostfoundmsgsupport 413576 xyz 1662.8 540.2 2015
+lostfoundmsgsupport 413704 xyz 1750.2 660.2 2015
+lostfoundmsgsupport 413832 xyz 1892.8 780.2 2015
+msg 410248 found_synchronous
+  from lostfoundmsgsupport_ref 413448
+  to durationcanvas_ref 410120
+  yz 96 2030 msg operation_ref 173699 // "entregarVehiculoReserva(inout event : ActionEvent) : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "event"
+  label_xy 24 72
+reflexivemsg 410504 synchronous
+  to durationcanvas_ref 410376
+  yz 150 2030 msg operation_ref 174083 // "initCasoDeUso(in urlVista : String, inout controlClass : Class<T>) : T"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "ENTREGAR_VEHICULO_RESERVA, ControladorEntregarVehiculoReserva.class"
+  label_xy 422 126
+msg 410760 synchronous
+  from durationcanvas_ref 410376
+  to durationcanvas_ref 410632
+  yz 194 2030 msg operation_ref 169731 // "initCasoDeUso(in urlVista : String, inout controlClass : Class<T>, inout owner : Stage, inout controladorPrincipal : ControladorPrincipal) : T"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "urlVista, controlClass, primaryStage, this"
+  label_xy 414 170
+msg 411016 synchronous
+  from durationcanvas_ref 410632
+  to durationcanvas_ref 410888
+  yz 236 2030 explicitmsg "<<create>> (lo crea FXMLLoader.load())"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1386 212
+msg 411272 synchronous
+  from durationcanvas_ref 410632
+  to durationcanvas_ref 411144
+  yz 304 2030 msg operation_ref 170883 // "initialize(inout arg0 : URL, inout arg1 : ResourceBundle) : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "location, resources"
+  label_xy 1386 280
+msg 411656 synchronous
+  from durationcanvas_ref 410632
+  to durationcanvas_ref 411528
+  yz 424 2030 msg operation_ref 169347 // "setControladorPrincipal(inout controladorPrincipal : ControladorPrincipal) : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "controladorPrincipal"
+  label_xy 1386 400
+msg 411912 synchronous
+  from durationcanvas_ref 410120
+  to durationcanvas_ref 411784
+  yz 484 2030 msg operation_ref 169603 // "show() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 414 460
+msg 412168 found_synchronous
+  from lostfoundmsgsupport_ref 413576
+  to durationcanvas_ref 412040
+  yz 538 2030 msg operation_ref 170499 // "popularTablaReservas(in sucursal : int) : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "newValue"
+  label_xy 1676 514
+msg 412552 found_synchronous
+  from lostfoundmsgsupport_ref 413704
+  to durationcanvas_ref 412424
+  yz 658 2030 msg operation_ref 170627 // "listarCoches(inout r : Reserva) : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "newValue"
+  label_xy 1764 634
+msg 412936 found_synchronous
+  from lostfoundmsgsupport_ref 413832
+  to durationcanvas_ref 412808
+  yz 778 2030 msg operation_ref 171011 // "aceptar() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1906 754
+end
