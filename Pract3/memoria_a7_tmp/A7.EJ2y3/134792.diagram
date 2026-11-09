@@ -1,0 +1,197 @@
+format 224
+
+classcanvas 317704 class_ref 131203 // AlquilerVehiculos
+  classdiagramsettings member_max_width 0 end
+  xyz 54.5 737.0 2010
+end
+classcanvas 317832 class_ref 128643 // DAL
+  classdiagramsettings member_max_width 0 end
+  xyz 130.0 1037.0 3005
+end
+classcanvas 317960 class_ref 129539 // IEmpleadoDAO
+  classdiagramsettings member_max_width 0 end
+  xyz 485.0 95.0 2006
+end
+classcanvas 318088 class_ref 132611 // EmpleadoDAOImp
+  classdiagramsettings member_max_width 0 end
+  xyz 924.5 109.0 2000
+end
+classcanvas 318216 class_ref 129411 // ICocheDAO
+  classdiagramsettings member_max_width 0 end
+  xyz 500.0 545.0 2006
+end
+classcanvas 318344 class_ref 132355 // CocheDAOImp
+  classdiagramsettings member_max_width 0 end
+  xyz 945.5 559.0 2000
+end
+classcanvas 318472 class_ref 129155 // IReservaDAO
+  classdiagramsettings member_max_width 0 end
+  xyz 495.0 995.0 2006
+end
+classcanvas 318600 class_ref 132995 // ReservaDAOImp
+  classdiagramsettings member_max_width 0 end
+  xyz 931.5 1009.0 2000
+end
+classcanvas 318728 class_ref 129283 // IEntregaDAO
+  classdiagramsettings member_max_width 0 end
+  xyz 495.0 1445.0 2006
+end
+classcanvas 318856 class_ref 132739 // EntregaDAOImp
+  classdiagramsettings member_max_width 0 end
+  xyz 933.0 1459.0 2000
+end
+classcanvas 318984 class_ref 128899 // IClienteDAO
+  classdiagramsettings member_max_width 0 end
+  xyz 500.0 1895.0 3011
+end
+classcanvas 319112 class_ref 132227 // ClienteDAOImp
+  classdiagramsettings member_max_width 0 end
+  xyz 940.0 1909.0 3017
+end
+classcanvas 319240 class_ref 132099 // ConnectionManager
+  classdiagramsettings member_max_width 0 end
+  xyz 1378.5 1010.5 3023
+end
+note 319368 "Gestiona la conexión con la base de datos. La usan todas las implementaciones DAO para conectarse y ejecutar sus sentencias SQL."
+  xyzwh 1355.0 1609.5 2000 290 230
+note 319496 "Capa de acceso a datos (Singleton). Crea los DAO y ofrece a la lógica métodos de consulta y creación que trabajan con DTOs."
+  xyzwh 15.0 1413.0 2000 290 202
+note 319624 "Declara las operaciones de persistencia de coches: listar por sucursal, buscar por matrícula y modificar kilómetros."
+  xyzwh 455.0 640.0 2000 290 202
+note 319752 "Implementación de IEntregaDAO. Inserta y consulta las entregas en la base de datos a través de ConnectionManager."
+  xyzwh 845.0 1526.0 2000 290 202
+note 319880 "Implementación de ICocheDAO. Consulta los coches de una sucursal y actualiza sus kilómetros en la base de datos."
+  xyzwh 845.0 626.0 2000 290 202
+note 320008 "Declara las operaciones de persistencia de reservas: buscar, contar, crear y obtener por sucursal de origen."
+  xyzwh 455.0 1090.0 2000 290 174
+note 320136 "Implementación de IEmpleadoDAO. Recupera de la base de datos los datos de un empleado a partir de su DNI."
+  xyzwh 845.0 176.0 2000 290 174
+note 320264 "Implementación de IReservaDAO. Accede a la base de datos con SQL usando ConnectionManager."
+  xyzwh 845.0 1076.0 2000 290 174
+note 320392 "Declara las operaciones de persistencia de empleados: buscar por DNI y crear."
+  xyzwh 455.0 190.0 2000 290 146
+note 320520 "Declara las operaciones de persistencia de clientes: buscar por DNI y crear."
+  xyzwh 455.0 1990.0 2000 290 146
+note 320648 "Implementación de IClienteDAO. Busca e inserta clientes en la base de datos."
+  xyzwh 845.0 1976.0 2000 290 146
+note 320776 "Declara las operaciones de persistencia de entregas: crear y buscar."
+  xyzwh 455.0 1540.0 2000 290 146
+relationcanvas 320904 relation_ref 133507 // <realization>
+  from ref 318344 z 2001 to ref 318216
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 321032 relation_ref 133763 // <realization>
+  from ref 318088 z 2001 to ref 317960
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 321160 relation_ref 134275 // <realization>
+  from ref 318600 z 2001 to ref 318472
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 321288 relation_ref 134019 // <realization>
+  from ref 318856 z 2001 to ref 318728
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 321416 relation_ref 133379 // <unidirectional association>
+  from ref 319112 z 2001 to ref 319240
+  role_a_pos 1464.2 1148.7 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 321544 relation_ref 133635 // <unidirectional association>
+  from ref 318344 z 2001 to ref 319240
+  role_a_pos 1433.5 949.9 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 321672 relation_ref 134403 // <unidirectional association>
+  from ref 318600 z 2001 to ref 319240
+  role_a_pos 1196.6 1017.7 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 321800 relation_ref 134147 // <unidirectional association>
+  from ref 318856 z 2001 to ref 319240
+  role_a_pos 1272.8 1140.2 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 321928 relation_ref 133891 // <unidirectional association>
+  from ref 318088 z 2001 to ref 319240
+  role_a_pos 1440.9 891.2 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 322056 relation_ref 130051 // <unidirectional association>
+  from ref 317704 z 2001 to point 315.5 717.0
+  line 322184 z 2001 to point 315.5 803.0
+  line 322312 z 2001 to ref 317704
+  role_a_pos 323.5 752.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 322440 relation_ref 128387 // <unidirectional association>
+  from ref 317832 z 2001 to ref 318472
+  role_a_pos 373.1 1005.9 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 322568 relation_ref 128515 // <unidirectional association>
+  from ref 317832 z 2001 to ref 318728
+  role_a_pos 509.1 1384.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 322696 relation_ref 128643 // <unidirectional association>
+  from ref 317832 z 2001 to ref 318216
+  role_a_pos 377.0 681.4 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 322824 relation_ref 128771 // <unidirectional association>
+  from ref 317832 z 2001 to ref 317960
+  role_a_pos 471.6 362.7 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 322952 relation_ref 128899 // <unidirectional association>
+  from ref 317832 z 2001 to point 240.0 1017.0
+  line 323080 z 2001 to point 240.0 1103.0
+  line 323208 z 2001 to ref 317832
+  role_a_pos 248.0 1052.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 323336 relation_ref 129923 // <unidirectional association>
+  from ref 317704 z 2001 to ref 317832
+  role_a_pos 170.0 965.0 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 323464 relation_ref 128131 // <unidirectional association>
+  from ref 317832 z 2001 to ref 318984
+  role_a_pos 537.2 1826.7 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 323592 relation_ref 133251 // <realization>
+  from ref 319112 z 2001 to ref 318984
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 323720 -_-_
+  from ref 319240 z 2001 to ref 319368
+line 323848 -_-_
+  from ref 317832 z 2001 to ref 319496
+line 323976 -_-_
+  from ref 318216 z 2001 to ref 319624
+line 324104 -_-_
+  from ref 318856 z 2001 to ref 319752
+line 324232 -_-_
+  from ref 318344 z 2001 to ref 319880
+line 324360 -_-_
+  from ref 318472 z 2001 to ref 320008
+line 324488 -_-_
+  from ref 318088 z 2001 to ref 320136
+line 324616 -_-_
+  from ref 318600 z 2001 to ref 320264
+line 324744 -_-_
+  from ref 317960 z 2001 to ref 320392
+line 324872 -_-_
+  from ref 318984 z 2001 to ref 320520
+line 325000 -_-_
+  from ref 319112 z 2001 to ref 320648
+line 325128 -_-_
+  from ref 318728 z 2001 to ref 320776
+end

@@ -1,0 +1,56 @@
+class Sucursal
+!!!160771.java!!!	toString() : String
+		return "Sucursal [idSucursal=" + idSucursal + ", direccion=" + direccion + ", lugar_devolucion="
+				+ lugar_devolucion + ", lugar_recogida=" + lugar_recogida + ", esta_en=" 
+				+ ", coleccionEmpleados=" + coleccionEmpleados + "]";
+!!!160899.java!!!	addReservaDevolucion(inout r : Reserva) : void
+		lugar_devolucion.put(r.getIdReserva(), r);
+!!!161027.java!!!	Sucursal(inout suc : SucursalDTO)
+		this.idSucursal = suc.getId();
+		this.direccion = suc.getDirección();
+!!!161155.java!!!	removeReservaDevolucion(in idReserva : String) : Reserva
+		return lugar_devolucion.remove(idReserva);	
+!!!161283.java!!!	getReservaDevolucion(in idReserva : String) : Reserva
+		return lugar_devolucion.get(idReserva);
+!!!161411.java!!!	addReservaRecogida(inout r : Reserva) : void
+		lugar_recogida.put(r.getIdReserva(), r);
+!!!161539.java!!!	removeReservaRecogida(in idReserva : String) : Reserva
+		return lugar_recogida.remove(idReserva);	
+!!!161667.java!!!	getReservaRecogida(in idReserva : String) : Reserva
+		return lugar_recogida.get(idReserva);
+!!!161795.java!!!	addCoche(inout c : Coche) : void
+		esta_en.put(c.getMatricula(), c);
+!!!161923.java!!!	removeCoche(in matricula : String) : Coche
+		return esta_en.remove(matricula);	
+!!!162051.java!!!	getCoche(in matricula : String) : Coche
+		return esta_en.get(matricula);
+!!!162179.java!!!	addEmpleado(inout e : Empleado) : void
+		coleccionEmpleados.put(e.getDNI(), e);
+!!!162307.java!!!	removeEmpleado(in DNI : String) : Empleado
+		return coleccionEmpleados.remove(DNI);	
+!!!162435.java!!!	getEmpleado(in DNI : String) : Empleado
+		return coleccionEmpleados.get(DNI);
+!!!162563.java!!!	getIdSucursal() : int
+		return idSucursal;
+!!!162691.java!!!	setIdSucursal(in i : int) : void
+		this.idSucursal = i;
+!!!162819.java!!!	getDireccion() : String
+		return direccion;
+!!!162947.java!!!	setDireccion(in direccion : String) : void
+		this.direccion = direccion;
+!!!163075.java!!!	getReservas() : Reserva
+				
+		Collection<Reserva> rec = lugar_recogida.values();
+		Collection<Reserva> dev = lugar_devolucion.values();
+		
+		List<Reserva> list = new ArrayList<Reserva>(rec);
+		List<Reserva> list2 = new ArrayList<Reserva>(dev);
+		
+		list.addAll(list2);
+		
+		Set<Reserva> hs = new HashSet<>();
+		hs.addAll(list);
+		list.clear();
+		list.addAll(hs);
+		
+		return list;

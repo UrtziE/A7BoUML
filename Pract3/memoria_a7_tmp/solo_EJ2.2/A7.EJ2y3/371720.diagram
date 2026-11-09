@@ -1,0 +1,145 @@
+format 224
+
+classinstance 424456 class_ref 134147 // ControladorEntregarVehiculoReserva
+  name "ctrl"   xyz 20 4 2000 life_line_z 2000
+classinstance 424584 class_ref 131203 // AlquilerVehiculos
+  name "alq"   xyz 1237 4 2000 life_line_z 2000
+classinstance 424712 class_ref 130691 // Reserva
+  name "reserva"   xyz 1616 4 2000 life_line_z 2000
+classinstance 424840 class_ref 128515 // Coche
+  name "coche"   xyz 1824 4 2000 life_line_z 2000
+fragment 425992 "opt"
+  xyzwh 192 308 1990 1228 216
+end
+textcanvas 426120 "[empleadoDNIT no está vacío]"
+  xyzwh 280 312 2020 324 26
+continuation 426760 "continúa en AlquilerVehiculos.getEmpleado"
+  xyzwh 1344 446 2025 481 54
+fragment 426888 "opt"
+  xyzwh 192 540 1990 854 110
+end
+textcanvas 427016 "[errorMessage no vacío]"
+  xyzwh 280 544 2020 269 26
+fragment 427400 "opt"
+  xyzwh 192 672 1990 1760 312
+end
+textcanvas 427528 "[isInputValid() == true]"
+  xyzwh 280 676 2020 280 26
+continuation 428680 "continúa en AlquilerVehiculos.crearEntrega"
+  xyzwh 1344 906 2025 492 54
+fragment 428808 "break"
+  xyzwh 192 1000 1990 359 110
+end
+textcanvas 428936 "[DAOExcepcion]"
+  xyzwh 280 1004 2020 170 26
+note 429320 "Continuación de EJ2.2.2. reserva y coche son los elementos seleccionados en las tablas reservaT y cochesT. Si todo va bien se cierra la ventana"
+  xyzwh 20 1172 2000 760 124
+durationcanvas 424968 classinstance_ref 424456 // ctrl:ControladorEntregarVehiculoReserva
+  xyzwh 216 96 2010 11 1030
+  overlappingdurationcanvas 425224
+    xyzwh 222 150 2011 11 516
+    overlappingdurationcanvas 425480
+      xyzwh 228 206 2012 11 34
+    end
+    overlappingdurationcanvas 425736
+      xyzwh 228 268 2012 11 34
+    end
+    overlappingdurationcanvas 427144
+      xyzwh 228 608 2012 11 34
+    end
+  end
+  overlappingdurationcanvas 429064
+    xyzwh 222 1068 2011 11 34
+  end
+end
+durationcanvas 426248 classinstance_ref 424584 // alq:AlquilerVehiculos
+  xyzwh 1337 364 2010 11 32
+end
+durationcanvas 426504 classinstance_ref 424584 // alq:AlquilerVehiculos
+  xyzwh 1337 412 2010 11 104
+end
+durationcanvas 427656 classinstance_ref 424584 // alq:AlquilerVehiculos
+  xyzwh 1337 728 2010 11 32
+end
+durationcanvas 427912 classinstance_ref 424712 // reserva:Reserva
+  xyzwh 1695 776 2010 11 32
+end
+durationcanvas 428168 classinstance_ref 424840 // coche:Coche
+  xyzwh 1886 824 2010 11 32
+end
+durationcanvas 428424 classinstance_ref 424584 // alq:AlquilerVehiculos
+  xyzwh 1337 872 2010 11 104
+end
+lostfoundmsgsupport 429448 xyz 82 91 2015
+msg 425096 found_synchronous
+  from lostfoundmsgsupport_ref 429448
+  to durationcanvas_ref 424968
+  yz 96 2030 msg operation_ref 171011 // "aceptar() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 96 72
+reflexivemsg 425352 synchronous
+  to durationcanvas_ref 425224
+  yz 150 2030 msg operation_ref 171139 // "isInputValid() : boolean"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 264 126
+reflexivemsg 425608 synchronous
+  to durationcanvas_ref 425480
+  yz 206 2030 msg operation_ref 171395 // "esDouble(in s : String) : boolean"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "kmsActualesT.getText()"
+  label_xy 264 182
+reflexivemsg 425864 synchronous
+  to durationcanvas_ref 425736
+  yz 268 2030 msg operation_ref 171395 // "esDouble(in s : String) : boolean"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "combustibleT.getText()"
+  label_xy 264 244
+msg 426376 synchronous
+  from durationcanvas_ref 425224
+  to durationcanvas_ref 426248
+  yz 364 2030 msg operation_ref 140163 // "getSingleton() : AlquilerVehiculos"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 256 340
+msg 426632 synchronous
+  from durationcanvas_ref 425224
+  to durationcanvas_ref 426504
+  yz 412 2030 msg operation_ref 142339 // "getEmpleado(in dni : String) : Empleado"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "empleadoDNIT.getText()"
+  label_xy 256 388
+reflexivemsg 427272 synchronous
+  to durationcanvas_ref 427144
+  yz 608 2030 explicitmsg "new Alert(AlertType.WARNING) + showAndWait()  (lista de errores)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 264 584
+msg 427784 synchronous
+  from durationcanvas_ref 424968
+  to durationcanvas_ref 427656
+  yz 728 2030 msg operation_ref 140163 // "getSingleton() : AlquilerVehiculos"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 256 704
+msg 428040 synchronous
+  from durationcanvas_ref 424968
+  to durationcanvas_ref 427912
+  yz 776 2030 msg operation_ref 158339 // "getIdReserva() : int"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 256 752
+msg 428296 synchronous
+  from durationcanvas_ref 424968
+  to durationcanvas_ref 428168
+  yz 824 2030 msg operation_ref 149507 // "getMatricula() : String"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 256 800
+msg 428552 synchronous
+  from durationcanvas_ref 424968
+  to durationcanvas_ref 428424
+  yz 872 2030 msg operation_ref 141571 // "crearEntrega(in id : int, inout fecha : LocalDateTime, in tipoSeguro : String, in kms : double, in combustible : double, in tiene_asociado : String, in es_realizada_por : String) : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "idReserva, LocalDateTime.now(), tipoSeguro, kms, combustible, matricula, dniEmpleado"
+  label_xy 256 848
+reflexivemsg 429192 synchronous
+  to durationcanvas_ref 429064
+  yz 1068 2030 explicitmsg "e.printStackTrace()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 264 1044
+end

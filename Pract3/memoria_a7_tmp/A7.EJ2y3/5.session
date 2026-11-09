@@ -1,0 +1,10 @@
+window_sizes 1440 603 287 1147 430 120
+cleanlooks_style
+show_stereotypes
+selected componentdiagram_ref 128773 // EJ3
+open
+  classview_ref 128133 // EJ2.1
+  classview_ref 128389 // EJ2.2
+  componentview_ref 128133 // EJ3
+end
+end
