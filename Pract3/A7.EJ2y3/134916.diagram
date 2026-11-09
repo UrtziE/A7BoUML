@@ -1,0 +1,228 @@
+format 224
+
+classinstance 128004 class_ref 133891 // ControladorCrearCliente
+  name "controlador"   xyz 45.3 4 2000 life_line_z 2000
+classinstance 128132 class_ref 131203 // AlquilerVehiculos
+  name "alquiler"   xyz 589.9 4 2000 life_line_z 2000
+classinstance 128260 class_ref 131331 // Cliente
+  name "cliente"   xyz 1071.2 245.7 2000 life_line_z 2000
+classinstance 128388 class_ref 128259 // ClienteDTO
+  name "dto"   xyz 1800.9 713.2 2000 life_line_z 2000
+classinstance 128516 class_ref 128643 // DAL
+  name "dal"   xyz 2099.7 4 2000 life_line_z 2000
+continuation 129796 "continúa en AlquilerVehiculos.addCliente - c = cliente"
+  xyzwh 690.4 550.2 2025 1250 85
+continuation 133252 "continúa en DAL.crearCliente - delegación, DAO e INSERT"
+  xyzwh 690.4 2160.2 2025 1650 85
+fragment 133380 "alt"
+  color transparent xyzwh 24.9 2289.9 1990 2350 600
+  separator 4833
+end
+textcanvas 133508 "[DAL.crearCliente termina normalmente]"
+  xyzwh 129.9 2305.4 2025 1400 60
+textcanvas 133636 "[DAL.crearCliente lanza DAOExcepcion]"
+  xyzwh 129.9 2595.4 2025 1400 60
+note 134276 "N1. El constructor de once argumentos asigna
+los atributos. No envía mensajes a otras clases
+del proyecto."
+  xyzwh 2499.9 429.9 2025 720 220
+note 134404 "N2. Cada valor se asigna al atributo del DTO.
+Los resultados de getters se indican
+mediante v = getter()."
+  xyzwh 2499.9 2089.9 2025 720 220
+note 134532 "N3. Si DAL falla, se propaga DAOExcepcion:
+DAO -> DAL -> alquiler -> controlador.
+No se ejecutan los retornos normales."
+  xyzwh 2499.9 2389.9 2025 720 220
+note 134660 "N4. No hay rollback ni removeCliente().
+El objeto ya se añadió a la colección
+antes de llamar a DAL."
+  xyzwh 2499.9 2649.9 2025 720 220
+note 134788 "N5. El cierre del formulario pertenece a EJ2.1.2,
+después de terminar crearCliente correctamente."
+  xyzwh 2499.9 2909.9 2025 720 180
+durationcanvas 128644 classinstance_ref 128004 // controlador:ControladorCrearCliente
+  xyzwh 298 167.9 2010 11 2666
+end
+durationcanvas 128772 classinstance_ref 128132 // alquiler:AlquilerVehiculos
+  xyzwh 763 167.9 2010 11 2666
+  overlappingdurationcanvas 129540
+    xyzwh 769 490.4 2011 11 230
+  end
+end
+durationcanvas 128900 classinstance_ref 128260 // cliente:Cliente
+  xyzwh 1168 323.4 2010 11 127
+end
+durationcanvas 129028 classinstance_ref 128388 // dto:ClienteDTO
+  xyzwh 1904 814.9 2010 11 1191
+end
+durationcanvas 129156 classinstance_ref 128516 // dal:DAL
+  xyzwh 2151 2109.9 2010 11 660
+end
+durationcanvas 130180 classinstance_ref 128260 // cliente:Cliente
+  xyzwh 1169 928.4 2010 11 51
+end
+durationcanvas 130436 classinstance_ref 128260 // cliente:Cliente
+  xyzwh 1168 1024.9 2010 11 51
+end
+durationcanvas 130692 classinstance_ref 128260 // cliente:Cliente
+  xyzwh 1169 1118.4 2010 11 51
+end
+durationcanvas 130948 classinstance_ref 128260 // cliente:Cliente
+  xyzwh 1168 1214.9 2010 11 51
+end
+durationcanvas 131204 classinstance_ref 128260 // cliente:Cliente
+  xyzwh 1169 1307.4 2010 11 53
+end
+durationcanvas 131460 classinstance_ref 128260 // cliente:Cliente
+  xyzwh 1168 1404.9 2010 11 51
+end
+durationcanvas 131716 classinstance_ref 128260 // cliente:Cliente
+  xyzwh 1169 1498.4 2010 11 51
+end
+durationcanvas 131972 classinstance_ref 128260 // cliente:Cliente
+  xyzwh 1168 1594.9 2010 11 51
+end
+durationcanvas 132228 classinstance_ref 128260 // cliente:Cliente
+  xyzwh 1169 1688.4 2010 11 51
+end
+durationcanvas 132484 classinstance_ref 128260 // cliente:Cliente
+  xyzwh 1168 1784.9 2010 11 51
+end
+durationcanvas 132740 classinstance_ref 128260 // cliente:Cliente
+  xyzwh 1169 1878.4 2010 11 51
+end
+msg 129284 synchronous
+  from durationcanvas_ref 128644
+  to durationcanvas_ref 128772
+  yz 170 2030 msg operation_ref 141443 // "crearCliente(in DNI : String, in nombreyApellidos : String, in direccion : String, in poblacion : String, in codPostal : String, inout fechaCarnetConducir : LocalDateTime, in digitosTC : String, in mesTC : int, in anyoTC : int, in cvcTC : int, in tipoTC : String) : Cliente"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "datos"
+  label_xy 320 122
+msg 129412 synchronous
+  from durationcanvas_ref 128772
+  to durationcanvas_ref 128900
+  yz 325 2030 explicitmsg "Cliente(datos)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 840 277
+reflexivemsg 129668 synchronous
+  to durationcanvas_ref 129540
+  yz 490 2030 msg operation_ref 141827 // "addCliente(inout c : Cliente) : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "cliente"
+  label_xy 780 442
+selfreflexivemsg 129924
+  to durationcanvas_ref 129540
+  yz 712 2030 explicitmsg "void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 790 672
+msg 130052 synchronous
+  from durationcanvas_ref 128772
+  to durationcanvas_ref 129028
+  yz 815 2030 explicitmsg "ClienteDTO(cliente)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 930 767
+msg 130308 synchronous
+  from durationcanvas_ref 129028
+  to durationcanvas_ref 130180
+  yz 930 2030 explicitmsg "dni = getDNI()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1193 881
+msg 130564 synchronous
+  from durationcanvas_ref 129028
+  to durationcanvas_ref 130436
+  yz 1025 2030 explicitmsg "nombreyApellidos = getNombreyApellidos()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1192 977
+msg 130820 synchronous
+  from durationcanvas_ref 129028
+  to durationcanvas_ref 130692
+  yz 1120 2030 explicitmsg "direccion = getDireccion()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1193 1071
+msg 131076 synchronous
+  from durationcanvas_ref 129028
+  to durationcanvas_ref 130948
+  yz 1215 2030 explicitmsg "poblacion = getPoblacion()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1191 1167
+msg 131332 synchronous
+  from durationcanvas_ref 129028
+  to durationcanvas_ref 131204
+  yz 1310 2030 explicitmsg "codPostal = getCodPostal()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1193 1261
+msg 131588 synchronous
+  from durationcanvas_ref 129028
+  to durationcanvas_ref 131460
+  yz 1405 2030 explicitmsg "fechaCarnetConducir = getFechaCarnetConducir()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1192 1357
+msg 131844 synchronous
+  from durationcanvas_ref 129028
+  to durationcanvas_ref 131716
+  yz 1500 2030 explicitmsg "digitosTC = getDigitosTC()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1193 1451
+msg 132100 synchronous
+  from durationcanvas_ref 129028
+  to durationcanvas_ref 131972
+  yz 1595 2030 explicitmsg "mesTC = getMesTC()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1192 1547
+msg 132356 synchronous
+  from durationcanvas_ref 129028
+  to durationcanvas_ref 132228
+  yz 1690 2030 explicitmsg "añoTC = getAnyoTC()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1192 1641
+msg 132612 synchronous
+  from durationcanvas_ref 129028
+  to durationcanvas_ref 132484
+  yz 1785 2030 explicitmsg "cvcTC = getCvcTC()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1191 1737
+msg 132868 synchronous
+  from durationcanvas_ref 129028
+  to durationcanvas_ref 132740
+  yz 1880 2030 explicitmsg "tipoTC = getTipoTC()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1193 1831
+msg 132996 return
+  from durationcanvas_ref 129028
+  to durationcanvas_ref 128772
+  yz 1990 2030 explicitmsg "fin del constructor"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 950 1941
+msg 133124 synchronous
+  from durationcanvas_ref 128772
+  to durationcanvas_ref 129156
+  yz 2110 2030 msg operation_ref 131587 // "crearCliente(inout cliente : ClienteDTO) : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "dto"
+  label_xy 1050 2062
+msg 133764 return
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 128772
+  yz 2420 2030 explicitmsg "void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1250 2372
+msg 133892 return
+  from durationcanvas_ref 128772
+  to durationcanvas_ref 128644
+  yz 2520 2030 explicitmsg "cliente"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 390 2472
+msg 134020 return
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 128772
+  yz 2720 2030 explicitmsg "DAOExcepcion"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1200 2672
+msg 134148 return
+  from durationcanvas_ref 128772
+  to durationcanvas_ref 128644
+  yz 2820 2030 explicitmsg "DAOExcepcion"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 320 2772
+end
