@@ -1,7 +1,7 @@
 format 224
 "A7.EJ2y3"
-  revision 10
-  modified_by 8 "Zhijian Wu Wang"
+  revision 17
+  modified_by 4 "jorge-carvajal"
 
 
   
@@ -73,7 +73,52 @@ format 224
 
     sequencediagram 128261 "EJ2.1.2"
       sequencediagramsettings end
-      overlapping_bars size A4
+      overlapping_bars size A2-Landscape
+    end
+
+    sequencediagram 134532 "ControladorCrearCliente.isInputValid"
+      sequencediagramsettings end
+      overlapping_bars size A0
+    end
+
+    sequencediagram 134660 "AlquilerVehiculos.getCliente"
+      sequencediagramsettings end
+      overlapping_bars size 4000x5400
+    end
+
+    sequencediagram 134788 "DAL.getCliente"
+      sequencediagramsettings end
+      overlapping_bars size 4000x3000
+    end
+
+    sequencediagram 134916 "AlquilerVehiculos.crearCliente"
+      sequencediagramsettings end
+      overlapping_bars size 3400x3200
+    end
+
+    sequencediagram 135044 "AlquilerVehiculos.addCliente"
+      sequencediagramsettings end
+      overlapping_bars size A1-Landscape
+    end
+
+    sequencediagram 135172 "DAL.crearCliente"
+      sequencediagramsettings end
+      overlapping_bars size 4100x4200
+    end
+
+    sequencediagram 135428 "AlquilerVehiculos.getSingleton"
+      sequencediagramsettings end
+      overlapping_bars size A0-Landscape
+    end
+
+    sequencediagram 135556 "DAL.getSingleton"
+      sequencediagramsettings end
+      overlapping_bars size A0-Landscape
+    end
+
+    sequencediagram 135684 "ConstruccionDAO"
+      sequencediagramsettings end
+      overlapping_bars size A0-Landscape
     end
   end
 

@@ -92,5 +92,16 @@ ${members}}
       mysql_decl ""
       
     end
+    class 600067 "Alert"
+      visibility public
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+    end
+
   end
 end

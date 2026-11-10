@@ -1,0 +1,276 @@
+format 224
+
+classinstance 128004 class_ref 131203 // AlquilerVehiculos
+  name "alq"   xyz 44.5 4 2000 life_line_z 2000
+classinstance 128132 class_ref 128643 // DAL
+  name "dal"   xyz 489.5 4 2000 life_line_z 2000
+classinstance 128260 class_ref 132227 // ClienteDAOImp
+  name "cliDAO"   xyz 930 4 2000 life_line_z 2000
+classinstance 128388 class_ref 132099 // ConnectionManager
+  name "connManager"   xyz 1380 4 2000 life_line_z 2000
+classinstance 128516 class_ref 128259 // ClienteDTO
+  name "dto"   xyz 2032.5 4 2000 life_line_z 2000
+classinstance 128644 class_ref 129667 // DAOExcepcion
+  name "errorDAO"   xyz 2290.5 2386.5 2000 life_line_z 2000
+classinstance 128772 class_ref 130947 // Exception
+  name "e (SQLException)"   xyz 2750.5 4 2000 life_line_z 2000
+fragment 129540 "try - operaciones SQL"
+  color transparent xyzwh 24.5 369.5 1990 3090 1900
+end
+fragment 133508 "catch (SQLException e) - desde cualquier operación protegida"
+  color transparent xyzwh 24.5 2320 1990 3090 1030
+end
+fragment 134788 "alt"
+  color transparent xyzwh 24.5 3409.5 1990 3090 440
+  separator 4773
+end
+textcanvas 134916 "[crearCliente del DAO termina normalmente]"
+  xyzwh 2477 3445 2025 2940 60
+textcanvas 135044 "[DAOExcepcion del DAO]"
+  xyzwh 2587 3647 2025 2940 60
+note 135428 "N1. Convierte fecha a Timestamp (JDK omitido).
+Construye DBQ con los getters en el orden
+que aparece en la secuencia."
+  xyzwh 3209.5 649.5 2025 740 220
+note 135556 "N2. super(message) actúa sobre el MISMO objeto.
+No se crea otra instancia Exception
+para representar la superclase."
+  xyzwh 3209.5 2839.5 2025 740 220
+note 135684 "N3. El DAO lanza el errorDAO ya construido.
+Construirlo y lanzarlo son pasos diferentes."
+  xyzwh 3209.5 3089.5 2025 740 180
+note 135812 "N4. Estas llamadas del JDK se conservan porque
+pertenecen al tratamiento de errores."
+  xyzwh 3209.5 3299.5 2025 740 180
+note 135940 "N5. Si una operación falla, se salta al catch.
+close() no es un finally y puede no ejecutarse.
+DAL propaga DAOExcepcion."
+  xyzwh 3209.5 3509.5 2025 740 220
+note 136068 "N6. La excepción llega al manejador Aceptar,
+donde se ejecuta printStackTrace().
+AlquilerVehiculos tampoco la captura."
+  xyzwh 3209.5 3759.5 2025 740 220
+note 136196 "e es SQLException; se representa con el tipo
+base Exception existente en el modelo."
+  xyzwh 3209.5 109.5 2025 740 180
+durationcanvas 128900 classinstance_ref 128004 // alq:AlquilerVehiculos
+  xyzwh 187 165.5 2010 11 3622
+end
+durationcanvas 129028 classinstance_ref 128132 // dal:DAL
+  xyzwh 541 165.5 2010 11 3622
+end
+durationcanvas 129156 classinstance_ref 128260 // cliDAO:ClienteDAOImp
+  xyzwh 1085 286.5 2010 11 3032
+end
+durationcanvas 129668 classinstance_ref 128388 // connManager:ConnectionManager
+  xyzwh 1623 506 2010 11 70
+end
+durationcanvas 129924 classinstance_ref 128516 // dto:ClienteDTO
+  xyzwh 2136 646.5 2010 11 60
+end
+durationcanvas 130180 classinstance_ref 128516 // dto:ClienteDTO
+  xyzwh 2136 756.5 2010 11 60
+end
+durationcanvas 130436 classinstance_ref 128516 // dto:ClienteDTO
+  xyzwh 2136 866.5 2010 11 60
+end
+durationcanvas 130692 classinstance_ref 128516 // dto:ClienteDTO
+  xyzwh 2136 976.5 2010 11 60
+end
+durationcanvas 130948 classinstance_ref 128516 // dto:ClienteDTO
+  xyzwh 2136 1086.5 2010 11 60
+end
+durationcanvas 131204 classinstance_ref 128516 // dto:ClienteDTO
+  xyzwh 2136 1194.5 2010 11 60
+end
+durationcanvas 131460 classinstance_ref 128516 // dto:ClienteDTO
+  xyzwh 2136 1306.5 2010 11 60
+end
+durationcanvas 131716 classinstance_ref 128516 // dto:ClienteDTO
+  xyzwh 2136 1416.5 2010 11 60
+end
+durationcanvas 131972 classinstance_ref 128516 // dto:ClienteDTO
+  xyzwh 2136 1524.5 2010 11 60
+end
+durationcanvas 132228 classinstance_ref 128516 // dto:ClienteDTO
+  xyzwh 2138 1634.5 2010 11 60
+end
+durationcanvas 132484 classinstance_ref 128516 // dto:ClienteDTO
+  xyzwh 2136 1746.5 2010 11 60
+end
+durationcanvas 132740 classinstance_ref 128388 // connManager:ConnectionManager
+  xyzwh 1621 1895 2010 11 172
+end
+durationcanvas 133124 classinstance_ref 128388 // connManager:ConnectionManager
+  xyzwh 1623 2156.5 2010 11 60
+end
+durationcanvas 133636 classinstance_ref 128644 // errorDAO:DAOExcepcion
+  xyzwh 2460 2466 2010 11 702
+  overlappingdurationcanvas 134276
+    xyzwh 2466 2910 2011 11 70
+  end
+end
+durationcanvas 133892 classinstance_ref 128772 // e (SQLException):Exception
+  xyzwh 2938 2645.5 2010 11 142
+end
+msg 129284 synchronous
+  from durationcanvas_ref 128900
+  to durationcanvas_ref 129028
+  yz 170 2030 msg operation_ref 131587 // "crearCliente(inout cliente : ClienteDTO) : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "dto"
+  label_xy 260 120
+msg 129412 synchronous
+  from durationcanvas_ref 129028
+  to durationcanvas_ref 129156
+  yz 290 2030 msg operation_ref 164483 // "crearCliente(inout c : ClienteDTO) : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "dto"
+  label_xy 670 240
+msg 129796 synchronous
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 129668
+  yz 510 2030 msg operation_ref 165635 // "connect() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1170 460
+msg 130052 synchronous
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 129924
+  yz 650 2030 explicitmsg "fecha = getFechaCarnetConducir()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1201 600
+msg 130308 synchronous
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 130180
+  yz 760 2030 explicitmsg "dni = getDni()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1200 710
+msg 130564 synchronous
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 130436
+  yz 870 2030 explicitmsg "nombreyApellidos = getNombreyApellidos()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1200 820
+msg 130820 synchronous
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 130692
+  yz 980 2030 explicitmsg "direccion = getDireccion()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1201 930
+msg 131076 synchronous
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 130948
+  yz 1090 2030 explicitmsg "poblacion = getPoblacion()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1200 1040
+msg 131332 synchronous
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 131204
+  yz 1200 2030 explicitmsg "codPostal = getCodPostal()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1201 1150
+msg 131588 synchronous
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 131460
+  yz 1310 2030 explicitmsg "digitosTC = getDigitosTC()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1200 1260
+msg 131844 synchronous
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 131716
+  yz 1420 2030 explicitmsg "mesTC = getMesTC()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1200 1370
+msg 132100 synchronous
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 131972
+  yz 1530 2030 explicitmsg "añoTC = getAñoTC()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1200 1480
+msg 132356 synchronous
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 132228
+  yz 1640 2030 explicitmsg "cvcTC = getCvcTC()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1200 1590
+msg 132612 synchronous
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 132484
+  yz 1750 2030 explicitmsg "tipoTC = getTipoTC()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1201 1700
+msg 132868 synchronous
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 132740
+  yz 1900 2030 msg operation_ref 166019 // "queryDB(in sql : String) : ResultSet"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "DBQ: INSERT INTO Cliente
+VALUES (...)"
+  label_xy 1136 1820
+msg 132996 return
+  from durationcanvas_ref 132740
+  to durationcanvas_ref 129156
+  yz 2050 2030 explicitmsg "ResultSet (valor ignorado)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1120 2000
+msg 133252 synchronous
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 133124
+  yz 2160 2030 msg operation_ref 165763 // "close() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1200 2110
+msg 133380 return
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 129028
+  yz 2250 2030 explicitmsg "void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 730 2200
+msg 133764 synchronous
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 133636
+  yz 2470 2030 msg operation_ref 139651 // "DAOExcepcion(inout e : Exception)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "e"
+  label_xy 1654 2420
+msg 134020 synchronous
+  from durationcanvas_ref 133636
+  to durationcanvas_ref 133892
+  yz 2650 2030 explicitmsg "getMessage()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 2512 2600
+msg 134148 return
+  from durationcanvas_ref 133892
+  to durationcanvas_ref 133636
+  yz 2770 2030 explicitmsg "message"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 2553 2720
+reflexivemsg 134404 synchronous
+  to durationcanvas_ref 134276
+  yz 2910 2030 explicitmsg "super(message)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 2463 2860
+msg 134532 return
+  from durationcanvas_ref 133636
+  to durationcanvas_ref 129156
+  yz 3150 2030 explicitmsg "errorDAO"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1701 3100
+msg 134660 return
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 129028
+  yz 3300 2030 explicitmsg "DAOExcepcion"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 650 3250
+msg 135172 return
+  from durationcanvas_ref 129028
+  to durationcanvas_ref 128900
+  yz 3560 2030 explicitmsg "void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 270 3510
+msg 135300 return
+  from durationcanvas_ref 129028
+  to durationcanvas_ref 128900
+  yz 3770 2030 explicitmsg "DAOExcepcion"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 220 3720
+end
