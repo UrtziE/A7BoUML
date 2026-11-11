@@ -1,9 +1,7 @@
 format 224
 "A7.EJ2y3"
-
-  revision 12
+  revision 13
   modified_by 3 "urtzi"
-
 
 
   
@@ -328,7 +326,7 @@ format 224
 
       simplerelation 130307
 	-_->
-	  on component_ref 128643 // Entregar veh�culo reservado
+	  on component_ref 128643 // Entregar vehiculo reservado
       end
 
       simplerelation 130435
@@ -338,7 +336,7 @@ format 224
 
       simplerelation 130563
 	-_->
-	  on component_ref 128771 // Listar veh�culos disponibles
+	  on component_ref 128771 // Listar vehiculos disponibles
       end
 
       simplerelation 130691
@@ -400,7 +398,7 @@ format 224
       end
     end
 
-    component 128643 "Entregar veh�culo reservado"
+    component 128643 "Entregar vehiculo reservado"
       simplerelation 128899
 	-_->
 	  on component_ref 129027 // Error
@@ -412,7 +410,7 @@ format 224
       end
     end
 
-    component 128771 "Listar veh�culos disponibles"
+    component 128771 "Listar vehiculos disponibles"
       simplerelation 129155
 	-_->
 	  on component_ref 129027 // Error
@@ -454,12 +452,12 @@ format 224
 
       simplerelation 129027
 	-_->
-	  on component_ref 128643 // Entregar veh�culo reservado
+	  on component_ref 128643 // Entregar vehiculo reservado
       end
 
       simplerelation 129283
 	-_->
-	  on component_ref 128771 // Listar veh�culos disponibles
+	  on component_ref 128771 // Listar vehiculos disponibles
       end
 
       simplerelation 129539
