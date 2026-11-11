@@ -1,0 +1,82 @@
+format 224
+
+classinstance 454664 class_ref 131203 // AlquilerVehiculos
+  name "alq"   xyz 178 4 2000 life_line_z 2000
+classinstance 454792 class_ref 128643 // DAL
+  name "dal"   xyz 534 4 2000 life_line_z 2000
+classinstance 454920 class_ref 130691 // Reserva
+  name ""   xyz 748 334 2000 life_line_z 2000
+note 457352 "Continuación de AlquilerVehiculos.crearEntrega."
+  xyzwh 20 720 2000 760 72
+fragment 455944 "opt"
+  xyzwh 251 294 1990 608 346
+end
+fragment 455304 "opt"
+  xyzwh 251 128 1990 608 530
+end
+textcanvas 455432 "[la reserva no está en coleccionReservas]"
+  xyzwh 339 132 2020 467 26
+textcanvas 456072 "[resDTO != null]"
+  xyzwh 339 298 2020 192 26
+continuation 455816 "continúa en DAL.getReserva"
+  xyzwh 565 218 2025 316 30
+continuation 456456 "continúa en Reserva.Reserva"
+  xyzwh 784 404 2025 327 30
+durationcanvas 455048 classinstance_ref 454664 // alq:AlquilerVehiculos
+  xyzwh 296 96 2010 11 578
+  overlappingdurationcanvas 456584
+    xyzwh 302 502 2011 11 82
+  end
+end
+durationcanvas 455560 classinstance_ref 454792 // dal:DAL
+  xyzwh 575 184 2010 11 104
+end
+durationcanvas 456200 classinstance_ref 454920 // :Reserva
+  xyzwh 794 368 2010 11 106
+end
+durationcanvas 456840 classinstance_ref 454920 // :Reserva
+  xyzwh 794 546 2010 11 32
+end
+durationcanvas 457096 classinstance_ref 454920 // :Reserva
+  xyzwh 794 600 2010 11 32
+end
+lostfoundmsgsupport 457480 xyz 10 91 2015
+msg 455176 found_synchronous
+  from lostfoundmsgsupport_ref 457480
+  to durationcanvas_ref 455048
+  yz 96 2030 msg operation_ref 142723 // "getReserva"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "idReserva"
+  label_xy 24 72
+msg 455688 synchronous
+  from durationcanvas_ref 455048
+  to durationcanvas_ref 455560
+  yz 184 2030 msg operation_ref 132611 // "getReserva"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "idReserva"
+  label_xy 315 160
+msg 456328 synchronous
+  from durationcanvas_ref 455048
+  to durationcanvas_ref 456200
+  yz 350 2030 explicitmsg "new Reserva(resDTO)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 315 326
+reflexivemsg 456712 synchronous
+  to durationcanvas_ref 456584
+  yz 502 2030 msg operation_ref 142467 // "addReserva"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  args "reserva"
+  label_xy 323 478
+msg 456968 synchronous
+  from durationcanvas_ref 456584
+  to durationcanvas_ref 456840
+  yz 546 2030 msg operation_ref 158339 // "getIdReserva"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 315 522
+msg 457224 synchronous
+  from durationcanvas_ref 455048
+  to durationcanvas_ref 457096
+  yz 600 2030 explicitmsg "<<create>> new Reserva(resDTO)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 315 576
+end

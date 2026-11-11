@@ -1,0 +1,51 @@
+format 224
+
+classcanvas 325256 class_ref 129795 // ReservaDTO
+  classdiagramsettings member_max_width 0 end
+  xyz 60.0 60.0 2000
+end
+classcanvas 325384 class_ref 128259 // ClienteDTO
+  classdiagramsettings member_max_width 0 end
+  xyz 840.0 60.0 2000
+end
+classcanvas 325512 class_ref 129923 // EntregaDTO
+  classdiagramsettings member_max_width 0 end
+  xyz 60.0 420.0 2000
+end
+classcanvas 325640 class_ref 130179 // EmpleadoDTO
+  classdiagramsettings member_max_width 0 end
+  xyz 840.0 420.0 2000
+end
+classcanvas 325768 class_ref 128387 // CocheDTO
+  classdiagramsettings member_max_width 0 end
+  xyz 60.0 780.0 2000
+end
+classcanvas 325896 class_ref 129667 // DAOExcepcion
+  classdiagramsettings member_max_width 0 end
+  xyz 840.0 780.0 2000
+end
+note 326024 "DTO con los datos de una reserva tal como se guardan en la base de datos. Las relaciones se guardan como claves: DNI del cliente, nombre de la categoría e ids de las sucursales."
+  xyzwh 311.0 60.0 2000 300 258
+note 326152 "Excepción propia que se lanza cuando falla una operación de persistencia. Se propaga por las capas hasta el controlador, que la muestra con un aviso."
+  xyzwh 1049.0 780.0 2000 300 230
+note 326280 "DTO con los datos de una entrega. Guarda la matrícula del coche y el DNI del empleado."
+  xyzwh 276.0 420.0 2000 300 146
+note 326408 "DTO con los datos de un cliente para guardarlos o recuperarlos de la base de datos."
+  xyzwh 1098.0 60.0 2000 300 146
+note 326536 "DTO con los datos de un coche: matrícula, kilómetros, sucursal y categoría."
+  xyzwh 230.0 780.0 2000 300 146
+note 326664 "DTO con los datos de un empleado: DNI, nombre y si es administrador."
+  xyzwh 1060.0 420.0 2000 300 118
+line 326792 -_-_
+  from ref 325256 z 2001 to ref 326024
+line 326920 -_-_
+  from ref 325896 z 2001 to ref 326152
+line 327048 -_-_
+  from ref 325512 z 2001 to ref 326280
+line 327176 -_-_
+  from ref 325384 z 2001 to ref 326408
+line 327304 -_-_
+  from ref 325768 z 2001 to ref 326536
+line 327432 -_-_
+  from ref 325640 z 2001 to ref 326664
+end

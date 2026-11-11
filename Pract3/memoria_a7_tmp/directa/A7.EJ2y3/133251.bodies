@@ -1,0 +1,24 @@
+class AlquilerVehiculosApp
+!!!168963.java!!!	main(inout args : String [[]]) : void
+		launch(args);
+!!!169091.java!!!	start(inout primaryStage : Stage) : void
+		this.primaryStage = primaryStage;
+		this.primaryStage.setTitle("ALQUILER DE VEHICULOS");
+		initRootLayout();
+!!!169219.java!!!	initRootLayout() : void
+		try {
+			// Load root layout from fxml file.
+			FXMLLoader loader = new FXMLLoader();
+
+			loader.setLocation(AlquilerVehiculosApp.class
+					.getResource("principal.fxml"));
+			rootLayout = (BorderPane) loader.load();
+			// Show the scene containing the root layout.
+			Scene scene = new Scene(rootLayout);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+			ControladorPrincipal controlador = loader.getController();
+			controlador.setPrimaryStage(primaryStage);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}

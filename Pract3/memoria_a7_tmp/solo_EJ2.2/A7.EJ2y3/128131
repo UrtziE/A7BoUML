@@ -1,0 +1,43 @@
+format 224
+"src" // src
+  revision 1
+  modified_by 3 "urtzi"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  java_dir "/home/urtzi/eclipse-workspace/AlquilerDeVehiculosA7/src/"
+  package_ref 128259 // comunicacion
+
+  package_ref 128387 // logica
+
+  package_ref 128515 // persistencia
+
+  package_ref 128643 // excepciones
+
+  package_ref 128899 // presentacion
+end

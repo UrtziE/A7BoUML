@@ -1,0 +1,123 @@
+format 224
+
+classinstance 413960 class_ref 134147 // ControladorEntregarVehiculoReserva
+  name "ctrl"   xyz 189.5 4.5 2000 life_line_z 2000
+classinstance 414088 class_ref 131203 // AlquilerVehiculos
+  name "alq"   xyz 842.5 4.5 2000 life_line_z 2000
+classinstance 414216 class_ref 128643 // DAL
+  name "dal"   xyz 1329.5 4.5 2000 life_line_z 2000
+classinstance 414344 class_ref 130819 // Sucursal
+  name "s"   xyz 1846.5 4.5 2000 life_line_z 2000
+fragment 414984 "opt"
+  xyzwh 915 170 1990 1023 346
+end
+textcanvas 415112 "[alquiler == null]"
+  xyzwh 1002 174 2020 214 26
+fragment 415752 "opt"
+  xyzwh 1325.5 314 1990 612 110
+end
+textcanvas 415880 "[dal == null]"
+  xyzwh 1414 318 2020 159 26
+fragment 416776 "break"
+  xyzwh 360.5 586 1990 634 110
+end
+textcanvas 416904 "[DAOExcepcion]"
+  xyzwh 448 590 2020 170 26
+fragment 417288 "loop"
+  xyzwh 361 711.5 1990 1607 96
+end
+textcanvas 417416 "[i < sucurs.size()]"
+  xyzwh 449 716 2020 225 26
+continuation 418056 "continúa en ControladorEntregarVehiculoReserva.popularTablaReservas"
+  xyzwh 396.5 882 2025 767 54
+note 418184 "Continuación de EJ2.2.2. Tras rellenar los ComboBox y configurar botones y columnas, sucursalCB.getSelectionModel().select(0) dispara el listener que llama a popularTablaReservas."
+  xyzwh 19.5 1004 2000 760 150
+durationcanvas 414472 classinstance_ref 413960 // ctrl:ControladorEntregarVehiculoReserva
+  xyzwh 385 96 2010 11 862
+  overlappingdurationcanvas 417032
+    xyzwh 391 654 2011 11 34
+  end
+  overlappingdurationcanvas 417800
+    xyzwh 391 846 2011 11 106
+  end
+end
+durationcanvas 414728 classinstance_ref 414088 // alq:AlquilerVehiculos
+  xyzwh 942 138 2010 11 394
+  overlappingdurationcanvas 415240
+    xyzwh 948 238 2011 11 270
+    overlappingdurationcanvas 416264
+      xyzwh 954 468 2012 11 34
+    end
+  end
+end
+durationcanvas 415496 classinstance_ref 414216 // dal:DAL
+  xyzwh 1367 282 2010 11 158
+  overlappingdurationcanvas 416008
+    xyzwh 1373 382 2011 11 34
+  end
+end
+durationcanvas 416520 classinstance_ref 414088 // alq:AlquilerVehiculos
+  xyzwh 942 547 2010 11 32
+end
+durationcanvas 417544 classinstance_ref 414344 // s:Sucursal
+  xyzwh 1896 767 2010 11 32
+end
+lostfoundmsgsupport 418312 xyz 10 91 2015
+msg 414600 found_synchronous
+  from lostfoundmsgsupport_ref 418312
+  to durationcanvas_ref 414472
+  yz 96 2030 msg operation_ref 170883 // "initialize(inout arg0 : URL, inout arg1 : ResourceBundle) : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "location, resources"
+  label_xy 24 72
+msg 414856 synchronous
+  from durationcanvas_ref 414472
+  to durationcanvas_ref 414728
+  yz 138 2030 msg operation_ref 140163 // "getSingleton() : AlquilerVehiculos"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 425 114
+reflexivemsg 415368 synchronous
+  to durationcanvas_ref 415240
+  yz 238 2030 explicitmsg "new AlquilerVehiculos()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 987 214
+msg 415624 synchronous
+  from durationcanvas_ref 415240
+  to durationcanvas_ref 415496
+  yz 282 2030 msg operation_ref 131459 // "getSingleton() : DAL"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 979 258
+reflexivemsg 416136 synchronous
+  to durationcanvas_ref 416008
+  yz 382 2030 explicitmsg "new DAL()  (crea las implementaciones DAO)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1398 358
+reflexivemsg 416392 synchronous
+  to durationcanvas_ref 416264
+  yz 468 2030 explicitmsg "cargaSistema()  (no se detalla)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 987 444
+msg 416648 synchronous
+  from durationcanvas_ref 414472
+  to durationcanvas_ref 416520
+  yz 548 2030 msg operation_ref 140803 // "listarSucursales() : Sucursal"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 425 524
+reflexivemsg 417160 synchronous
+  to durationcanvas_ref 417032
+  yz 654 2030 explicitmsg "new Alert(AlertType.WARNING) + showAndWait()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 433 630
+msg 417672 synchronous
+  from durationcanvas_ref 414472
+  to durationcanvas_ref 417544
+  yz 768 2030 msg operation_ref 162563 // "getIdSucursal() : int"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 425 744
+reflexivemsg 417928 synchronous
+  to durationcanvas_ref 417800
+  yz 846 2030 msg operation_ref 170499 // "popularTablaReservas(in sucursal : int) : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "newValue"
+  label_xy 433 822
+end

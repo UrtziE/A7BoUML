@@ -1,0 +1,570 @@
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+
+Práctica 3 de ingeniería inversa
+Entregar vehículo reservado
+Memoria del segundo caso de uso · Proyecto A7
+Zhijian Wu Wang
+La entrega comienza en el menú principal de la aplicación. El empleado elige una sucursal, una reserva
+pendiente y un vehículo de la categoría correspondiente, e introduce los datos de la entrega. La operación
+registra la entrega y actualiza el estado persistido del coche.
+
+2.2.1 Diagrama de clases
+El diagrama EJ2.2.1 de la vista EJ2.2 reúne 29 clases e interfaces. Para identificarlas se siguió el manejador de la
+interfaz hasta las operaciones de persistencia y se incluyeron los objetos del dominio, los DTO y la excepción que
+intervienen en el recorrido.
+
+Organización del modelo
+Presentación. ControladorPrincipal abre el caso de uso. ControladorCasoDeUso aporta la inicialización común y
+ControladorEntregarVehiculoReserva gestiona las tablas y el formulario. Este último hereda del controlador base
+y maneja objetos Reserva y Coche.
+Dominio y lógica. AlquilerVehiculos centraliza las operaciones del caso de uso. Reserva enlaza con el cliente, la
+categoría y las sucursales de recogida y devolución. Entrega vincula la reserva con el coche y el empleado.
+Categoria permite recorrer la relación superior si la categoría solicitada carece de coches.
+Acceso a datos. AlquilerVehiculos se comunica con DAL. DAL trabaja con interfaces DAO. Las implementaciones
+ejecutan las consultas y escrituras a través de ConnectionManager y las capas intercambian DTO. DAOExcepcion
+representa los errores de persistencia.
+
+Alcance y representación
+La vista completa se desglosa en EJ2.2.1a–d. Las clases que se repiten entre vistas sirven de enlace para seguir
+las relaciones entre capas. Las figuras de esta memoria son esquemas de lectura elaborados a partir del modelo.
+Los diagramas editables y sus relaciones completas se encuentran en A7.EJ2y3.
+Devolucion y Danyo quedan fuera del recorrido de entrega. Categoria y Sucursal sí participan como objetos de
+dominio. Sus DAO y DTO se utilizan en la carga del sistema, cuyo detalle queda fuera del alcance de este
+ejercicio. Los tipos de JavaFX y del JDK pertenecen al entorno de ejecución.
+
+
+
+
+                                                                                                        Práctica 3 · 1
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+2.2.1 Clases de presentación y dominio
+
+
+
+
+Figura 1. Vista de presentación basada en EJ2.2.1a.
+
+
+
+
+Figura 2. Relaciones principales del dominio basadas en EJ2.2.1b.
+
+Elemento                                       Responsabilidad en el caso de uso
+
+ControladorPrincipal                           Recibe el evento del menú mediante entregarVehiculoReserva. Solicita la
+                                               inicialización y muestra la ventana del caso de uso.
+
+ControladorCasoDeUso                           Clase abstracta con la lógica común de apertura. Carga el FXML, obtiene el
+                                               controlador y le asocia la ventana y el controlador principal.
+
+ControladorEntregarVehiculoReserva             Inicializa el formulario y carga las reservas y los coches. Valida los datos y pide a
+                                               AlquilerVehiculos que cree la entrega.
+
+AlquilerVehiculos                              Fachada de la lógica. Gestiona las colecciones del dominio y coordina las
+                                               consultas y escrituras mediante DAL.
+
+
+
+
+                                                                                                                         Práctica 3 · 2
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+2.2.1 Objetos del dominio y datos intercambiados
+Elemento                                         Responsabilidad en el caso de uso
+
+Reserva                                          Representa la solicitud de alquiler. Incluye fechas y modalidad y referencia al
+                                                 cliente, la categoría, las sucursales y la entrega, si existe.
+
+Entrega                                          Registra fecha, tipo de seguro, kilometraje y combustible en el momento de la
+                                                 entrega. Relaciona la reserva, el coche y el empleado.
+
+Coche                                            Identifica el vehículo por su matrícula y almacena su kilometraje. Se relaciona
+                                                 con una categoría y, cuando está asignado a ella, con una sucursal.
+
+Categoria                                        Agrupa vehículos y define sus tarifas. Su referencia a una categoría superior
+                                                 permite ampliar la búsqueda de coches.
+
+Sucursal                                         Identifica la oficina por su identificador y dirección. Puede ser lugar de recogida
+                                                 o devolución y punto de adscripción de coches y empleados.
+
+Empleado                                         Representa al trabajador que realiza la entrega. El formulario usa su DNI para
+                                                 comprobar que existe y asociarlo a la entrega.
+
+Cliente                                          Representa a quien hizo la reserva. Su nombre y DNI se muestran en la tabla de
+                                                 reservas de la sucursal.
+
+ReservaDTO                                       Transfiere los datos persistidos de una reserva. Identifica sus relaciones por DNI
+                                                 del cliente, categoría e identificadores de sucursal.
+
+EntregaDTO                                       Transfiere los datos de la entrega para su consulta o inserción. Incluye el
+                                                 identificador de la reserva, la matrícula y el DNI del empleado.
+
+CocheDTO                                         Transfiere matrícula, kilometraje, sucursal y categoría del coche. Se utiliza al
+                                                 listar y recuperar vehículos.
+
+EmpleadoDTO                                      Transfiere el DNI, nombre y condición de administrador del empleado
+                                                 recuperado. Permite construir el objeto Empleado.
+
+ClienteDTO                                       Transfiere los datos personales y de tarjeta del cliente. Se usa al reconstruir el
+                                                 Cliente asociado a una reserva.
+
+DAOExcepcion                                     Excepción propia para errores del acceso a datos. El tratamiento depende de
+                                                 dónde se capture en el recorrido.
+
+
+
+
+Figura 3. DTO y excepción basados en EJ2.2.1d.
+
+
+
+
+                                                                                                                          Práctica 3 · 3
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+2.2.1 Clases e interfaces de persistencia
+
+
+
+
+Figura 4. Acceso a datos basado en EJ2.2.1c.
+
+Elemento                                       Responsabilidad en el caso de uso
+
+DAL                                            Fachada de acceso a datos. Delega las operaciones en los DAO y entrega a la
+                                               lógica los datos en forma de DTO.
+
+IReservaDAO                                    Declara las operaciones de persistencia de reservas. Para este caso se consultan
+                                               por sucursal de recogida y por identificador.
+
+ReservaDAOImp                                  Implementa IReservaDAO. Ejecuta las consultas y convierte los registros
+                                               obtenidos en ReservaDTO.
+
+IEntregaDAO                                    Declara la inserción de una entrega y su búsqueda por identificador.
+
+EntregaDAOImp                                  Implementa IEntregaDAO. Inserta el registro de entrega y reconstruye un
+                                               EntregaDTO cuando una consulta devuelve resultado.
+
+ICocheDAO                                      Declara el listado por sucursal, la búsqueda por matrícula y la modificación del
+                                               coche.
+
+CocheDAOImp                                    Implementa ICocheDAO. Consulta los coches y, al registrar la entrega, actualiza
+                                               la sucursal y el kilometraje del vehículo.
+
+IEmpleadoDAO                                   Declara las operaciones de persistencia de empleados. En este caso se utiliza la
+                                               búsqueda por DNI.
+
+EmpleadoDAOImp                                 Implementa IEmpleadoDAO. Recupera de la base de datos al empleado cuyo
+                                               DNI se indica.
+
+IClienteDAO                                    Declara las operaciones de persistencia de clientes. En este caso se utiliza la
+                                               búsqueda por DNI.
+
+ClienteDAOImp                                  Implementa IClienteDAO. Recupera al cliente de una reserva cuando la lógica
+                                               necesita consultarlo en la base de datos.
+
+ConnectionManager                              Abre y cierra la conexión y ejecuta las sentencias SQL solicitadas por las
+                                               implementaciones DAO.
+
+
+
+
+                                                                                                                        Práctica 3 · 4
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+2.2.2 Diagrama de secuencia
+El diagrama EJ2.2.2 empieza en el manejador entregarVehiculoReserva(event) del menú principal. Las 23
+continuaciones de la vista EJ2.2 amplían los mensajes de presentación, lógica y persistencia. Los eventos que
+llegan desde fuera de cada diagrama se indican con un punto de entrada.
+
+Apertura y carga de las reservas
+ControladorPrincipal llama a initCasoDeUso. El controlador base carga el FXML, se crea
+ControladorEntregarVehiculoReserva y se ejecuta initialize. La inicialización obtiene las sucursales, ordena sus
+identificadores, carga los seguros «todoriesgo» y «terceros» y registra los escuchadores. Al seleccionar la
+primera sucursal se dispara popularTablaReservas. El mismo método se ejecuta cuando cambia la sucursal.
+popularTablaReservas limpia la tabla y solicita listarReservasSucursal. DAL delega la consulta en ReservaDAOImp.
+La fachada reconstruye una Reserva por cada ReservaDTO, resuelve cliente, sucursales, categoría y entrega y
+guarda la reserva en memoria. La interfaz muestra las reservas cuyo getAsociado_a() devuelve null.
+
+Selección de un vehículo
+Cuando el empleado selecciona una reserva, listarCoches obtiene su categoría y consulta los coches de la
+sucursal seleccionada. La lógica construye los objetos Coche a partir de sus DTO y filtra por categoría. Si la lista
+filtrada queda vacía, prueba con la categoría superior y repite hasta encontrar coches o agotar la cadena. Si al
+final no hay resultados, el controlador muestra un aviso.
+
+Validación y registro de la entrega
+Al pulsar Aceptar, isInputValid comprueba que se han elegido reserva, coche y seguro, que el kilometraje y el
+combustible pueden convertirse a double y que el DNI corresponde a un empleado existente. Los mensajes de
+validación se acumulan en un aviso. Si la entrada es válida, aceptar llama a crearEntrega con la fecha y hora
+actuales, el id de reserva, los datos del formulario, la matrícula y el DNI.
+crearEntrega construye el EntregaDTO e inserta la entrega. Después modifica el coche mediante dos UPDATE,
+que dejan la sucursal a NULL y guardan el kilometraje indicado. A continuación construye Entrega, establece sus
+referencias a la reserva, al empleado y al coche y la guarda en la colección de entregas. Cuando la llamada
+termina correctamente, el controlador cierra la ventana.
+
+Tratamiento de errores
+Las operaciones DAO representadas convierten SQLException en DAOExcepcion. initialize, popularTablaReservas
+y listarCoches muestran un aviso si la capturan. aceptar y el constructor de Reserva imprimen la traza en los
+caminos de error modelados. La secuencia representa la llamada a cargaSistema() como parte de la inicialización
+del singleton y deja su implementación fuera del desarrollo.
+
+
+
+
+                                                                                                          Práctica 3 · 5
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+2.2.2 Secuencia principal y criterio de lectura
+
+
+
+
+Figura 5. EJ2.2.2. Apertura de la ventana y eventos del caso de uso.
+
+En las figuras siguientes, la columna de la izquierda muestra las llamadas y condiciones en orden de ejecución.
+Las flechas señalan el origen y el destino. Un tramo que vuelve a su propia línea de vida representa una llamada
+interna. Los rótulos de continuación remiten al método que se detalla en otra figura. Se abrevian algunos
+nombres de participantes y argumentos largos para facilitar la lectura.
+Las continuaciones se agrupan por la clase que inicia el recorrido. En las llamadas de persistencia aparece la
+implementación concreta del DAO que responde en ejecución. Las consultas breves a las colecciones en
+memoria se entienden en el contexto del método que las invoca. Las operaciones de biblioteca se condensan,
+con los avisos y excepciones relevantes para el flujo.
+
+
+
+
+                                                                                                     Práctica 3 · 6
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+Continuaciones de presentación
+initialize
+
+
+
+
+Figura 6. ControladorEntregarVehiculoReserva.initialize.
+
+
+
+
+                                                           Práctica 3 · 7
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+popularTablaReservas
+
+
+
+
+Figura 7. ControladorEntregarVehiculoReserva.popularTablaReservas.
+
+listarCoches
+
+
+
+
+Figura 8. ControladorEntregarVehiculoReserva.listarCoches.
+
+
+
+
+                                                                     Práctica 3 · 8
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+aceptar
+
+
+
+
+Figura 9. ControladorEntregarVehiculoReserva.aceptar.
+
+
+
+
+                                                        Práctica 3 · 9
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+Continuaciones de lógica
+AlquilerVehiculos.listarReservasSucursal
+
+
+
+
+Figura 10. AlquilerVehiculos.listarReservasSucursal.
+
+
+
+
+                                                       Práctica 3 · 10
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+AlquilerVehiculos.getCliente
+
+
+
+
+Figura 11. AlquilerVehiculos.getCliente.
+
+AlquilerVehiculos.getEntrega
+
+
+
+
+Figura 12. AlquilerVehiculos.getEntrega.
+
+
+
+
+                                                       Práctica 3 · 11
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+AlquilerVehiculos.listarVehiculosCategoriaSucursal
+
+
+
+
+Figura 13. AlquilerVehiculos.listarVehiculosCategoriaSucursal.
+
+
+
+
+                                                                 Práctica 3 · 12
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+AlquilerVehiculos.getEmpleado
+
+
+
+
+Figura 14. AlquilerVehiculos.getEmpleado.
+
+AlquilerVehiculos.crearEntrega
+
+
+
+
+Figura 15. AlquilerVehiculos.crearEntrega.
+
+
+
+
+                                                       Práctica 3 · 13
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+AlquilerVehiculos.getReserva
+
+
+
+
+Figura 16. AlquilerVehiculos.getReserva.
+
+
+
+
+                                                       Práctica 3 · 14
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+Continuaciones de los constructores
+Reserva.Reserva
+
+
+
+
+Figura 17. Reserva.Reserva.
+
+
+
+
+                                                       Práctica 3 · 15
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+Entrega.Entrega
+
+
+
+
+Figura 18. Entrega.Entrega.
+
+Coche.Coche
+
+
+
+
+Figura 19. Coche.Coche.
+
+
+
+
+                                                       Práctica 3 · 16
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+Continuaciones de persistencia
+DAL.getReservasSucursal
+
+
+
+
+Figura 20. DAL.getReservasSucursal.
+
+DAL.getCliente
+
+
+
+
+Figura 21. DAL.getCliente.
+
+
+
+
+                                                       Práctica 3 · 17
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+DAL.getEntrega
+
+
+
+
+Figura 22. DAL.getEntrega.
+
+DAL.obtenerCoches
+
+
+
+
+Figura 23. DAL.obtenerCoches.
+
+
+
+
+                                                       Práctica 3 · 18
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+DAL.getEmpleado
+
+
+
+
+Figura 24. DAL.getEmpleado.
+
+DAL.getCoche
+
+
+
+
+Figura 25. DAL.getCoche.
+
+
+
+
+                                                       Práctica 3 · 19
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+DAL.getReserva
+
+
+
+
+Figura 26. DAL.getReserva.
+
+DAL.modificarCoche
+
+
+
+
+Figura 27. DAL.modificarCoche.
+
+
+
+
+                                                       Práctica 3 · 20
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+DAL.crearEntrega
+
+
+
+
+Figura 28. DAL.crearEntrega.
+
+
+
+
+                                                       Práctica 3 · 21
+MANTENIMIENTO Y EVOLUCIÓN DEL SOFTWARE / PROYECTO A7
+
+
+
+Declaración de uso de IA para el apartado 4
+Este texto recoge el uso de IA correspondiente a EJ2.2.1 y EJ2.2.2 para incorporarlo a la declaración conjunta de
+la práctica.
+
+Claude Opus 5.5
+Según los borradores de trabajo, se utilizó para revisar las clases participantes y las notas del diagrama, así como
+para reorganizar su disposición y dividirlo en cuatro vistas. Para la secuencia se utilizó Claude Code con Claude
+Opus 5.5 para seguir las llamadas Java, elaborar un generador de ficheros de BoUML y preparar el diagrama
+principal y sus 23 continuaciones. Los borradores recogen una revisión en BoUML y retoques de etiquetas y
+notas.
+Una de las peticiones de esa sesión fue «seguimos con la misma rama 2.2.1 que falta hacer el diagrama de
+secuencia y si lo mejor sería partirlo cuando lo hagas dime cómo lo has hecho y justificaciones».
+
+ChatGPT con Codex y GPT-6
+Se utilizó para consolidar la memoria en Word, contrastar las explicaciones de los borradores con los diagramas
+y cuerpos Java guardados en A7.EJ2y3 y preparar las figuras de lectura a partir del modelo. El resultado es esta
+memoria de los dos ejercicios.
+La petición fue «Vale dado este proyecto necesito que me hagas un Word con la memoria del proyecto me
+interesa que solo hagas mi parte con el control remoto si hace falta de escritorio que son el ejercicio 2.2.1 y el
+2.2.2 que son del segundo caso de uso. Te adjunto todo lo que necesitarás, si te hace falta cualquier cosa o duda
+me dices».
+
+Material consultado
+Enunciado y presentación de la Práctica 3 de Ingeniería Inversa. Casos de uso del alquiler de vehículos. Proyecto
+A7.EJ2y3, vista EJ2.2. Borradores Explicacion_EJ2.2.1 y Explicacion_EJ2.2.2.
+
+
+
+
+                                                                                                       Práctica 3 · 22
+
