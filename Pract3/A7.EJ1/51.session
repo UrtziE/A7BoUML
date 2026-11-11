@@ -1,0 +1,20 @@
+window_sizes 1268 892 343 919 702 128
+
+diagrams
+  active  classdiagram_ref 128133 // EJ1
+    906 659 100 A4 0 0
+end
+show_stereotypes
+selected attribute_ref 133683 // DESCRIPCION
+open
+  class_ref 129203 // Sucursal
+  attribute_ref 129331 // TIPOTC
+  class_ref 128307 // Categoria
+  class_ref 128435 // Empleado
+  class_ref 128563 // Reserva
+  class_ref 128691 // Coche
+  class_ref 128819 // Entrega
+  class_ref 128947 // Devolucion
+  class_ref 129075 // Da\u00f1o
+end
+end
