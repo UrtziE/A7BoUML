@@ -1,6 +1,6 @@
 format 224
 "A7.EJ2y3"
-  revision 11
+  revision 12
   modified_by 3 "urtzi"
 
 
@@ -317,6 +317,11 @@ format 224
 	-_->
 	  on component_ref 128003 // Ventana Principal
       end
+
+      simplerelation 138115
+	-_->
+	  on component_ref 129027 // Error
+      end
     end
 
     component 128387 "Listar categorias"
@@ -413,6 +418,11 @@ format 224
       simplerelation 129539
 	-_->
 	  on component_ref 128899 // Listar sucursales
+      end
+
+      simplerelation 138243
+	-_->
+	  on component_ref 128259 // Crear Cliente
       end
     end
   end
