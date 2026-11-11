@@ -1,12 +1,18 @@
 window_sizes 1800 892 450 1344 702 128
 
 diagrams
-  active  sequencediagram_ref 128261 // EJ2.1.2
-    1075 561 100 A4 228 0
+  active  classdiagram_ref 128127 // EJ2.1.1
+    1075 561 100 A4 0 0
 end
 show_stereotypes
-selected classdiagram_ref 128133 // EJ2.1.1
+selected classdiagram_ref 128127 // EJ2.1.1
 open
-  classview_ref 128133 // EJ2.1
+  classview_ref 128003 // comunicacion
+  classview_ref 128131 // logica
+  classview_ref 128259 // persistencia
+  classview_ref 128387 // excepciones
+  classview_ref 128643 // presentacion
+  sequencediagram_ref 135556 // DAL.getSingleton
+  classview_ref 128515 // unknown
 end
 end

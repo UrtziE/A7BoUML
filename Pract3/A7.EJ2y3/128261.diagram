@@ -16,13 +16,13 @@ continuation 130564 "continúa en AlquilerVehiculos.crearCliente"
   xyzwh 1303 1042.5 2015 663 82
 fragment 130820 "alt"
   color transparent xyzwh 162.5 571.5 2000 1935 773
-  separator 8583
+  separator 8582
 end
 textcanvas 130948 "[valido == true]
 "
-  xyzwh 1800 598.5 2005 290 134
+  xyzwh 1800 598 2005 290 134
 textcanvas 131076 "[valido == false]"
-  xyzwh 1831 1257.5 2005 215 41
+  xyzwh 1831 1257 2005 215 41
 fragment 131204 "try"
   xyzwh 109.4 212 2000 2020 1158
 end
@@ -40,24 +40,24 @@ sin excepción, se cierra la ventana.
 Si la validación falla, la ventana permanece abierta."
   xyzwh 1918 1415 2005 364 229
 durationcanvas 128516 classinstance_ref 128004 // ctrl:ControladorCrearCliente
-  xyzwh 319 122.3 2010 11 1464
+  xyzwh 232 122 2010 11 1464
 end
 durationcanvas 128900 classinstance_ref 128004 // ctrl:ControladorCrearCliente
-  xyzwh 319 283.5 2010 11 277
+  xyzwh 232 283 2010 11 277
   overlappingdurationcanvas 129540
-    xyzwh 325 284.5 2020 11 270
+    xyzwh 238 284 2020 11 270
   end
 end
 durationcanvas 129796 classinstance_ref 128132 // :AlquilerVehiculos
-  xyzwh 814 630 2010 11 290
+  xyzwh 761 630 2010 11 290
 end
 durationcanvas 130308 classinstance_ref 128260 // alq:AlquilerVehiculos
-  xyzwh 1297 965.5 2010 11 225
+  xyzwh 1234 965 2010 11 225
 end
 durationcanvas 131460 classinstance_ref 128388 // e:DAOExcepcion
-  xyzwh 1700 1524.8 2010 11 25
+  xyzwh 1654 1524 2010 11 25
 end
-lostfoundmsgsupport 128644 xyz 4.8 125 2015
+lostfoundmsgsupport 128644 xyz 4 125 2015
 msg 128772 found_synchronous
   from lostfoundmsgsupport_ref 128644
   to durationcanvas_ref 128516

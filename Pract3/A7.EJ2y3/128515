@@ -1,7 +1,7 @@
 format 224
 "persistencia" // src::persistencia
-  revision 1
-  modified_by 3 "urtzi"
+  revision 2
+  modified_by 127 "Steve"
   // class settings
   
   classdiagramsettings member_max_width 0 end
@@ -106,6 +106,7 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
+      comment "Interfaz de persistencia de clientes, con buscarCliente (por DNI) y crearCliente. Desacopla DAL de la implementación concreta."
       operation 163971 "buscarCliente"
 	public return_type class_ref 128259 // ClienteDTO
 	nparams 1
@@ -134,6 +135,13 @@ ${members}}
 	
 	
 	
+      end
+
+      classrelation 129791 // <dependency>
+	relation 129663 -_->
+	  a public
+	    classrelation_ref 129791 // <dependency>
+	  b parent class_ref 128259 // ClienteDTO
       end
     end
 
@@ -467,6 +475,7 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
+      comment "Gestiona la conexión con la base de datos (connect, close) y ejecuta las sentencias SQL (queryDB, updateDB)."
       attribute 138243 "sourceURL"
 	private explicit_type "String"
 	cpp_decl ""
@@ -578,6 +587,7 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
+      comment "Implementación de IClienteDAO sobre la base de datos. Construye la sentencia SQL (consulta o INSERT) y la ejecuta con ConnectionManager, convirtiendo los errores SQL en DAOExcepcion."
       classrelation 133251 // <realization>
 	relation 133251 -_-|>
 	  a public
@@ -641,6 +651,27 @@ ${members}}
 	
 	
 	
+      end
+
+      classrelation 128767 // <dependency>
+	relation 128767 -_->
+	  a public
+	    classrelation_ref 128767 // <dependency>
+	  b parent class_ref 128259 // ClienteDTO
+      end
+
+      classrelation 128895 // <dependency>
+	relation 128895 -_->
+	  a public
+	    classrelation_ref 128895 // <dependency>
+	  b parent class_ref 129667 // DAOExcepcion
+      end
+
+      classrelation 130047 // <dependency>
+	relation 129919 -_->
+	  a public
+	    classrelation_ref 130047 // <dependency>
+	  b parent class_ref 128899 // IClienteDAO
       end
     end
 

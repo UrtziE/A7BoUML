@@ -1,7 +1,7 @@
 format 224
 "comunicacion" // src::comunicacion
-  revision 1
-  modified_by 3 "urtzi"
+  revision 2
+  modified_by 127 "Steve"
   // class settings
   
   classdiagramsettings member_max_width 0 end
@@ -368,6 +368,7 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
+      comment "Objeto de transferencia con los datos de un cliente. Es lo que viaja entre la capa lógica y la de persistencia, y se construye a partir de un Cliente."
       attribute 128899 "dni"
 	private explicit_type "String"
 	cpp_decl ""
@@ -462,6 +463,13 @@ ${members}}
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
+      end
+
+      classrelation 128511 // <dependency>
+	relation 128511 -_->
+	  a public
+	    classrelation_ref 128511 // <dependency>
+	  b parent class_ref 131331 // Cliente
       end
     end
 
@@ -667,6 +675,7 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
+      comment "Fachada (singleton) de acceso a datos, en el paquete comunicacion. Crea los DAO concretos y delega en ellos; para clientes, crearCliente y getCliente delegan en IClienteDAO."
       classrelation 128003 // catDAO (<unidirectional association>)
 	relation 128003 --->
 	  a role_name "catDAO" private
@@ -973,6 +982,29 @@ ${members}}
 	
 	
 	
+      end
+
+      classrelation 129407 // <dependency>
+	relation 129279 -_->
+	  a public
+	    classrelation_ref 129407 // <dependency>
+	  b parent class_ref 128259 // ClienteDTO
+      end
+
+      classrelation 129535 // <unidirectional association>
+	relation 129407 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 129535 // <unidirectional association>
+	  b parent class_ref 128899 // IClienteDAO
+      end
+
+      classrelation 129663 // <dependency>
+	relation 129535 -_->
+	  a public
+	    classrelation_ref 129663 // <dependency>
+	  b parent class_ref 132227 // ClienteDAOImp
       end
     end
 

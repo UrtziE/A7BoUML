@@ -1,7 +1,7 @@
 format 224
 "logica" // src::logica
-  revision 2
-  modified_by 8 "Zhijian Wu Wang"
+  revision 3
+  modified_by 127 "Steve"
   // class settings
   
   classdiagramsettings member_max_width 0 end
@@ -1932,6 +1932,7 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
+      comment "Clase de la capa lógica (singleton) que guarda en memoria las colecciones de objetos de negocio, entre ellas los clientes. crearCliente construye el Cliente, lo añade a su colección y envía su ClienteDTO a DAL; getCliente lo busca en memoria o en la base de datos."
       classrelation 129283 // coleccionClientes (<unidirectional association>)
 	relation 129283 --->
 	  stereotype "Hashtable"
@@ -1989,15 +1990,6 @@ ${members}}
 "
 	    classrelation_ref 129923 // dal (<unidirectional association>)
 	  b parent class_ref 128643 // DAL
-      end
-
-      classrelation 130051 // alquiler (<unidirectional association>)
-	relation 130051 --->
-	  a role_name "alquiler" class_relation private
-	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
-"
-	    classrelation_ref 130051 // alquiler (<unidirectional association>)
-	  b parent class_ref 131203 // AlquilerVehiculos
       end
 
       operation 140035 "AlquilerVehiculos"
@@ -2409,6 +2401,38 @@ ${members}}
 	
 	
       end
+
+      classrelation 128383 // <dependency>
+	relation 128383 -_->
+	  a public
+	    classrelation_ref 128383 // <dependency>
+	  b parent class_ref 128259 // ClienteDTO
+      end
+
+      classrelation 129023 // <association>
+	relation 129023 ----
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 129023 // <association>
+	  b role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 129151 // <association>
+      end
+
+      classrelation 129151 // <association>
+	relation_ref 129023 // <association>
+      end
+
+      classrelation 129279 // <unidirectional association>
+	relation 129151 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 129279 // <unidirectional association>
+	  b parent class_ref 131203 // AlquilerVehiculos
+      end
     end
 
     class 131331 "Cliente"
@@ -2423,6 +2447,7 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
+      comment "Clase de dominio con los datos de un cliente: DNI, nombre, dirección, población, código postal, fecha de carnet y datos de la tarjeta. Se puede construir a partir de sus datos o de un ClienteDTO."
       attribute 133763 "DNI"
 	private explicit_type "String"
 	cpp_decl ""
@@ -2879,6 +2904,13 @@ ${members}}
 	
 	
 	
+      end
+
+      classrelation 128639 // <dependency>
+	relation 128639 -_->
+	  a public
+	    classrelation_ref 128639 // <dependency>
+	  b parent class_ref 128259 // ClienteDTO
       end
     end
 

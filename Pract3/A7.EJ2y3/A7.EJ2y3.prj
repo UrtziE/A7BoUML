@@ -1,7 +1,7 @@
 format 224
 "A7.EJ2y3"
-  revision 13
-  modified_by 3 "urtzi"
+  revision 14
+  modified_by 127 "Steve"
 
 
   
@@ -44,6 +44,8 @@ format 224
 
   mark_for_import
   
+  ncouples 1
+  key "html dir" value "C:\\Users\\Steve\\Desktop\\MES/"
   package_ref 128131 // src
 
   classview 128133 "EJ2.1"
@@ -66,11 +68,6 @@ format 224
     
     activitydiagramsettings
      end
-    classdiagram 128133 "EJ2.1.1"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-
     sequencediagram 128261 "EJ2.1.2"
       sequencediagramsettings end
       overlapping_bars size A2-Landscape
@@ -119,6 +116,11 @@ format 224
     sequencediagram 135684 "ConstruccionDAO"
       sequencediagramsettings end
       overlapping_bars size A0-Landscape
+    end
+
+    classdiagram 128127 "EJ2.1.1"
+      classdiagramsettings draw_all_relations no hide_operations yes member_max_width 0 end
+      size A4
     end
   end
 
