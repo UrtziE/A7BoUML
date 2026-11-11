@@ -1,52 +1,52 @@
 format 224
 
 classinstance 409736 class_ref 133763 // ControladorPrincipal
-  name ""   xyz 278 4.5 2000 life_line_z 2000
+  name ""   xyz 278 5.3 2000 life_line_z 2000
 classinstance 409864 class_ref 133507 // ControladorCasoDeUso
-  name ""   xyz 1250.5 4.5 2000 life_line_z 2000
+  name ""   xyz 1250.7 5.3 2000 life_line_z 2000
 classinstance 409992 class_ref 134147 // ControladorEntregarVehiculoReserva
-  name "ctrl"   xyz 1829.5 220.5 2000 life_line_z 2000
+  name "ctrl"   xyz 1830.1 221.1 2000 life_line_z 2000
 continuation 411400 "continúa en ControladorEntregarVehiculoReserva.initialize"
-  xyzwh 2036 338 2025 657 54
+  xyzwh 2036.2 338.2 2025 657 54
 continuation 412296 "continúa en ControladorEntregarVehiculoReserva.popularTablaReservas"
-  xyzwh 2036.5 572 2025 767 54
+  xyzwh 2036.7 572.4 2025 767 54
 continuation 412680 "continúa en ControladorEntregarVehiculoReserva.listarCoches"
-  xyzwh 2036.5 692 2025 679 54
+  xyzwh 2036.5 692.4 2025 679 54
 continuation 413064 "continúa en ControladorEntregarVehiculoReserva.aceptar"
-  xyzwh 2035.5 812 2025 624 54
+  xyzwh 2036.1 812.4 2025 624 54
 note 413192 "Parte inicial del diagrama EJ2.2.2. Empieza en el manejador del botón 'Entregar vehículo reservado' del menú principal (ControladorPrincipal.entregarVehiculoReserva), que abre la ventana del caso de uso."
-  xyzwh 19.5 928 2000 760 150
+  xyzwh 19.7 927.6 2000 760 150
 note 413320 "Después, los eventos de la ventana: al cambiar la sucursal seleccionada se ejecuta popularTablaReservas, al seleccionar una reserva listarCoches y al pulsar Aceptar el método aceptar, que crea la entrega. Cada uno continúa en su propio diagrama."
-  xyzwh 17.5 1091.5 2000 760 176
+  xyzwh 18.1 1091.7 2000 760 176
 durationcanvas 410120 classinstance_ref 409736 // :ControladorPrincipal
-  xyzwh 379 96 2010 11 426
+  xyzwh 360 96 2010 11 426
   overlappingdurationcanvas 410376
-    xyzwh 385 150 2011 11 318
+    xyzwh 366 150 2011 11 318
   end
 end
 durationcanvas 410632 classinstance_ref 409864 // :ControladorCasoDeUso
-  xyzwh 1366 193 2010 11 268
+  xyzwh 1344 192 2010 11 268
 end
 durationcanvas 410888 classinstance_ref 409992 // ctrl:ControladorEntregarVehiculoReserva
-  xyzwh 2025 236 2010 11 52
+  xyzwh 1987 235 2010 11 52
 end
 durationcanvas 411144 classinstance_ref 409992 // ctrl:ControladorEntregarVehiculoReserva
-  xyzwh 2025 303 2010 11 104
+  xyzwh 1987 303 2010 11 104
 end
 durationcanvas 411528 classinstance_ref 409992 // ctrl:ControladorEntregarVehiculoReserva
-  xyzwh 2025 423 2010 11 32
+  xyzwh 1987 423 2010 11 32
 end
 durationcanvas 411784 classinstance_ref 409992 // ctrl:ControladorEntregarVehiculoReserva
-  xyzwh 2025 483 2010 11 32
+  xyzwh 1987 483 2010 11 32
 end
 durationcanvas 412040 classinstance_ref 409992 // ctrl:ControladorEntregarVehiculoReserva
-  xyzwh 2025 537 2010 11 104
+  xyzwh 1987 537 2010 11 104
 end
 durationcanvas 412424 classinstance_ref 409992 // ctrl:ControladorEntregarVehiculoReserva
-  xyzwh 2025 657 2010 11 104
+  xyzwh 1987 657 2010 11 104
 end
 durationcanvas 412808 classinstance_ref 409992 // ctrl:ControladorEntregarVehiculoReserva
-  xyzwh 2025 777 2010 11 104
+  xyzwh 1987 777 2010 11 104
 end
 lostfoundmsgsupport 413448 xyz 10 98 2015
 lostfoundmsgsupport 413576 xyz 1662 540 2015

@@ -1,7 +1,7 @@
 format 224
 "excepciones" // src::excepciones
-  revision 1
-  modified_by 3 "urtzi"
+  revision 2
+  modified_by 127 "Steve"
   // class settings
   
   classdiagramsettings member_max_width 0 end
@@ -66,6 +66,7 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
+      comment "Excepción propia que indica un error en el acceso a datos. Envuelve las excepciones SQL y se propaga hasta el controlador."
       classrelation 129027 // <generalisation>
 	relation 129027 ---|>
 	  a public

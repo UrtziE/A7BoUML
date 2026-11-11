@@ -1,7 +1,7 @@
 format 224
 "presentacion" // src::presentacion
-  revision 1
-  modified_by 3 "urtzi"
+  revision 2
+  modified_by 127 "Steve"
   // class settings
   
   classdiagramsettings member_max_width 0 end
@@ -150,6 +150,7 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
+      comment "Clase abstracta base de los controladores de las ventanas JavaFX. Guarda la ventana (Stage) y el ControladorPrincipal, y su método estático initCasoDeUso carga el FXML y crea el controlador."
       classrelation 134915 // <realization>
 	relation 134915 -_-|>
 	  a public
@@ -245,6 +246,7 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
+      comment "Controlador de la ventana principal con el menú. Su manejador crearCliente abre la ventana del caso de uso mediante initCasoDeUso."
       attribute 144771 "CREAR_CLIENTE"
 	class_attribute const_attribute private explicit_type "String"
 	init_value " \"crear-cliente.fxml\""
@@ -509,6 +511,13 @@ casos de uso Crear Reserva y Listar Reservas de una Sucursal
 	
 	
       end
+
+      classrelation 128255 // <dependency>
+	relation 128255 -_->
+	  a public
+	    classrelation_ref 128255 // <dependency>
+	  b parent class_ref 133891 // ControladorCrearCliente
+      end
     end
 
     class 133891 "ControladorCrearCliente"
@@ -523,6 +532,7 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
+      comment "Controlador de la ventana ?Crear cliente?. Valida los datos del formulario, comprobando también que el DNI no exista, y al pulsar Aceptar invoca AlquilerVehiculos.crearCliente. Si hay errores muestra un aviso con los mensajes."
       classrelation 135171 // <generalisation>
 	relation 135171 ---|>
 	  a public
@@ -571,6 +581,21 @@ ${members}}
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
+      end
+
+      classrelation 128127 // <generalisation>
+	relation 128127 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128127 // <generalisation>
+	  b parent class_ref 131203 // AlquilerVehiculos
+      end
+
+      classrelation 128383 // <dependency>
+	relation 128383 -_->
+	  a public
+	    classrelation_ref 128383 // <dependency>
+	  b parent class_ref 129667 // DAOExcepcion
       end
     end
 

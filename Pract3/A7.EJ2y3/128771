@@ -1,7 +1,7 @@
 format 224
 "unknown" // unknown
-  revision 1
-  modified_by 3 "urtzi"
+  revision 2
+  modified_by 127 "Steve"
   // class settings
   
   classdiagramsettings member_max_width 0 end
@@ -63,6 +63,7 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
+      comment "Clase base de excepciones del JDK, de la que hereda DAOExcepcion."
     end
 
     class 133379 "Application"
@@ -91,17 +92,7 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
+      comment "Interfaz de JavaFX cuyo método initialize se invoca al cargar el FXML de la ventana."
     end
-    class 600067 "Alert"
-      visibility public
-      cpp_decl ""
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-    end
-
   end
 end
