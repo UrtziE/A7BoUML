@@ -1,6 +1,12 @@
-window_sizes 1137 672 284 847 515 104
+window_sizes 1213 731 223 984 566 104
 cleanlooks_style
+diagrams
+  active  componentdiagram_ref 128773 // EJ3
+    984 566 89 A4 0 0
+end
 show_stereotypes
-selected 
-package_ref 129 // A7.EJ2y3
+selected componentdiagram_ref 128773 // EJ3
+open
+  componentview_ref 128133 // EJ3
+end
 end
