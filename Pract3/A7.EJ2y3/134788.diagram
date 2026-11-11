@@ -1,0 +1,188 @@
+format 224
+
+classinstance 128004 class_ref 131203 // AlquilerVehiculos
+  name "alquiler"   xyz 45 4 2000 life_line_z 2000
+classinstance 128132 class_ref 128643 // DAL
+  name "dal"   xyz 489.5 4 2000 life_line_z 2000
+classinstance 128260 class_ref 132227 // ClienteDAOImp
+  name "cliDAO"   xyz 930 4 2000 life_line_z 2000
+classinstance 128388 class_ref 132099 // ConnectionManager
+  name "connManager"   xyz 1380 4 2000 life_line_z 2000
+classinstance 128516 class_ref 128259 // ClienteDTO
+  name "cliDTO"   xyz 1848 986.5 2000 life_line_z 2000
+classinstance 128644 class_ref 129667 // DAOExcepcion
+  name "errorDAO"   xyz 2280.5 1618 2000 life_line_z 2000
+classinstance 128772 class_ref 130947 // Exception
+  name "e (SQLException)"   xyz 2710.5 4 2000 life_line_z 2000
+fragment 129540 "try - buscarCliente"
+  color transparent xyzwh 24.5 370 1990 3070 1110
+end
+fragment 130564 "alt"
+  color transparent xyzwh 24.5 940 1990 3070 510
+  separator 6274
+end
+textcanvas 130692 "[rs.next() == true]"
+  xyzwh 129.5 955 2025 1000 60
+textcanvas 130820 "[rs.next() == false]"
+  xyzwh 129.5 1275 2025 1000 60
+fragment 131460 "catch (SQLException e) - interrumpe el recorrido normal"
+  color transparent xyzwh 24.5 1530 1990 3070 1010
+end
+note 132868 "N1. Después de close(), el código evalúa rs.next().
+Las llamadas de ResultSet se omiten; también
+pueden lanzar SQLException."
+  xyzwh 3189.5 940 2025 720 210
+note 132996 "N2. El constructor de once argumentos solo asigna
+atributos. La lectura de columnas y la conversión
+de fecha pertenecen al JDK y se omiten."
+  xyzwh 3189.5 1230 2025 720 210
+note 133124 "N3. super(message) actúa sobre el MISMO objeto.
+No se crea otra instancia Exception para
+representar la superclase."
+  xyzwh 3189.5 2000 2025 720 210
+note 133252 "N4. El DAO lanza el errorDAO ya construido.
+Construir la excepción y lanzarla son dos pasos
+diferentes."
+  xyzwh 3189.5 2260 2025 720 210
+note 133380 "N5. Las llamadas del JDK que tratan errores
+se conservan, como en el PDF."
+  xyzwh 3189.5 2510 2025 720 210
+note 133508 "N6. DAL no captura DAOExcepcion: se propaga
+a alquiler y al controlador. Si hay excepción,
+no se ejecuta el retorno normal."
+  xyzwh 3189.5 2730 2025 720 210
+note 133636 "e es SQLException. Se usa el tipo base Exception
+ya existente para no modificar el modelo
+en otro archivo."
+  xyzwh 3189.5 100 2025 720 210
+durationcanvas 128900 classinstance_ref 128004 // alquiler:AlquilerVehiculos
+  xyzwh 219 165.5 2010 11 2502
+end
+durationcanvas 129028 classinstance_ref 128132 // dal:DAL
+  xyzwh 541 165.5 2010 11 2502
+end
+durationcanvas 129156 classinstance_ref 128260 // cliDAO:ClienteDAOImp
+  xyzwh 1085 286.5 2010 11 2204
+end
+durationcanvas 129668 classinstance_ref 128388 // connManager:ConnectionManager
+  xyzwh 1621 496.5 2010 11 64
+end
+durationcanvas 129924 classinstance_ref 128388 // connManager:ConnectionManager
+  xyzwh 1623 655.5 2010 11 122
+end
+durationcanvas 130308 classinstance_ref 128388 // connManager:ConnectionManager
+  xyzwh 1621 856.5 2010 11 64
+end
+durationcanvas 130948 classinstance_ref 128516 // cliDTO:ClienteDTO
+  xyzwh 1973 1066 2010 11 134
+end
+durationcanvas 131588 classinstance_ref 128644 // errorDAO:DAOExcepcion
+  xyzwh 2448 1706.5 2010 11 664
+  overlappingdurationcanvas 132228
+    xyzwh 2454 2130 2011 11 70
+  end
+end
+durationcanvas 131844 classinstance_ref 128772 // e (SQLException):Exception
+  xyzwh 2896 1865.5 2010 11 122
+end
+msg 129284 synchronous
+  from durationcanvas_ref 128900
+  to durationcanvas_ref 129028
+  yz 170 2030 msg operation_ref 132867 // "getCliente(in dni : String) : ClienteDTO"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "dni"
+  label_xy 260 120
+msg 129412 synchronous
+  from durationcanvas_ref 129028
+  to durationcanvas_ref 129156
+  yz 290 2030 msg operation_ref 164355 // "buscarCliente(in dni : String) : ClienteDTO"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "dni"
+  label_xy 660 240
+msg 129796 synchronous
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 129668
+  yz 500 2030 msg operation_ref 165635 // "connect() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1150 450
+msg 130052 synchronous
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 129924
+  yz 660 2030 msg operation_ref 166019 // "queryDB(in sql : String) : ResultSet"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "SELECT * FROM CLIENTE
+WHERE DNI = dni.trim()"
+  label_xy 1132 582
+msg 130180 return
+  from durationcanvas_ref 129924
+  to durationcanvas_ref 129156
+  yz 760 2030 explicitmsg "rs"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1300 710
+msg 130436 synchronous
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 130308
+  yz 860 2030 msg operation_ref 165763 // "close() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1150 810
+msg 131076 synchronous
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 130948
+  yz 1070 2030 explicitmsg "<<create>> ClienteDTO(datos de la fila)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1251 1020
+msg 131204 return
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 129028
+  yz 1200 2030 explicitmsg "cliDTO"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 700 1150
+msg 131332 return
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 129028
+  yz 1390 2030 explicitmsg "null"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 700 1340
+msg 131716 synchronous
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 131588
+  yz 1710 2030 msg operation_ref 139651 // "DAOExcepcion(inout e : Exception)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "e"
+  label_xy 1450 1660
+msg 131972 synchronous
+  from durationcanvas_ref 131588
+  to durationcanvas_ref 131844
+  yz 1870 2030 explicitmsg "getMessage()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 2500 1820
+msg 132100 return
+  from durationcanvas_ref 131844
+  to durationcanvas_ref 131588
+  yz 1970 2030 explicitmsg "message"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 2541 1920
+reflexivemsg 132356 synchronous
+  to durationcanvas_ref 132228
+  yz 2130 2030 explicitmsg "super(message)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 2451 2080
+msg 132484 return
+  from durationcanvas_ref 131588
+  to durationcanvas_ref 129156
+  yz 2320 2030 explicitmsg "errorDAO"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 1701 2270
+msg 132612 return
+  from durationcanvas_ref 129156
+  to durationcanvas_ref 129028
+  yz 2460 2030 explicitmsg "DAOExcepcion"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 700 2410
+msg 132740 return
+  from durationcanvas_ref 129028
+  to durationcanvas_ref 128900
+  yz 2650 2030 explicitmsg "cliDTO o null (solo terminación normal)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 243 2672
+end

@@ -1,0 +1,160 @@
+format 224
+
+componentcanvas 128003 component_ref 128003 // Ventana Principal
+  
+  xyzwh 13.9623 285.387 2000 197 71
+end
+componentcanvas 128131 component_ref 128131 // Crear Reserva
+  
+  xyzwh 288.31 89.4624 2000 197 71
+end
+componentcanvas 128259 component_ref 128259 // Crear Cliente
+  
+  xyzwh 281.349 -5.73056 2000 197 71
+end
+componentcanvas 128387 component_ref 128387 // Listar categorias
+  
+  xyzwh 281.349 185.079 2000 197 71
+end
+componentcanvas 128515 component_ref 128515 // Listar reservas
+  
+  xyzwh 288.31 296.041 2000 197 71
+end
+componentcanvas 128643 component_ref 128643 // Entregar vehículo reservado
+  
+  xyzwh 284.272 376.888 2000 219 71
+end
+componentcanvas 128771 component_ref 128771 // Listar vehículos disponibles
+  
+  xyzwh 289.541 458.58 2000 215 71
+end
+componentcanvas 128899 component_ref 128899 // Listar sucursales
+  
+  xyzwh 299.964 558.889 2000 197 71
+end
+componentcanvas 129027 component_ref 129027 // Error
+  
+  xyzwh 537.235 -6.15364 2000 197 71
+end
+componentcanvas 129155 component_ref 129027 // Error
+  
+  xyzwh 566.428 91.3086 2000 197 71
+end
+componentcanvas 129411 component_ref 129027 // Error
+  
+  xyzwh 555.774 281.695 2000 197 71
+end
+componentcanvas 129539 component_ref 129027 // Error
+  
+  xyzwh 554.351 367.08 2000 197 71
+end
+note 133251 "Para pasar de cualquier componente  al componente error, hace  falta cometer el error, sino, no se puede llegar al componente error."
+  xyzwh -4.34551 35.8469 2000 189 143
+simplerelationcanvas 129795 simplerelation_ref 128003
+  from ref 128131 z 2001 to point 523.119 139.655
+  line 130179 z 2001 to ref 129155
+end
+simplerelationcanvas 129923 simplerelation_ref 128131
+  from ref 129155 z 2001 to point 518.004 101.578
+  line 130051 z 2001 to ref 128131
+end
+simplerelationcanvas 130819 simplerelation_ref 128515
+  from ref 128515 z 2001 to point 515.734 294.233
+  line 130947 z 2001 to ref 129411
+end
+simplerelationcanvas 131331 simplerelation_ref 128771
+  from ref 129411 z 2001 to point 518.004 334.156
+  line 131459 z 2001 to ref 128515
+end
+simplerelationcanvas 131587 simplerelation_ref 128899
+  from ref 128643 z 2001 to point 524.542 379.195
+  line 131715 z 2001 to ref 129539
+end
+simplerelationcanvas 131843 simplerelation_ref 129027
+  from ref 129539 z 2001 to point 532.927 416.849
+  line 131971 z 2001 to ref 128643
+end
+simplerelationcanvas 133763 simplerelation_ref 129795
+  from ref 128003 z 2001 to point 259.425 324.925
+  line 134019 z 2001 to point 261.271 309.579
+  line 136067 z 2001 to point 259.425 239.963
+  line 135683 z 2001 to point 259.425 24.0002
+  line 134147 z 2001 to ref 128259
+end
+simplerelationcanvas 134275 simplerelation_ref 129923
+  decenter_begin 563
+  decenter_end 577
+  from ref 128003 z 2001 to point 258.002 322.079
+  line 135555 z 2001 to point 261.271 316.541
+  line 136195 z 2001 to point 260.848 125.732
+  line 135427 z 2001 to ref 128131
+end
+simplerelationcanvas 134403 simplerelation_ref 130051
+  from ref 128003 z 2001 to point 259.425 322.079
+  line 135939 z 2001 to point 260.848 217.655
+  line 135811 z 2001 to ref 128387
+end
+simplerelationcanvas 134531 simplerelation_ref 130179
+  from ref 128003 z 2001 to ref 128515
+end
+simplerelationcanvas 134659 simplerelation_ref 130307
+  from ref 128003 z 2001 to point 261.271 324.925
+  line 136323 z 2001 to point 258.002 407.041
+  line 136451 z 2001 to ref 128643
+end
+simplerelationcanvas 135171 simplerelation_ref 130563
+  from ref 128003 z 2001 to point 260.848 324.925
+  line 136579 z 2001 to point 259.425 486.465
+  line 136707 z 2001 to point 263.117 488.311
+  line 137219 z 2001 to ref 128771
+end
+simplerelationcanvas 135299 simplerelation_ref 130691
+  from ref 128003 z 2001 to point 261.271 324.925
+  line 136963 z 2001 to point 258.002 585.35
+  line 136835 z 2001 to ref 128899
+end
+simplerelationcanvas 137091 simplerelation_ref 130819
+  from ref 128899 z 2001 to point 249.194 597.427
+  line 137347 z 2001 to point 116.924 597.427
+  line 137475 z 2001 to point 63.5005 420.541
+  line 138499 z 2001 to ref 128003
+end
+simplerelationcanvas 137603 simplerelation_ref 130947
+  from ref 128771 z 2001 to point 233.425 510.619
+  line 140035 z 2001 to point 165.655 501.282
+  line 138371 z 2001 to point 113.655 486.465
+  line 137731 z 2001 to ref 128003
+end
+simplerelationcanvas 137859 simplerelation_ref 131075
+  from ref 128643 z 2001 to point 245.502 428.926
+  line 139907 z 2001 to point 164.232 408.464
+  line 138243 z 2001 to ref 128003
+end
+simplerelationcanvas 138627 simplerelation_ref 131203
+  decenter_begin 701
+  from ref 128515 z 2001 to point 199.04 388.003
+  line 139651 z 2001 to point 164.08 366.84
+  line 141059 z 2001 to ref 128003
+end
+simplerelationcanvas 140163 simplerelation_ref 131331
+  from ref 128387 z 2001 to point 238.54 208.848
+  line 140291 z 2001 to ref 128003
+end
+simplerelationcanvas 140419 simplerelation_ref 131459
+  from ref 128131 z 2001 to point 217.655 157.27
+  line 140547 z 2001 to ref 128003
+end
+simplerelationcanvas 140675 simplerelation_ref 131587
+  from ref 128259 z 2001 to point 225.04 95.0392
+  line 140803 z 2001 to point 183.271 184.694
+  line 140931 z 2001 to ref 128003
+end
+simplerelationcanvas 141187 simplerelation_ref 138115
+  from ref 128259 z 2001 to point 506 8
+  line 141315 z 2001 to ref 129027
+end
+simplerelationcanvas 141443 simplerelation_ref 138243
+  from ref 129027 z 2001 to point 506 48
+  line 141571 z 2001 to ref 128259
+end
+end

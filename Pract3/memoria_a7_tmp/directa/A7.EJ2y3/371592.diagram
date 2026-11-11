@@ -1,0 +1,94 @@
+format 224
+
+classinstance 421000 class_ref 134147 // ControladorEntregarVehiculoReserva
+  name "ctrl"   xyz 20 4 2000 life_line_z 2000
+classinstance 421128 class_ref 130691 // Reserva
+  name "r"   xyz 1091 4 2000 life_line_z 2000
+classinstance 421256 class_ref 128131 // Categoria
+  name ""   xyz 1234 4 2000 life_line_z 2000
+classinstance 421384 class_ref 131203 // AlquilerVehiculos
+  name "alq"   xyz 1388 4 2000 life_line_z 2000
+fragment 421768 "opt"
+  xyzwh 192 128 1990 1379 564
+end
+textcanvas 421896 "[r != null]"
+  xyzwh 280 132 2020 137 26
+continuation 423048 "continúa en AlquilerVehiculos.listarVehiculosCategoriaSucursal"
+  xyzwh 1496 362 2025 712 54
+fragment 423176 "opt"
+  xyzwh 192 438 1990 986 110
+end
+textcanvas 423304 "[cochesT está vacía]"
+  xyzwh 280 442 2020 236 26
+fragment 423688 "break"
+  xyzwh 192 564 1990 634 110
+end
+textcanvas 423816 "[DAOExcepcion]"
+  xyzwh 280 568 2020 170 26
+note 424200 "Continuación de EJ2.2.2. Se ejecuta al seleccionar una reserva en la tabla reservaT; los coches devueltos se muestran en cochesT."
+  xyzwh 20 754 2000 760 110
+durationcanvas 421512 classinstance_ref 421000 // ctrl:ControladorEntregarVehiculoReserva
+  xyzwh 216 96 2010 11 612
+  overlappingdurationcanvas 423432
+    xyzwh 222 506 2011 11 34
+  end
+  overlappingdurationcanvas 423944
+    xyzwh 222 632 2011 11 34
+  end
+end
+durationcanvas 422024 classinstance_ref 421384 // alq:AlquilerVehiculos
+  xyzwh 1488 184 2010 11 32
+end
+durationcanvas 422280 classinstance_ref 421128 // r:Reserva
+  xyzwh 1138 232 2010 11 32
+end
+durationcanvas 422536 classinstance_ref 421256 // :Categoria
+  xyzwh 1285 280 2010 11 32
+end
+durationcanvas 422792 classinstance_ref 421384 // alq:AlquilerVehiculos
+  xyzwh 1488 328 2010 11 104
+end
+lostfoundmsgsupport 424328 xyz 16 91 2015
+msg 421640 found_synchronous
+  from lostfoundmsgsupport_ref 424328
+  to durationcanvas_ref 421512
+  yz 96 2030 msg operation_ref 170627 // "listarCoches(inout r : Reserva) : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "r"
+  label_xy 30 72
+msg 422152 synchronous
+  from durationcanvas_ref 421512
+  to durationcanvas_ref 422024
+  yz 184 2030 msg operation_ref 140163 // "getSingleton() : AlquilerVehiculos"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 256 160
+msg 422408 synchronous
+  from durationcanvas_ref 421512
+  to durationcanvas_ref 422280
+  yz 232 2030 msg operation_ref 159619 // "getTiene_asociada() : Categoria"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 256 208
+msg 422664 synchronous
+  from durationcanvas_ref 421512
+  to durationcanvas_ref 422536
+  yz 280 2030 msg operation_ref 144131 // "getNombre() : String"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 256 256
+msg 422920 synchronous
+  from durationcanvas_ref 421512
+  to durationcanvas_ref 422792
+  yz 328 2030 msg operation_ref 140675 // "listarVehiculosCategoriaSucursal(in categoria : String, in sucursal : int) : Coche"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "nombreCategoria, sucursal"
+  label_xy 256 304
+reflexivemsg 423560 synchronous
+  to durationcanvas_ref 423432
+  yz 506 2030 explicitmsg "new Alert(AlertType.WARNING) + showAndWait()  'No hay vehículos disponibles'"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 264 482
+reflexivemsg 424072 synchronous
+  to durationcanvas_ref 423944
+  yz 632 2030 explicitmsg "new Alert(AlertType.WARNING) + showAndWait()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 264 608
+end
