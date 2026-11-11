@@ -1,7 +1,9 @@
 format 224
 "A7.EJ2y3"
-  revision 11
-  modified_by 127 "Steve"
+
+  revision 12
+  modified_by 3 "urtzi"
+
 
 
   
@@ -67,15 +69,59 @@ format 224
     activitydiagramsettings
      end
     classdiagram 128133 "EJ2.1.1"
-      classdiagramsettings hide_operations yes member_max_width 0 end
+      classdiagramsettings member_max_width 0 end
       size A4
     end
 
     sequencediagram 128261 "EJ2.1.2"
       sequencediagramsettings end
-      overlapping_bars size A4
+      overlapping_bars size A2-Landscape
     end
 
+    sequencediagram 134532 "ControladorCrearCliente.isInputValid"
+      sequencediagramsettings end
+      overlapping_bars size A0
+    end
+
+    sequencediagram 134660 "AlquilerVehiculos.getCliente"
+      sequencediagramsettings end
+      overlapping_bars size 4000x5400
+    end
+
+    sequencediagram 134788 "DAL.getCliente"
+      sequencediagramsettings end
+      overlapping_bars size 4000x3000
+    end
+
+    sequencediagram 134916 "AlquilerVehiculos.crearCliente"
+      sequencediagramsettings end
+      overlapping_bars size 3400x3200
+    end
+
+    sequencediagram 135044 "AlquilerVehiculos.addCliente"
+      sequencediagramsettings end
+      overlapping_bars size A1-Landscape
+    end
+
+    sequencediagram 135172 "DAL.crearCliente"
+      sequencediagramsettings end
+      overlapping_bars size 4100x4200
+    end
+
+    sequencediagram 135428 "AlquilerVehiculos.getSingleton"
+      sequencediagramsettings end
+      overlapping_bars size A0-Landscape
+    end
+
+    sequencediagram 135556 "DAL.getSingleton"
+      sequencediagramsettings end
+      overlapping_bars size A0-Landscape
+    end
+
+    sequencediagram 135684 "ConstruccionDAO"
+      sequencediagramsettings end
+      overlapping_bars size A0-Landscape
+    end
   end
 
   classview 128389 "EJ2.2"
@@ -249,9 +295,182 @@ format 224
     componentdiagramsettings
      end
     componentdiagram 128773 "EJ3"
-      componentdiagramsettings
+      componentdiagramsettings draw_all_relations no
        end
       size A4
+    end
+
+    component 128003 "Ventana Principal"
+      simplerelation 129667
+	-_->
+	  on component_ref 128259 // Crear Cliente
+      end
+
+      simplerelation 129795
+	-_->
+	  on component_ref 128259 // Crear Cliente
+      end
+
+      simplerelation 129923
+	-_->
+	  on component_ref 128131 // Crear Reserva
+      end
+
+      simplerelation 130051
+	-_->
+	  on component_ref 128387 // Listar categorias
+      end
+
+      simplerelation 130179
+	-_->
+	  on component_ref 128515 // Listar reservas
+      end
+
+      simplerelation 130307
+	-_->
+	  on component_ref 128643 // Entregar veh�culo reservado
+      end
+
+      simplerelation 130435
+	-_->
+	  on component_ref 128003 // Ventana Principal
+      end
+
+      simplerelation 130563
+	-_->
+	  on component_ref 128771 // Listar veh�culos disponibles
+      end
+
+      simplerelation 130691
+	-_->
+	  on component_ref 128899 // Listar sucursales
+      end
+    end
+
+    component 128131 "Crear Reserva"
+      simplerelation 128003
+	-_->
+	  on component_ref 129027 // Error
+      end
+
+      simplerelation 131459
+	-_->
+	  on component_ref 128003 // Ventana Principal
+      end
+    end
+
+    component 128259 "Crear Cliente"
+      simplerelation 131587
+	-_->
+	  on component_ref 128003 // Ventana Principal
+      end
+
+      simplerelation 138115
+	-_->
+	  on component_ref 129027 // Error
+      end
+    end
+
+    component 128387 "Listar categorias"
+      simplerelation 128259
+	-_->
+	  on component_ref 129027 // Error
+      end
+
+      simplerelation 131331
+	-_->
+	  on component_ref 128003 // Ventana Principal
+      end
+    end
+
+    component 128515 "Listar reservas"
+      simplerelation 128515
+	-_->
+	  on component_ref 129027 // Error
+      end
+
+      simplerelation 128643
+	-_->
+	  on component_ref 129027 // Error
+      end
+
+      simplerelation 131203
+	-_->
+	  on component_ref 128003 // Ventana Principal
+      end
+    end
+
+    component 128643 "Entregar veh�culo reservado"
+      simplerelation 128899
+	-_->
+	  on component_ref 129027 // Error
+      end
+
+      simplerelation 131075
+	-_->
+	  on component_ref 128003 // Ventana Principal
+      end
+    end
+
+    component 128771 "Listar veh�culos disponibles"
+      simplerelation 129155
+	-_->
+	  on component_ref 129027 // Error
+      end
+
+      simplerelation 130947
+	-_->
+	  on component_ref 128003 // Ventana Principal
+      end
+    end
+
+    component 128899 "Listar sucursales"
+      simplerelation 129411
+	-_->
+	  on component_ref 129027 // Error
+      end
+
+      simplerelation 130819
+	-_->
+	  on component_ref 128003 // Ventana Principal
+      end
+    end
+
+    component 129027 "Error"
+      simplerelation 128131
+	-_->
+	  on component_ref 128131 // Crear Reserva
+      end
+
+      simplerelation 128387
+	-_->
+	  on component_ref 128387 // Listar categorias
+      end
+
+      simplerelation 128771
+	-_->
+	  on component_ref 128515 // Listar reservas
+      end
+
+      simplerelation 129027
+	-_->
+	  on component_ref 128643 // Entregar veh�culo reservado
+      end
+
+      simplerelation 129283
+	-_->
+	  on component_ref 128771 // Listar veh�culos disponibles
+      end
+
+      simplerelation 129539
+	-_->
+	  on component_ref 128899 // Listar sucursales
+      end
+
+      simplerelation 138243
+	-_->
+	  on component_ref 128259 // Crear Cliente
+      end
     end
   end
 
