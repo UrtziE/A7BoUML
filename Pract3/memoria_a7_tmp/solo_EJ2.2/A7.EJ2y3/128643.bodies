@@ -1,0 +1,43 @@
+class DAL
+!!!131331.java!!!	DAL()
+
+		this.catDAO = new CategoriaDAOImp();
+		this.sucDAO = new SucursalDAOImp();
+		this.resDAO = new ReservaDAOImp();
+		this.cliDAO = new ClienteDAOImp();
+		this.entDAO = new EntregaDAOImp();
+		this.cocDAO = new CocheDAOImp();
+		this.empDAO = new EmpleadoDAOImp();
+
+!!!131459.java!!!	getSingleton() : DAL
+		if (dal == null)
+			dal = new DAL();
+		return dal;
+!!!131587.java!!!	crearCliente(inout cliente : ClienteDTO) : void
+		cliDAO.crearCliente(cliente);
+!!!131715.java!!!	crearReserva(inout reserva : ReservaDTO) : void
+		resDAO.crearReserva(reserva);
+!!!131843.java!!!	crearEntrega(inout entrega : EntregaDTO) : void
+		entDAO.crearEntrega(entrega);
+!!!131971.java!!!	countReservas() : int
+		return resDAO.countReservas();
+!!!132099.java!!!	getReservasSucursal(in id : int) : ReservaDTO
+		return resDAO.obtenerReservasPorSucursalOrigen(id);
+!!!132227.java!!!	obtenerSucursales() : SucursalDTO
+		return sucDAO.obtenerSucursales();
+!!!132355.java!!!	obtenerCoches(in sucursal : int) : CocheDTO
+		return cocDAO.listarCoches(sucursal);
+!!!132483.java!!!	obtenerCategorias() : CategoriaDTO
+		return catDAO.obtenerCategorias();
+!!!132611.java!!!	getReserva(in id : int) : ReservaDTO
+		return resDAO.buscarReserva(id);
+!!!132739.java!!!	getCoche(in matricula : String) : CocheDTO
+		return cocDAO.buscarCoche(matricula);
+!!!132867.java!!!	getCliente(in dni : String) : ClienteDTO
+		return cliDAO.buscarCliente(dni);
+!!!132995.java!!!	getEmpleado(in dni : String) : EmpleadoDTO
+		return empDAO.buscarEmpleado(dni);
+!!!133123.java!!!	getEntrega(in id : int) : EntregaDTO
+		return entDAO.buscarEntrega(id);
+!!!133251.java!!!	modificarCoche(in matricula : String, in kms : double) : void
+		cocDAO.modificarVehiculo(matricula, kms);		

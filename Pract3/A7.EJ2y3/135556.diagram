@@ -1,0 +1,89 @@
+format 224
+
+classinstance 128004 class_ref 131203 // AlquilerVehiculos
+  name "alquiler"   xyz 45 4 2000 life_line_z 2000
+classinstance 128132 class_ref 128643 // DAL
+  name ""   xyz 590 4 2000 life_line_z 2000
+classinstance 128260 class_ref 128643 // DAL
+  name "dal"   xyz 1240.5 600.5 2000 life_line_z 2000
+fragment 128900 "alt"
+  color transparent xyzwh 27.5 266.5 1990 1670 2480
+  separator 1169
+end
+textcanvas 129028 "[dal != null]"
+  xyzwh 1489 285 2025 1520 60
+textcanvas 129156 "[dal == null]"
+  xyzwh 37 585 2025 1520 60
+continuation 129540 "continúa en ConstruccionDAO
+TipoDAO = CategoriaDAOImp; asignar a dal.catDAO"
+  xyzwh 810 890 2025 1217 145
+continuation 129668 "continúa en ConstruccionDAO
+TipoDAO = SucursalDAOImp; asignar a dal.sucDAO"
+  xyzwh 810 1111 2025 1205 145
+continuation 129796 "continúa en ConstruccionDAO
+TipoDAO = ReservaDAOImp; asignar a dal.resDAO"
+  xyzwh 810.5 1330 2025 1192 145
+continuation 129924 "continúa en ConstruccionDAO
+TipoDAO = ClienteDAOImp; asignar a dal.cliDAO"
+  xyzwh 810 1551 2025 1166 145
+continuation 130052 "continúa en ConstruccionDAO
+TipoDAO = EntregaDAOImp; asignar a dal.entDAO"
+  xyzwh 810 1770 2025 1194 145
+continuation 130180 "continúa en ConstruccionDAO
+TipoDAO = CocheDAOImp; asignar a dal.cocDAO"
+  xyzwh 810 1990 2025 1173 145
+continuation 130308 "continúa en ConstruccionDAO
+TipoDAO = EmpleadoDAOImp; asignar a dal.empDAO"
+  xyzwh 810 2210 2025 1242 145
+note 130692 "N1. Las siete construcciones son secuenciales.
+No hay un bucle Java. Cada referencia crea
+un DAO y un ConnectionManager distintos."
+  xyzwh 2340.5 1070 2025 740 230
+note 130820 "N2. La clase guarda la instancia creada
+en el atributo estático dal."
+  xyzwh 2272.5 2211.5 2025 740 180
+note 130948 "N3. Si una construcción falla, las siguientes
+no se ejecutan. DAOExcepcion se propaga
+a AlquilerVehiculos.getSingleton
+y al manejador de Aceptar."
+  xyzwh 2264.5 2466.5 2025 740 260
+durationcanvas 128388 classinstance_ref 128004 // alquiler:AlquilerVehiculos
+  xyzwh 219 165.5 2010 11 2542
+end
+durationcanvas 128516 classinstance_ref 128132 // :DAL
+  xyzwh 623 165.5 2010 11 2542
+end
+durationcanvas 128644 classinstance_ref 128260 // dal:DAL
+  xyzwh 1292 726 2010 11 1802
+end
+msg 128772 synchronous
+  from durationcanvas_ref 128388
+  to durationcanvas_ref 128516
+  yz 170 2030 msg operation_ref 131459 // "getSingleton() : DAL"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 290 120
+msg 129284 return
+  from durationcanvas_ref 128516
+  to durationcanvas_ref 128388
+  yz 480 2030 explicitmsg "dal existente"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 280 430
+msg 129412 synchronous
+  from durationcanvas_ref 128516
+  to durationcanvas_ref 128644
+  yz 730 2030 msg operation_ref 131331 // "DAL()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 850 680
+msg 130436 return
+  from durationcanvas_ref 128644
+  to durationcanvas_ref 128516
+  yz 2510 2030 explicitmsg "fin del constructor"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 850 2460
+msg 130564 return
+  from durationcanvas_ref 128516
+  to durationcanvas_ref 128388
+  yz 2690 2030 explicitmsg "dal"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 290 2640
+end

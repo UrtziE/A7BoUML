@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Bouml (http://bouml.free.fr/) -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="3226" height="4429" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<g>
+	<polygon fill="#c0ffff" stroke="black" stroke-opacity="1" points="65,396 384,396 384,406 394,406 394,625 65,625 65,396" />
+	<line stroke="black" stroke-opacity="1" x1="384" y1="396" x2="394" y2="406" />
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="75" y="433">Controlador principal de la</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="75" y="460">aplicación. Sus manejadores de</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="75" y="487">evento abren cada caso de</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="75" y="514">uso; el de entregar vehículo</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="75" y="541">reservado es el que inicia este.</text>
+</g>
+<g>
+	<polygon fill="#c0ffff" stroke="black" stroke-opacity="1" points="881,297 1200,297 1200,307 1210,307 1210,498 881,498 881,297" />
+	<line stroke="black" stroke-opacity="1" x1="1200" y1="297" x2="1210" y2="307" />
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="891" y="334">Es la clase base de todos los</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="891" y="361">controladores. Su método</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="891" y="388">initCasoDeUso carga la vista,</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="891" y="415">crea el controlador y asocia su</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="891" y="442">ventana (Stage).</text>
+</g>
+<g>
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="1877" y="64" width="3" height="329" />
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="1457" y="390" width="423" height="3" />
+	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="1453" y="60" width="424" height="330" />
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="1665" y="73">ControladorEntregarVehiculoReserva</text>
+	<line stroke="black" stroke-opacity="1" x1="1453" y1="91" x2="1877" y2="91" />
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1457" y="104">resources</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1457" y="133">location</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1457" y="162">sucursalCB</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1457" y="191">empleadoDNIT</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1457" y="220">kmsActualesT</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1457" y="249">tipoSeguroCB</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1457" y="278">aceptarB</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1457" y="307">cancelarB</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1457" y="336">combustibleT</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1457" y="365">dateTimeFormatter</text>
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="756" y1="1161" x2="764" y2="1160" />
+	<line stroke="black" stroke-opacity="1" x1="756" y1="1161" x2="755" y2="1152" />
+	<line stroke="black" stroke-opacity="1" x1="1501" y1="394" x2="756" y2="1161" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="756" y1="1161" x2="764" y2="1160" />
+	<line stroke="black" stroke-opacity="1" x1="756" y1="1161" x2="755" y2="1152" />
+	<line stroke="black" stroke-opacity="1" x1="1501" y1="394" x2="756" y2="1161" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="756" y1="1161" x2="764" y2="1160" />
+	<line stroke="black" stroke-opacity="1" x1="756" y1="1161" x2="755" y2="1152" />
+	<line stroke="black" stroke-opacity="1" x1="1501" y1="394" x2="756" y2="1161" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="756" y1="1161" x2="764" y2="1160" />
+	<line stroke="black" stroke-opacity="1" x1="756" y1="1161" x2="755" y2="1152" />
+	<line stroke="black" stroke-opacity="1" x1="1501" y1="394" x2="756" y2="1161" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="756" y1="1161" x2="764" y2="1160" />
+	<line stroke="black" stroke-opacity="1" x1="756" y1="1161" x2="755" y2="1152" />
+	<line stroke="black" stroke-opacity="1" x1="1501" y1="394" x2="756" y2="1161" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="756" y1="1161" x2="764" y2="1160" />
+	<line stroke="black" stroke-opacity="1" x1="756" y1="1161" x2="755" y2="1152" />
+	<line stroke="black" stroke-opacity="1" x1="1501" y1="394" x2="756" y2="1161" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="756" y1="1161" x2="764" y2="1160" />
+	<line stroke="black" stroke-opacity="1" x1="756" y1="1161" x2="755" y2="1152" />
+	<line stroke="black" stroke-opacity="1" x1="1501" y1="394" x2="756" y2="1161" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="756" y1="1161" x2="764" y2="1160" />
+	<line stroke="black" stroke-opacity="1" x1="756" y1="1161" x2="755" y2="1152" />
+	<line stroke="black" stroke-opacity="1" x1="1501" y1="394" x2="756" y2="1161" />
+</g>
+<g>
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="1176" y="191" width="3" height="69" />
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="914" y="257" width="265" height="3" />
+	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="910" y="187" width="266" height="70" />
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" font-weight="bold" font-style="italic" text-anchor="middle" x="1043" y="200">ControladorCasoDeUso</text>
+	<line stroke="black" stroke-opacity="1" x1="910" y1="218" x2="1176" y2="218" />
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="914" y="231">stage</text>
+</g>
+<g>
+	<line stroke="#000000" stroke-opacity="1" x1="1452" y1="225" x2="1185" y2="224" />
+	<line stroke="#000000" stroke-opacity="1" x1="1180" y1="224" x2="1185" y2="230" />
+	<line stroke="#000000" stroke-opacity="1" x1="1180" y1="224" x2="1186" y2="218" />
+	<line stroke="#000000" stroke-opacity="1" x1="1185" y1="230" x2="1186" y2="218" />
+</g>
+<g>
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="1045" y1="261" x2="1045" y2="296" />
+</g>
+<g>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="443" y="201">controladorPrincipal</text>
+</g>
+<g>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1704" y="698">superior</text>
+</g>
+<g>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1344" y="871">tiene_asociada</text>
+</g>
+<g>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1217" y="674">&lt;&lt;TableColumn&gt;&gt;</text>
+</g>
+<g>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1017" y="674">&lt;&lt;TableColumn&gt;&gt;</text>
+</g>
+<g>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1179" y="713">&lt;&lt;TableView&gt;&gt;</text>
+</g>
+<g>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1179" y="749">&lt;&lt;TableColumn&gt;&gt;</text>
+</g>
+<g>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="979" y="713">&lt;&lt;TableColumn&gt;&gt;</text>
+</g>
+<g>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="979" y="749">&lt;&lt;TableColumn&gt;&gt;</text>
+</g>
+<g>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1141" y="788">&lt;&lt;TableColumn&gt;&gt;</text>
+</g>
+<g>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="941" y="788">&lt;&lt;TableColumn&gt;&gt;</text>
+</g>
+<g>
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="396" y="92" width="3" height="271" />
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="70" y="360" width="329" height="3" />
+	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="66" y="88" width="330" height="272" />
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="231" y="101">ControladorPrincipal</text>
+	<line stroke="black" stroke-opacity="1" x1="66" y1="119" x2="396" y2="119" />
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" text-decoration="underline" x="70" y="132">CREAR_CLIENTE</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" text-decoration="underline" x="70" y="161">CREAR_RESERVA</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" text-decoration="underline" x="70" y="190">LISTAR_RESERVAS_SUCURSAL</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" text-decoration="underline" x="70" y="219">LISTAR_SUCURSALES</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" text-decoration="underline" x="70" y="248">LISTAR_CATEGORIAS</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" text-decoration="underline" x="70" y="277">ENTREGAR_VEHICULO_RESERVA</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" text-decoration="underline" x="70" y="306">LISTAR_VEHICULO_SUCURSAL</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="70" y="335">primaryStage</text>
+</g>
+<g>
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="1775" y="728" width="3" height="213" />
+	<rect fill="#cbcbcb" stroke="none" stroke-opacity="1" x="1563" y="938" width="215" height="3" />
+	<rect fill="#ffffc0" stroke="black" stroke-width="1" stroke-opacity="1" x="1559" y="724" width="216" height="214" />
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" font-weight="bold" text-anchor="middle" x="1667" y="737">Categoria</text>
+	<line stroke="black" stroke-opacity="1" x1="1559" y1="755" x2="1775" y2="755" />
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1563" y="768">nombre</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1563" y="797">precioModIlimitada</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1563" y="826">precioModKms</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1563" y="855">precioKmModKms</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1563" y="884">precioSeguroTRiesgo</text>
+	<text font-family="MS Shell Dlg 2" font-size="11" fill="#000000" xml:space="preserve" x="1563" y="913">precioSeguroTerceros</text>
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="400" y1="225" x2="406" y2="230" />
+	<line stroke="black" stroke-opacity="1" x1="400" y1="225" x2="405" y2="218" />
+	<line stroke="black" stroke-opacity="1" x1="909" y1="224" x2="400" y2="225" />
+</g>
+<g>
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="231" y1="364" x2="230" y2="395" />
+</g>
+<g>
+	<line stroke-dasharray="4,4" stroke="black" stroke-opacity="1" x1="1779" y1="762" x2="2310" y2="430" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="1558" y1="877" x2="1550" y2="873" />
+	<line stroke="black" stroke-opacity="1" x1="1558" y1="877" x2="1554" y2="884" />
+	<line stroke="black" stroke-opacity="1" x1="772" y1="1202" x2="1558" y2="877" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="1648" y1="723" x2="1638" y2="666" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="2884" y1="1219" x2="2880" y2="1211" />
+	<line stroke="black" stroke-opacity="1" x1="2884" y1="1219" x2="2876" y2="1222" />
+	<line stroke="black" stroke-opacity="1" x1="1779" y1="867" x2="2884" y2="1219" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="1638" y1="666" x2="1705" y2="666" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="1625" y1="942" x2="1617" y2="945" />
+	<line stroke="black" stroke-opacity="1" x1="1625" y1="942" x2="1628" y2="949" />
+	<line stroke="black" stroke-opacity="1" x1="1131" y1="2228" x2="1625" y2="942" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="1779" y1="868" x2="1782" y2="875" />
+	<line stroke="black" stroke-opacity="1" x1="1779" y1="868" x2="1786" y2="864" />
+	<line stroke="black" stroke-opacity="1" x1="2884" y1="1218" x2="1779" y2="868" />
+</g>
+<g>
+	<line stroke="black" stroke-opacity="1" x1="1691" y1="723" x2="1698" y2="718" />
+	<line stroke="black" stroke-opacity="1" x1="1691" y1="723" x2="1686" y2="715" />
+	<line stroke="black" stroke-opacity="1" x1="1705" y1="666" x2="1691" y2="723" />
+</g>
+</svg>

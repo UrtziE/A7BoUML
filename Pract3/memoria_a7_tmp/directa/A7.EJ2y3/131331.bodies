@@ -1,0 +1,76 @@
+class Cliente
+!!!146051.java!!!	Cliente(in dNI : String, in nombreyApellidos : String, in direccion : String, in poblacion : String, in codPostal : String, inout fechaCarnetConducir : LocalDateTime, in digitosTC : String, in mesTC : int, in anyoTC : int, in cvcTC : int, in tipoTC : String)
+		DNI = dNI;
+		this.nombreyApellidos = nombreyApellidos;
+		this.direccion = direccion;
+		this.poblacion = poblacion;
+		this.codPostal = codPostal;
+		this.fechaCarnetConducir = fechaCarnetConducir;
+		this.digitosTC = digitosTC;
+		this.mesTC = mesTC;
+		this.anyoTC = anyoTC;
+		this.cvcTC = cvcTC;
+		this.tipoTC = tipoTC;
+!!!146179.java!!!	Cliente(inout c : ClienteDTO)
+		this.DNI = c.getDni();
+		this.nombreyApellidos = c.getNombreyApellidos();
+		this.direccion = c.getDireccion();
+		this.poblacion = c.getPoblacion();
+		this.codPostal = c.getCodPostal();
+		this.fechaCarnetConducir = c.getFechaCarnetConducir();
+		this.digitosTC = c.getDigitosTC();
+		this.mesTC = c.getMesTC();
+		this.anyoTC = c.getAñoTC();
+		this.cvcTC = c.getCvcTC();
+		this.tipoTC = c.getTipoTC();
+!!!146307.java!!!	getDNI() : String
+		return DNI;
+!!!146435.java!!!	setDNI(in dNI : String) : void
+		DNI = dNI;
+!!!146563.java!!!	getNombreyApellidos() : String
+		return nombreyApellidos;
+!!!146691.java!!!	setNombreyApellidos(in nombreyApellidos : String) : void
+		this.nombreyApellidos = nombreyApellidos;
+!!!146819.java!!!	getDireccion() : String
+		return direccion;
+!!!146947.java!!!	setDireccion(in direccion : String) : void
+		this.direccion = direccion;
+!!!147075.java!!!	getPoblacion() : String
+		return poblacion;
+!!!147203.java!!!	setPoblacion(in poblacion : String) : void
+		this.poblacion = poblacion;
+!!!147331.java!!!	getCodPostal() : String
+		return codPostal;
+!!!147459.java!!!	setCodPostal(in codPostal : String) : void
+		this.codPostal = codPostal;
+!!!147587.java!!!	getFechaCarnetConducir() : LocalDateTime
+		return fechaCarnetConducir;
+!!!147715.java!!!	setFechaCarnetConducir(inout fechaCarnetConducir : LocalDateTime) : void
+		this.fechaCarnetConducir = fechaCarnetConducir;
+!!!147843.java!!!	getDigitosTC() : String
+		return digitosTC;
+!!!147971.java!!!	setDigitosTC(in digitosTC : String) : void
+		this.digitosTC = digitosTC;
+!!!148099.java!!!	getMesTC() : int
+		return mesTC;
+!!!148227.java!!!	setMesTC(in mesTC : int) : void
+		this.mesTC = mesTC;
+!!!148355.java!!!	getAnyoTC() : int
+		return anyoTC;
+!!!148483.java!!!	setAnyoTC(in anyoTC : int) : void
+		this.anyoTC = anyoTC;
+!!!148611.java!!!	getCvcTC() : int
+		return cvcTC;
+!!!148739.java!!!	setCvcTC(in cvcTC : int) : void
+		this.cvcTC = cvcTC;
+!!!148867.java!!!	getTipoTC() : String
+		return tipoTC;
+!!!148995.java!!!	setTipoTC(in tipoTC : String) : void
+		this.tipoTC = tipoTC;
+!!!149123.java!!!	toString() : String
+		return "Cliente [DNI=" + DNI + ", nombreyApellidos=" + nombreyApellidos
+				+ ", direccion=" + direccion + ", poblacion=" + poblacion
+				+ ", codPostal=" + codPostal + ", fechaCarnetConducir="
+				+ fechaCarnetConducir + ", digitosTC=" + digitosTC + ", mesTC="
+				+ mesTC + ", anyoTC=" + anyoTC + ", cvcTC=" + cvcTC
+				+ ", tipoTC=" + tipoTC + "]";
