@@ -1,0 +1,12 @@
+window_sizes 1213 731 284 923 566 104
+cleanlooks_style
+diagrams
+  active  classdiagram_ref 128133 // EJ1
+    923 566 70 A4 0 0
+end
+show_stereotypes
+selected attribute_ref 130227 // direccion
+open
+  class_ref 129203 // Sucursal
+end
+end

@@ -1,7 +1,7 @@
 format 224
 "A7.EJ1"
-  revision 2
-  modified_by 51 "Laura"
+  revision 3
+  modified_by 3 "urtzi"
 
 
   
@@ -81,20 +81,7 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
-      attribute 130099 "ID"
-	private explicit_type "int"
-	multiplicity "1"
-	cpp_decl ""
-	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
-"
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 130227 "DIRECCION"
+      attribute 130227 "direccion"
 	private explicit_type "string"
 	multiplicity "1"
 	cpp_decl ""
@@ -122,6 +109,33 @@ ${members}}
       classrelation 130739 // ()
 	relation_ref 129587 // 
       end
+
+      classrelation 129795 // (almacena)
+	relation 128899 o--- name "almacena"
+	  a role_name "" multiplicity "*" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 129795 // (almacena)
+	  b role_name "" multiplicity "0..1" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 129923 // (almacena)
+      end
+
+      classrelation 130051 // (trabaja para)
+	relation 129027 o--- name "trabaja para"
+	  a role_name "" multiplicity "1..*" private
+	    comment "
+
+"
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 130051 // (trabaja para)
+	  b role_name "" multiplicity "1" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 130179 // (trabaja para)
+      end
     end
 
     class 128179 "Cliente"
@@ -136,7 +150,7 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
-      attribute 128051 "DNI"
+      attribute 128051 "dni"
 	private explicit_type "string"
 	multiplicity "1"
 	cpp_decl ""
@@ -149,7 +163,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 128179 "NOMBREAPELLIDOS"
+      attribute 128179 "nombreapellidos"
 	private explicit_type "string"
 	multiplicity "1"
 	cpp_decl ""
@@ -162,7 +176,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 128307 "DIRECCION"
+      attribute 128307 "direccion"
 	private explicit_type "string"
 	multiplicity "1"
 	cpp_decl ""
@@ -175,7 +189,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 128435 "POBLACION"
+      attribute 128435 "poblacion"
 	private explicit_type "string"
 	multiplicity "1"
 	cpp_decl ""
@@ -188,7 +202,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 128563 "CODPOSTAL"
+      attribute 128563 "codpostal"
 	private explicit_type "string"
 	multiplicity "1"
 	cpp_decl ""
@@ -201,7 +215,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 128691 "FECHACARNETCONDUCIR"
+      attribute 128691 "fechacarnetdeconducir"
 	private explicit_type "timestamp"
 	multiplicity "1"
 	cpp_decl ""
@@ -214,7 +228,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 128819 "DIGITOSTC"
+      attribute 128819 "digitostc"
 	private explicit_type "string"
 	multiplicity "1"
 	cpp_decl ""
@@ -227,7 +241,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 128947 "MESTC"
+      attribute 128947 "mestc"
 	private explicit_type "short"
 	multiplicity "1"
 	cpp_decl ""
@@ -240,7 +254,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 129075 "a\\u00f1oTC"
+      attribute 129075 "añoTc"
 	private explicit_type "short"
 	multiplicity "1"
 	cpp_decl ""
@@ -253,7 +267,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 129203 "CVCTC"
+      attribute 129203 "cvcTc"
 	private explicit_type "short"
 	multiplicity "1"
 	cpp_decl ""
@@ -266,7 +280,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 129331 "TIPOTC"
+      attribute 129331 "tipoTc"
 	private explicit_type "string"
 	multiplicity "1"
 	cpp_decl ""
@@ -279,8 +293,8 @@ ${members}}
 	MysqlColumn
       end
 
-      classrelation 130227 // ()
-	relation_ref 129331 // 
+      classrelation 130227 // (realiza)
+	relation_ref 129331 // realiza
       end
     end
 
@@ -299,7 +313,7 @@ ${members}}
       associated_diagram classdiagram_ref 128133 // EJ1
       ncouples 1
       key "" value ""
-      attribute 129715 "NOMBRE"
+      attribute 129715 "nombre"
 	private explicit_type "string"
 	multiplicity "1"
 	cpp_decl ""
@@ -312,7 +326,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 129843 "PRECIOMODILIMITADA"
+      attribute 129843 "preciomodilimitada"
 	private explicit_type "double"
 	multiplicity "1"
 	cpp_decl ""
@@ -325,7 +339,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 130355 "PRECIOMODKMS"
+      attribute 130355 "preciomodkms"
 	private explicit_type "double"
 	multiplicity "1"
 	cpp_decl ""
@@ -338,7 +352,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 130483 "PRECIOSEGUROTRIESGO"
+      attribute 130483 "preciosegurotriesgo"
 	private explicit_type "double"
 	multiplicity "1"
 	cpp_decl ""
@@ -351,7 +365,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 130611 "PRECIOSEGUROTERCEROS"
+      attribute 130611 "precioseguroterceros"
 	private explicit_type "double"
 	multiplicity "1"
 	cpp_decl ""
@@ -364,7 +378,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 130867 "PRECIOMMODKMS"
+      attribute 130867 "preciommodkms"
 	private explicit_type "double"
 	multiplicity "1"
 	cpp_decl ""
@@ -383,15 +397,15 @@ ${members}}
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
 	    classrelation_ref 128691 // (Categoria superior)
-	  b parent class_ref 128307 // Categoria
+	  b multiplicity "*" parent class_ref 128307 // Categoria
       end
 
-      classrelation 130483 // <association>
-	relation_ref 129459 // <association>
+      classrelation 130483 // (solicita)
+	relation_ref 129459 // solicita
       end
 
-      classrelation 130995 // ()
-	relation_ref 129715 // 
+      classrelation 130995 // (pertenece a)
+	relation_ref 129715 // pertenece a
       end
     end
 
@@ -407,7 +421,7 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
-      attribute 130995 "DNI"
+      attribute 130995 "dni"
 	private explicit_type "string"
 	multiplicity "1"
 	cpp_decl ""
@@ -420,7 +434,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 131123 "NOMBRE"
+      attribute 131123 "nombre"
 	private explicit_type "string"
 	multiplicity "1"
 	cpp_decl ""
@@ -433,7 +447,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 131251 "ADMINISTRADOR"
+      attribute 131251 "administrador"
 	private explicit_type "bool"
 	multiplicity "1"
 	cpp_decl ""
@@ -452,18 +466,26 @@ ${members}}
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
 "
 	    classrelation_ref 129075 // ()
-	  b role_name "" multiplicity "*" private
+	  b role_name "" multiplicity "1..*" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
 	    classrelation_ref 129203 // ()
       end
 
-      classrelation 131251 // <association>
-	relation_ref 129843 // <association>
+      classrelation 131251 // (realiza)
+	relation_ref 129843 // realiza
       end
 
-      classrelation 132019 // <association>
-	relation_ref 130227 // <association>
+      classrelation 132019 // (realiza)
+	relation_ref 130227 // realiza
+      end
+
+      classrelation 128131 // <association>
+	relation_ref 128003 // <association>
+      end
+
+      classrelation 130179 // (trabaja para)
+	relation_ref 129027 // trabaja para
       end
     end
 
@@ -479,20 +501,7 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
-      attribute 131379 "ID"
-	private explicit_type "int"
-	multiplicity "1"
-	cpp_decl ""
-	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
-"
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 131507 "FECHARECOGIDA"
+      attribute 131507 "fecharecogida"
 	private explicit_type "timestamp"
 	multiplicity "1"
 	cpp_decl ""
@@ -505,7 +514,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 131635 "FECHADEVOLUCION"
+      attribute 131635 "fechadevolucion"
 	private explicit_type "timestamp"
 	multiplicity "1"
 	cpp_decl ""
@@ -518,7 +527,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 131763 "MODALIDADALQUILER"
+      attribute 131763 "modalidadalquiler"
 	private explicit_type "string"
 	multiplicity "1"
 	cpp_decl ""
@@ -533,8 +542,8 @@ ${members}}
 
       classrelation 129331 // (Recogida)
 	relation 128947 ---- name "Recogida"
-	  a role_name "" multiplicity "0..1" private
-	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+	  a role_name "" multiplicity "1" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
 "
 	    classrelation_ref 129331 // (Recogida)
 	  b role_name "" multiplicity "*" private
@@ -545,8 +554,8 @@ ${members}}
 
       classrelation 129587 // (Entrega)
 	relation 129075 ---- name "Entrega"
-	  a role_name "" multiplicity "0..1" private
-	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+	  a role_name "" multiplicity "1" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
 "
 	    classrelation_ref 129587 // (Entrega)
 	  b role_name "" multiplicity "*" private
@@ -555,29 +564,29 @@ ${members}}
 	    classrelation_ref 129715 // (Entrega)
       end
 
-      classrelation 130099 // ()
-	relation 129331 ---- name ""
+      classrelation 130099 // (realiza)
+	relation 129331 ---- name "realiza"
 	  a role_name "" multiplicity "1" private
 	    comment "				"
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
 "
-	    classrelation_ref 130099 // ()
+	    classrelation_ref 130099 // (realiza)
 	  b role_name "" multiplicity "*" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 130227 // ()
+	    classrelation_ref 130227 // (realiza)
       end
 
-      classrelation 130355 // <association>
-	relation 129459 ----
+      classrelation 130355 // (solicita)
+	relation 129459 ---- name "solicita"
 	  a role_name "" multiplicity "1" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
 "
-	    classrelation_ref 130355 // <association>
+	    classrelation_ref 130355 // (solicita)
 	  b role_name "" multiplicity "*" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 130483 // <association>
+	    classrelation_ref 130483 // (solicita)
       end
 
       classrelation 131635 // <association>
@@ -595,6 +604,18 @@ ${members}}
       classrelation 132275 // <association>
 	relation_ref 130355 // <association>
       end
+
+      classrelation 128771 // (contiene)
+	relation 128387 *--- name "contiene"
+	  a role_name "" multiplicity "0..1" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 128771 // (contiene)
+	  b role_name "" multiplicity "1" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 128899 // (contiene)
+      end
     end
 
     class 128691 "Coche"
@@ -609,7 +630,7 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
-      attribute 131891 "MATRICULA"
+      attribute 131891 "matricula"
 	private explicit_type "string"
 	multiplicity "1"
 	cpp_decl ""
@@ -622,7 +643,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 132019 "KMSACTUALES"
+      attribute 132019 "kmsactuales"
 	private explicit_type "double"
 	multiplicity "1"
 	cpp_decl ""
@@ -637,8 +658,8 @@ ${members}}
 
       classrelation 130611 // ()
 	relation 129587 ---- name ""
-	  a role_name "" multiplicity "1" private
-	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+	  a role_name "" multiplicity "0..1" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
 	    classrelation_ref 130611 // ()
 	  b role_name "" multiplicity "*" private
@@ -647,20 +668,24 @@ ${members}}
 	    classrelation_ref 130739 // ()
       end
 
-      classrelation 130867 // 1 ()
-	relation 129715 ---- name ""
+      classrelation 130867 // 1 (pertenece a)
+	relation 129715 ---- name "pertenece a"
 	  a role_name "1" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
 "
-	    classrelation_ref 130867 // 1 ()
+	    classrelation_ref 130867 // 1 (pertenece a)
 	  b role_name "" multiplicity "*" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 130995 // ()
+	    classrelation_ref 130995 // (pertenece a)
       end
 
-      classrelation 131507 // <association>
-	relation_ref 129971 // <association>
+      classrelation 131507 // (es asignado a)
+	relation_ref 129971 // es asignado a
+      end
+
+      classrelation 129923 // (almacena)
+	relation_ref 128899 // almacena
       end
     end
 
@@ -676,7 +701,7 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
-      attribute 132275 "FECHA"
+      attribute 132275 "fecha"
 	private explicit_type "timestamp"
 	cpp_decl ""
 	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
@@ -688,7 +713,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 132403 "TIPOSEGURO"
+      attribute 132403 "tiposeguro"
 	private explicit_type "string"
 	multiplicity "1"
 	cpp_decl ""
@@ -701,7 +726,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 132531 "KMS"
+      attribute 132531 "kms"
 	private explicit_type "double"
 	multiplicity "1"
 	cpp_decl ""
@@ -714,7 +739,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 132659 "COMBUSTIBLE"
+      attribute 132659 "combustible"
 	private explicit_type "double"
 	multiplicity "1"
 	cpp_decl ""
@@ -727,28 +752,28 @@ ${members}}
 	MysqlColumn
       end
 
-      classrelation 131123 // <association>
-	relation 129843 ----
+      classrelation 131123 // (realiza)
+	relation 129843 ---- name "realiza"
 	  a role_name "" multiplicity "1" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
 "
-	    classrelation_ref 131123 // <association>
+	    classrelation_ref 131123 // (realiza)
 	  b role_name "" multiplicity "*" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 131251 // <association>
+	    classrelation_ref 131251 // (realiza)
       end
 
-      classrelation 131379 // <association>
-	relation 129971 ----
+      classrelation 131379 // (es asignado a)
+	relation 129971 ---- name "es asignado a"
 	  a role_name "" multiplicity "1" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
 "
-	    classrelation_ref 131379 // <association>
-	  b role_name "" multiplicity "0..1" private
+	    classrelation_ref 131379 // (es asignado a)
+	  b role_name "" multiplicity "*" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 131507 // <association>
+	    classrelation_ref 131507 // (es asignado a)
       end
 
       classrelation 131763 // <association>
@@ -757,6 +782,42 @@ ${members}}
 
       classrelation 132787 // <association>
 	relation_ref 130611 // <association>
+      end
+
+      classrelation 128387 // <association>
+	relation_ref 128131 // <association>
+      end
+
+      classrelation 128643 // <association>
+	relation_ref 128259 // <association>
+      end
+
+      classrelation 128899 // (contiene)
+	relation_ref 128387 // contiene
+      end
+
+      classrelation 129027 // (corresponde a)
+	relation 128515 *--- name "corresponde a"
+	  a role_name "" multiplicity "0..1" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 129027 // (corresponde a)
+	  b role_name "" multiplicity "1" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 129155 // (corresponde a)
+      end
+
+      classrelation 129283 // (registra)
+	relation 128643 *--- name "registra"
+	  a role_name "" multiplicity "*" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 129283 // (registra)
+	  b role_name "" multiplicity "0..1" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 129411 // (registra)
       end
     end
 
@@ -772,7 +833,7 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
-      attribute 132787 "FECHA"
+      attribute 132787 "fecha"
 	private explicit_type "timestamp"
 	multiplicity "1"
 	cpp_decl ""
@@ -785,7 +846,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 132915 "TOTALACOBRAR"
+      attribute 132915 "totalacobrar"
 	private explicit_type "double"
 	multiplicity "1"
 	cpp_decl ""
@@ -798,7 +859,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 133043 "COBRADO"
+      attribute 133043 "cobrado"
 	private explicit_type "bool"
 	multiplicity "1"
 	cpp_decl ""
@@ -811,7 +872,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 133171 "KMS"
+      attribute 133171 "kms"
 	private explicit_type "double"
 	multiplicity "1"
 	cpp_decl ""
@@ -824,7 +885,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 133299 "COMBUSTIBLE"
+      attribute 133299 "combustible"
 	private explicit_type "double"
 	multiplicity "1"
 	cpp_decl ""
@@ -837,16 +898,16 @@ ${members}}
 	MysqlColumn
       end
 
-      classrelation 131891 // <association>
-	relation 130227 ----
+      classrelation 131891 // (realiza)
+	relation 130227 ---- name "realiza"
 	  a role_name "" multiplicity "1" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
 "
-	    classrelation_ref 131891 // <association>
+	    classrelation_ref 131891 // (realiza)
 	  b role_name "" multiplicity "*" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 132019 // <association>
+	    classrelation_ref 132019 // (realiza)
       end
 
       classrelation 132147 // <association>
@@ -855,8 +916,8 @@ ${members}}
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
 "
 	    classrelation_ref 132147 // <association>
-	  b role_name "" multiplicity "0..1" private
-	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+	  b role_name "" multiplicity "1" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
 "
 	    classrelation_ref 132275 // <association>
       end
@@ -864,34 +925,70 @@ ${members}}
       classrelation 132531 // <association>
 	relation_ref 130483 // <association>
       end
+
+      classrelation 128259 // <association>
+	relation 128131 ----
+	  a role_name "" multiplicity "1" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 128259 // <association>
+	  b role_name "" multiplicity "1" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 128387 // <association>
+      end
+
+      classrelation 128515 // <association>
+	relation 128259 ----
+	  a role_name "" multiplicity "1" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 128515 // <association>
+	  b role_name "" multiplicity "0..1" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 128643 // <association>
+      end
+
+      classrelation 129155 // (corresponde a)
+	relation_ref 128515 // corresponde a
+      end
+
+      classrelation 129539 // (registra)
+	relation 128771 *--- name "registra"
+	  a role_name "" multiplicity "*" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 129539 // (registra)
+	  b role_name "" multiplicity "0..1" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 129667 // (registra)
+      end
     end
 
-    class 129075 "Da\\u00f1o"
+    class 129075 "Daño"
       visibility package 
-      cpp_decl ""
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
       java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
 ${members}}
 "
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl "class ${name}${inherit}:
+${docstring}${members}
+"
+      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+${members}};
+"
       explicit_switch_type ""
       mysql_decl ""
       
-      attribute 133427 "ID"
-	private explicit_type "int"
-	multiplicity "1"
-	cpp_decl ""
-	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
-"
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 133555 "ZONA"
+      attribute 133555 "zona"
 	private explicit_type "string"
 	multiplicity "1"
 	cpp_decl ""
@@ -904,7 +1001,7 @@ ${members}}
 	MysqlColumn
       end
 
-      attribute 133683 "DESCRIPCION"
+      attribute 133683 "descripcion"
 	private explicit_type "string"
 	multiplicity "1"
 	cpp_decl ""
@@ -919,8 +1016,8 @@ ${members}}
 
       classrelation 132403 // <association>
 	relation 130483 ----
-	  a role_name "" multiplicity "1" private
-	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+	  a role_name "" multiplicity "0..1" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
 	    classrelation_ref 132403 // <association>
 	  b role_name "" multiplicity "*" private
@@ -931,14 +1028,34 @@ ${members}}
 
       classrelation 132659 // <association>
 	relation 130611 ----
-	  a role_name "" multiplicity "1" private
-	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+	  a role_name "" multiplicity "0..1" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
 	    classrelation_ref 132659 // <association>
 	  b role_name "" multiplicity "*" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
 	    classrelation_ref 132787 // <association>
+      end
+
+      classrelation 128003 // <association>
+	relation 128003 ----
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 128003 // <association>
+	  b role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 128131 // <association>
+      end
+
+      classrelation 129411 // (registra)
+	relation_ref 128643 // registra
+      end
+
+      classrelation 129667 // (registra)
+	relation_ref 128771 // registra
       end
     end
   end

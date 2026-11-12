@@ -1,20 +1,21 @@
 window_sizes 1213 731 223 984 566 104
 cleanlooks_style
 diagrams
-  active  componentdiagram_ref 128773 // EJ3
+  componentdiagram_ref 128773 // EJ3
     984 566 89 A4 0 0
   classdiagram_ref 128389 // EJ2.2.1
     787 452 30 A0 96 0
   sequencediagram_ref 128517 // EJ2.2.2
     2833 1332 30 A0 24 0
+  active  sequencediagram_ref 128261 // EJ2.1.2
+    787 452 100 A2-Landscape 48 0
 end
 show_stereotypes
-selected sequencediagram_ref 371336 // ControladorEntregarVehiculoReserva.initialize
+selected classdiagram_ref 128127 // EJ2.1.1
 open
   
-  package_ref 128131 // src
+package_ref 128131 // src
   classview_ref 128133 // EJ2.1
   classview_ref 128389 // EJ2.2
-  componentview_ref 128133 // EJ3
 end
 end
