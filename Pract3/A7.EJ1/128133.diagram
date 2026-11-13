@@ -2,125 +2,145 @@ format 224
 
 classcanvas 128179 class_ref 128179 // Cliente
   classdiagramsettings member_max_width 0 end
-  xyzwh 321.8 857.6 2000 221 305
+  xyzwh 242.6 889.42 2000 221 305
 end
 classcanvas 128307 class_ref 128307 // Categoria
   classdiagramsettings member_max_width 0 end
-  xyz 697.8 632.9 2000
+  xyz 482.36 429.95 2000
 end
 classcanvas 128435 class_ref 128435 // Empleado
   classdiagramsettings member_max_width 0 end
-  xyz 332.2 216.9 2000
+  xyz 305.28 66.52 2000
 end
 classcanvas 128691 class_ref 128691 // Coche
   classdiagramsettings member_max_width 0 end
-  xyz 753.3 445.9 2000
+  xyz 530.28 248.56 2000
 end
 classcanvas 128819 class_ref 128819 // Entrega
   classdiagramsettings member_max_width 0 end
-  xyz 745.8 207 2000
+  xyz 314.02 288 2000
 end
 classcanvas 128947 class_ref 128947 // Devolucion
   classdiagramsettings member_max_width 0 end
-  xyzwh -44.3 191.5 2005 151 161
+  xyzwh 81.08 40.6 2005 151 161
 end
 classcanvas 129075 class_ref 129075 // Da\u00f1o
   classdiagramsettings member_max_width 0 end
-  xyz 346 39.8 2005
+  xyz 88.9 306.64 2005
 end
 classcanvas 129203 class_ref 129203 // Sucursal
   classdiagramsettings member_max_width 0 end
-  xyz 361.7 435.3 2000
+  xyz 721.7 248.29 2000
 end
 classcanvas 131251 class_ref 128563 // Reserva
   classdiagramsettings member_max_width 0 end
-  xyz 318.9 637.1 2010
+  xyz 256.75 669.39 2010
 end
 relationcanvas 130483 relation_ref 128435 // Categoria superior
   decenter_begin 759
   decenter_end 314
-  from ref 128307 z 2001 label "Categoria superior" italic max_width 255 xyz 790 864 2001 to point 874.3 895.4
-  line 130611 z 2001 to point 783.9 894.4
+  from ref 128307 z 2001 label "Categoria superior" italic max_width 255 xyz 573.816 663.059 2001 to point 657.605 694.65
+  line 130611 z 2001 to point 565.623 694.511
   line 130739 z 2001 to ref 128307
   no_role_a no_role_b
-  multiplicity_a_pos 724 824 3000 no_multiplicity_b
+  multiplicity_a_pos 513 622 3000 no_multiplicity_b
 end
 relationcanvas 131123 relation_ref 128819 // Trabaja para
-  from ref 128435 z 2001 label "Trabaja para" italic max_width 255 xyz 360.5 359 3000 to ref 129203
+  geometry HV unfixed
+  decenter_end 456
+  from ref 128435 z 2001 label "Trabaja para" italic max_width 255 xyz 564.5 100 2001 to point 767 120
+  line 133939 z 2001 to ref 129203
   no_role_a no_role_b
-  multiplicity_a_pos 393 404 3000 multiplicity_b_pos 388 339 3000
+  multiplicity_a_pos 746 219 3000 multiplicity_b_pos 468 133 3000
 end
 relationcanvas 131379 relation_ref 128947 // Recogida en
-  decenter_begin 685
-  decenter_end 906
-  from ref 131251 z 2011 label "Recogida en" italic max_width 255 xyz 406.5 557.5 2011 to ref 129203
+  geometry HV unfixed
+  decenter_begin 875
+  decenter_end 830
+  from ref 131251 z 2011 label "Recogida en" italic max_width 255 xyz 580.5 766 2011 to point 807 786
+  line 134067 z 2011 to ref 129203
   no_role_a no_role_b
-  multiplicity_a_pos 413 532 3000 multiplicity_b_pos 431 607 3000
+  multiplicity_a_pos 763 345 3000 multiplicity_b_pos 457 797 3000
 end
 relationcanvas 131507 relation_ref 129075 // Entrega en
-  decenter_begin 266
-  decenter_end 82
-  from ref 131251 z 2011 label "Entrega en" italic max_width 255 xyz 305.5 567.5 2011 to ref 129203
+  geometry HV unfixed
+  decenter_begin 583
+  decenter_end 456
+  from ref 131251 z 2011 label "Entrega en" italic max_width 255 xyz 566.5 726 2011 to point 767 746
+  line 134195 z 2011 to ref 129203
   no_role_a no_role_b
-  multiplicity_a_pos 324 532 3000 multiplicity_b_pos 346 607 3000
+  multiplicity_a_pos 726 345 3000 multiplicity_b_pos 457 759 3000
 end
 relationcanvas 131763 relation_ref 129331 // Realiza
-  from ref 131251 z 2011 label "Realiza" italic max_width 255 xyz 393 794.5 3000 to ref 128179
+  from ref 131251 z 2011 label "Realiza" italic max_width 255 xyz 325.5 826.5 2011 to ref 128179
   no_role_a no_role_b
-  multiplicity_a_pos 398 826 3000 multiplicity_b_pos 396 782 3000
+  multiplicity_a_pos 329 859 3000 multiplicity_b_pos 327 814 3000
 end
-relationcanvas 131891 relation_ref 129459 // Entrega de
-  decenter_begin 356
-  decenter_end 324
-  from ref 131251 z 2011 label "Entrega de" italic max_width 255 xyz 562 666 3000 to ref 128307
+relationcanvas 131891 relation_ref 129459 // Pide
+  decenter_begin 953
+  decenter_end 472
+  from ref 131251 z 2011 label "Pide" italic max_width 255 xyz 419 569 2011 to point 436.02 510.52
+  line 134323 z 2011 to ref 128307
   no_role_a no_role_b
-  multiplicity_a_pos 669 702 3000 multiplicity_b_pos 528 697 3000
+  multiplicity_a_pos 460 528 3000 multiplicity_b_pos 411 641 3000
 end
 relationcanvas 132019 relation_ref 129587 // Ofrece
-  from ref 128691 z 2001 label "Ofrece" italic max_width 255 xyz 495.5 446 3000 to ref 129203
+  decenter_begin 538
+  decenter_end 538
+  from ref 128691 z 2001 label "Ofrece" italic max_width 255 xyz 660.5 263.5 2001 to ref 129203
   no_role_a no_role_b
-  multiplicity_a_pos 481 489 3000 multiplicity_b_pos 728 497 3000
+  multiplicity_a_pos 700 306 3000 multiplicity_b_pos 674 306 3000
 end
 relationcanvas 132147 relation_ref 129715 // Pertenece a
-  from ref 128691 z 2001 label "Pertenece a" italic max_width 255 xyz 767 558 3000 to ref 128307
-  role_a_pos 826 602 3000 no_role_b
-  no_multiplicity_a multiplicity_b_pos 794 542 3000
+  decenter_begin 465
+  decenter_end 479
+  from ref 128691 z 2001 label "Pertenece a" italic max_width 255 xyz 543.5 359 2001 to ref 128307
+  role_a_pos 605 403 3000 no_role_b
+  no_multiplicity_a multiplicity_b_pos 567 345 3000
 end
 relationcanvas 132403 relation_ref 129843 // Entrega corresponde a
-  from ref 128819 z 2001 label "Entrega corresponde a" italic max_width 255 xyz 527.5 251 3000 to ref 128435
+  decenter_end 469
+  from ref 128819 z 2001 label "Entrega corresponde a" italic max_width 255 xyz 292 210.5 2001 to ref 128435
   no_role_a no_role_b
-  multiplicity_a_pos 502 282 3000 multiplicity_b_pos 719 284 3000
+  multiplicity_a_pos 355 187 3000 multiplicity_b_pos 355 260 3000
 end
 relationcanvas 132531 relation_ref 129971 // De
-  from ref 128819 z 2001 label "De" italic max_width 255 xyz 801 369.5 3000 to ref 128691
+  decenter_begin 524
+  decenter_end 538
+  from ref 128819 z 2001 label "De" italic max_width 255 xyz 473.5 303.5 2001 to ref 128691
   no_role_a no_role_b
-  multiplicity_a_pos 793 414 3000 multiplicity_b_pos 767 352 3000
+  multiplicity_a_pos 507 296 3000 multiplicity_b_pos 455 360 3000
 end
 relationcanvas 132659 relation_ref 130099 // Entrega de
-  decenter_begin 851
-  from ref 131251 z 2011 label "Entrega de" italic max_width 255 xyz 590 403 3000 to ref 128819
+  decenter_begin 624
+  decenter_end 449
+  from ref 131251 z 2011 label "Entrega de" italic max_width 255 xyz 291.5 482.5 2011 to ref 128819
   no_role_a no_role_b
-  multiplicity_a_pos 695 352 3000 multiplicity_b_pos 473 607 3000
+  multiplicity_a_pos 329 433 3000 multiplicity_b_pos 352 641 3000
 end
 relationcanvas 132787 relation_ref 130227 // Recogida corresponde a
-  from ref 128947 z 2006 label "Recogida corresponde a" italic max_width 255 xyz 128.5 236.5 3000 to ref 128435
+  from ref 128947 z 2006 label "Recogida corresponde a" italic max_width 255 xyz 193 10.5 2006 to ref 128435
   no_role_a no_role_b
-  multiplicity_a_pos 306 282 3000 multiplicity_b_pos 119 281 3000
+  multiplicity_a_pos 285 132 3000 multiplicity_b_pos 245 132 3000
 end
 relationcanvas 132915 relation_ref 130355 // Devolucion de
-  from ref 128947 z 2011 label "Devolucion de" italic max_width 255 xyz -28 503 3000 to point 23.2 700.1
-  line 133683 z 2011 to ref 131251
+  decenter_end 524
+  from ref 128947 z 2011 label "Devolucion de" italic max_width 255 xyz 47.5 488 2011 to point 39.8586 120.198
+  line 133683 z 2011 to point 32.16 735.24
+  line 133811 z 2011 to ref 131251
   no_role_a no_role_b
-  multiplicity_a_pos 292 714 3000 multiplicity_b_pos -12 361 3000
+  multiplicity_a_pos 237 751 3000 multiplicity_b_pos 40 132 3000
 end
 relationcanvas 133171 relation_ref 130483 // Encontrado en
-  from ref 129075 z 2006 label "Encontrado en" italic max_width 255 xyz 169 154 3000 to ref 128947
+  decenter_end 469
+  from ref 129075 z 2006 label "Encontrado en" italic max_width 255 xyz 94.5 245 2006 to ref 128947
   no_role_a no_role_b
-  multiplicity_a_pos 119 238 3000 multiplicity_b_pos 322 128 3000
+  multiplicity_a_pos 129 211 3000 multiplicity_b_pos 126 278 3000
 end
 relationcanvas 133299 relation_ref 130611 // Registrado en
-  from ref 129075 z 2006 label "Registrado en" italic max_width 255 xyz 553 159 3000 to ref 128819
+  decenter_end 524
+  from ref 129075 z 2006 label "Registrado en" italic max_width 255 xyz 204.5 284 2006 to ref 128819
   no_role_a no_role_b
-  multiplicity_a_pos 719 258 3000 multiplicity_b_pos 487 138 3000
+  multiplicity_a_pos 293 370 3000 multiplicity_b_pos 223 370 3000
 end
 end

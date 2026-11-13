@@ -1,11 +1,11 @@
-window_sizes 1268 892 343 919 702 128
+window_sizes 1920 991 134 1780 801 128
 
 diagrams
   active  classdiagram_ref 128133 // EJ1
-    906 659 100 A4 73 0
+    1780 801 59 A4 0 0
 end
 show_stereotypes
-selected attribute_ref 133683 // DESCRIPCION
+selected class_ref 128691 // Coche
 open
   class_ref 129203 // Sucursal
   attribute_ref 129331 // TIPOTC

@@ -1,6 +1,6 @@
 format 224
 "A7.EJ1"
-  revision 3
+  revision 4
   modified_by 51 "Laura"
 
 
@@ -107,19 +107,19 @@ ${members}}
 	MysqlColumn
       end
 
-      classrelation 129203 // (Trabaja para)
+      classrelation 129203 // Trabaja para
 	relation_ref 128819 // Trabaja para
       end
 
-      classrelation 129459 // (Recogida en)
+      classrelation 129459 // Recogida en
 	relation_ref 128947 // Recogida en
       end
 
-      classrelation 129715 // (Entrega en)
+      classrelation 129715 // Entrega en
 	relation_ref 129075 // Entrega en
       end
 
-      classrelation 130739 // (Ofrece)
+      classrelation 130739 // Ofrece
 	relation_ref 129587 // Ofrece
       end
     end
@@ -279,7 +279,7 @@ ${members}}
 	MysqlColumn
       end
 
-      classrelation 130227 // (Realiza)
+      classrelation 130227 // Realiza
 	relation_ref 129331 // Realiza
       end
     end
@@ -386,11 +386,11 @@ ${members}}
 	  b parent class_ref 128307 // Categoria
       end
 
-      classrelation 130483 // (Entrega de)
-	relation_ref 129459 // Entrega de
+      classrelation 130483 // (Pide)
+	relation_ref 129459 // Pide
       end
 
-      classrelation 130995 // (Pertenece a)
+      classrelation 130995 // Pertenece a
 	relation_ref 129715 // Pertenece a
       end
     end
@@ -455,14 +455,14 @@ ${members}}
 	  b role_name "" multiplicity "*" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 129203 // (Trabaja para)
+	    classrelation_ref 129203 // Trabaja para
       end
 
-      classrelation 131251 // (Entrega corresponde a)
+      classrelation 131251 // Entrega corresponde a
 	relation_ref 129843 // Entrega corresponde a
       end
 
-      classrelation 132019 // (Recogida corresponde a)
+      classrelation 132019 // Recogida corresponde a
 	relation_ref 130227 // Recogida corresponde a
       end
     end
@@ -540,7 +540,7 @@ ${members}}
 	  b role_name "" multiplicity "*" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 129459 // (Recogida en)
+	    classrelation_ref 129459 // Recogida en
       end
 
       classrelation 129587 // (Entrega en)
@@ -552,7 +552,7 @@ ${members}}
 	  b role_name "" multiplicity "*" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 129715 // (Entrega en)
+	    classrelation_ref 129715 // Entrega en
       end
 
       classrelation 130099 // (Realiza)
@@ -565,19 +565,19 @@ ${members}}
 	  b role_name "" multiplicity "*" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 130227 // (Realiza)
+	    classrelation_ref 130227 // Realiza
       end
 
-      classrelation 130355 // (Entrega de)
-	relation 129459 ---- name "Entrega de"
+      classrelation 130355 // (Pide)
+	relation 129459 ---- name "Pide"
 	  a role_name "" multiplicity "1" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
 "
-	    classrelation_ref 130355 // (Entrega de)
+	    classrelation_ref 130355 // (Pide)
 	  b role_name "" multiplicity "*" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 130483 // (Entrega de)
+	    classrelation_ref 130483 // (Pide)
       end
 
       classrelation 131635 // (Entrega de)
@@ -592,7 +592,7 @@ ${members}}
 	    classrelation_ref 131763 // (Entrega de)
       end
 
-      classrelation 132275 // (Devolucion de)
+      classrelation 132275 // Devolucion de
 	relation_ref 130355 // Devolucion de
       end
     end
@@ -644,7 +644,7 @@ ${members}}
 	  b role_name "" multiplicity "*" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 130739 // (Ofrece)
+	    classrelation_ref 130739 // Ofrece
       end
 
       classrelation 130867 // 1 (Pertenece a)
@@ -656,10 +656,10 @@ ${members}}
 	  b role_name "" multiplicity "*" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 130995 // (Pertenece a)
+	    classrelation_ref 130995 // Pertenece a
       end
 
-      classrelation 131507 // (De)
+      classrelation 131507 // De
 	relation_ref 129971 // De
       end
     end
@@ -736,7 +736,7 @@ ${members}}
 	  b role_name "" multiplicity "*" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 131251 // (Entrega corresponde a)
+	    classrelation_ref 131251 // Entrega corresponde a
       end
 
       classrelation 131379 // (De)
@@ -748,14 +748,14 @@ ${members}}
 	  b role_name "" multiplicity "0..1" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 131507 // (De)
+	    classrelation_ref 131507 // De
       end
 
       classrelation 131763 // (Entrega de)
 	relation_ref 130099 // Entrega de
       end
 
-      classrelation 132787 // (Registrado en)
+      classrelation 132787 // Registrado en
 	relation_ref 130611 // Registrado en
       end
     end
@@ -846,7 +846,7 @@ ${members}}
 	  b role_name "" multiplicity "*" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 132019 // (Recogida corresponde a)
+	    classrelation_ref 132019 // Recogida corresponde a
       end
 
       classrelation 132147 // (Devolucion de)
@@ -858,10 +858,10 @@ ${members}}
 	  b role_name "" multiplicity "0..1" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 132275 // (Devolucion de)
+	    classrelation_ref 132275 // Devolucion de
       end
 
-      classrelation 132531 // (Encontrado en)
+      classrelation 132531 // Encontrado en
 	relation_ref 130483 // Encontrado en
       end
     end
@@ -926,7 +926,7 @@ ${members}}
 	  b role_name "" multiplicity "*" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 132531 // (Encontrado en)
+	    classrelation_ref 132531 // Encontrado en
       end
 
       classrelation 132659 // (Registrado en)
@@ -938,7 +938,7 @@ ${members}}
 	  b role_name "" multiplicity "*" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 132787 // (Registrado en)
+	    classrelation_ref 132787 // Registrado en
       end
     end
   end
