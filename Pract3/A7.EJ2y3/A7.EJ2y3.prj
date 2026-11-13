@@ -1,7 +1,7 @@
 format 224
 "A7.EJ2y3"
-  revision 14
-  modified_by 127 "Steve"
+  revision 15
+  modified_by 8 "Usuario-Pc"
 
 
   
@@ -119,7 +119,7 @@ format 224
     end
 
     classdiagram 128127 "EJ2.1.1"
-      classdiagramsettings draw_all_relations no hide_operations yes member_max_width 0 end
+      classdiagramsettings draw_all_relations yes hide_operations yes show_members_full_definition yes member_max_width 0 end
       size A4
     end
   end
@@ -145,7 +145,7 @@ format 224
     activitydiagramsettings
      end
     classdiagram 128389 "EJ2.2.1"
-      classdiagramsettings hide_operations yes member_max_width 0 end
+      classdiagramsettings draw_all_relations yes hide_operations yes show_members_full_definition yes member_max_width 0 end
       size A0
     end
 
@@ -270,22 +270,22 @@ format 224
     end
 
     classdiagram 134536 "EJ2.2.1a"
-      classdiagramsettings hide_operations yes member_max_width 0 end
+      classdiagramsettings draw_all_relations yes hide_operations yes show_members_full_definition yes member_max_width 0 end
       size A2
     end
 
     classdiagram 134664 "EJ2.2.1b"
-      classdiagramsettings hide_operations yes member_max_width 0 end
+      classdiagramsettings draw_all_relations yes hide_operations yes show_members_full_definition yes member_max_width 0 end
       size A2
     end
 
     classdiagram 134792 "EJ2.2.1c"
-      classdiagramsettings hide_operations yes member_max_width 0 end
+      classdiagramsettings draw_all_relations yes hide_operations yes show_members_full_definition yes member_max_width 0 end
       size A2
     end
 
     classdiagram 141320 "EJ2.2.1d"
-      classdiagramsettings hide_operations yes member_max_width 0 end
+      classdiagramsettings draw_all_relations yes hide_operations yes show_members_full_definition yes member_max_width 0 end
       size A2
     end
   end

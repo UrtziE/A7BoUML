@@ -1,10 +1,52 @@
-window_sizes 2560 1406 634 1919 1155 178
+window_sizes 958 1000 314 639 769 178
 
+diagrams
+  classdiagram_ref 134664 // EJ2.2.1b
+    114 106 100 A2 1632 0
+  classdiagram_ref 134792 // EJ2.2.1c
+    114 106 100 A2 171 0
+  classdiagram_ref 128389 // EJ2.2.1
+    384 615 90 A0 251 52
+  active  classdiagram_ref 134536 // EJ2.2.1a
+    639 769 100 A2 384 0
+  classdiagram_ref 141320 // EJ2.2.1d
+    114 106 100 A2 24 0
+  sequencediagram_ref 128517 // EJ2.2.2
+    114 106 100 A0 0 0
+  sequencediagram_ref 371464 // ControladorEntregarVehiculoReserva.popularTablaReservas
+    114 106 100 A2 0 0
+  sequencediagram_ref 372488 // AlquilerVehiculos.crearEntrega
+    114 106 29 A0 0 0
+  sequencediagram_ref 371976 // AlquilerVehiculos.getCliente
+    114 106 100 A3 0 0
+  sequencediagram_ref 373256 // DAL.getCliente
+    114 106 100 A2 0 0
+  sequencediagram_ref 373384 // DAL.getEntrega
+    114 106 100 A2 0 0
+  sequencediagram_ref 373640 // DAL.getEmpleado
+    114 106 100 A2 0 0
+  sequencediagram_ref 373896 // DAL.getReserva
+    114 106 100 A2 0 0
+  sequencediagram_ref 372104 // AlquilerVehiculos.getEntrega
+    114 106 100 A3 0 0
+  sequencediagram_ref 372232 // AlquilerVehiculos.listarVehiculosCategoriaSucursal
+    114 106 100 A1 0 0
+  sequencediagram_ref 372360 // AlquilerVehiculos.getEmpleado
+    114 106 100 A4 0 0
+  sequencediagram_ref 372616 // AlquilerVehiculos.getReserva
+    114 106 100 A3 0 0
+  sequencediagram_ref 374024 // DAL.modificarCoche
+    114 106 100 A1 0 0
+  sequencediagram_ref 371848 // AlquilerVehiculos.listarReservasSucursal
+    114 106 100 A2 0 0
+  sequencediagram_ref 371336 // ControladorEntregarVehiculoReserva.initialize
+    114 106 100 A1 0 51
+end
 show_stereotypes
-selected sequencediagram_ref 372104 // AlquilerVehiculos.getEntrega
+selected classdiagram_ref 134536 // EJ2.2.1a
 open
   
-package_ref 128131 // src
+  package_ref 128131 // src
   classview_ref 128133 // EJ2.1
   classview_ref 128389 // EJ2.2
 end
